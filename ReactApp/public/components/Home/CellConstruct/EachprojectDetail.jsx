@@ -9,20 +9,40 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import { Grid,Row } from 'react-bootstrap';
 import StepperComponent from './StepperComponent.jsx';
+import TextField from 'material-ui/TextField';
 export default class EachProjectDetail extends React.Component {
+  
+  state={
+    editStatus:false,
+    pName:this.props.projectName
+
+  }
+
+  handleProjectNameChange=(e)=>{
+    this.setState({pName:e.target.value});
+  }
+
+  removeProjectDetail=()=>{
+    this.props.removeProjectDetail(this.props.id);
+  }
+  editProjectDetail=()=>{
+    this.setState({editStatus:true});
+  }
+
+  editSave=()=>{
+    var obj={
+      projectName:this.state.pName,
+      projectID:this.props.projectID
+    };
+    this.props.saveEditProjectDetail(obj,this.props.id);
+    this.setState({editStatus:false});
+  }
 
 	render(){
+    if(this.state.editStatus==false){
 
 		return(
 			<div style={{marginTop:'20px'}}>
-			{/*<List>
-        <ListItem
-          leftAvatar={<Avatar src="images/projectIcon.png" />}
-          primaryText={this.props.projectName}
-          secondaryText= { this.props.projectID}
-        />
-        <Divider inset={true} />
-        </List>*/}
         <Grid>
   <Row>
         <Card>
@@ -33,17 +53,46 @@ export default class EachProjectDetail extends React.Component {
       showExpandableButton={true}
     />
     <CardActions>
-      <FlatButton label="Edit" />
-      <FlatButton label="Remove" />
+      <FlatButton label="Edit" onTouchTap={this.editProjectDetail} />
+      <FlatButton label="Remove" onTouchTap={this.removeProjectDetail}/>
     </CardActions>
     <CardText expandable={true}>    
      <StepperComponent />
     </CardText>
   </Card>
   </Row>
+  </Grid>  
+			</div>
+			)}
+    else{
+      return(
+      <div style={{marginTop:'20px'}}>
+        <Grid>
+  <Row>
+        <Card>
+    <CardHeader
+      title="Edit Project Name"
+      subtitle={ this.props.projectID}
+      actAsExpander={true}
+      showExpandableButton={true}
+    />
+    <CardText>
+     <TextField
+      hintText="Project Name"
+      floatingLabelText="Edit Project Name"
+      value={this.state.pName}
+      onChange={this.handleProjectNameChange}
+    /> 
+    </CardText>
+    <CardActions>
+      <FlatButton label="Save" onTouchTap={this.editSave}/>
+      <FlatButton label="Cancel" />
+    </CardActions>
+  </Card>
+  </Row>
   </Grid>
   
-			</div>
-			)
+      </div>
+    )};
 	}
 }

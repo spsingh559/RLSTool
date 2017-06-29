@@ -10,6 +10,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import AddConstructCell from './AddConstructCell.jsx';
 import AddConstructTable from './AddConstructTable.jsx';
+import CellLoading from '../CellLoading/CellLoading.jsx';
 
 export default class StepperComponent extends React.Component{
 
@@ -120,9 +121,9 @@ export default class StepperComponent extends React.Component{
             </StepContent>
           </Step>
           <Step>
-            <StepLabel>Create an ad group</StepLabel>
+            <StepLabel>Cell Loading </StepLabel>
             <StepContent>
-              <p>An ad group contains one or more ads which target a shared set of keywords.</p>
+              <CellLoading />
               {this.renderStepActions(1)}
             </StepContent>
           </Step>

@@ -4,6 +4,15 @@ import EachProjectDetail from './EachProjectDetail.jsx';
 
 export default class ProjectDetail extends React.Component {
 
+
+	saveEditProjectDetail=(pName,id)=>{
+		this.props.saveEditProjectDetail(pName,id);
+	};
+
+	removeProjectDetail=(id)=>{
+		this.props.removeProjectDetail(id);
+	}
+
 	render(){
 		console.log(this.props.data);	
 		if(this.props.data.Length!=0){
@@ -13,6 +22,9 @@ export default class ProjectDetail extends React.Component {
 	        <EachProjectDetail 
 	        projectName={data.projectName}
 	        projectID={data.projectID}
+	        id={data.id}
+	        saveEditProjectDetail={this.saveEditProjectDetail}
+	        removeProjectDetail={this.removeProjectDetail}
 	        />  
 	         </div>      
 	        
