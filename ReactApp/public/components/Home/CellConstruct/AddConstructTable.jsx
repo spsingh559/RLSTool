@@ -37,42 +37,7 @@ export default class AddConstructTable extends React.Component{
   removeDetails=(cellID)=>{
   	this.props.removeDetailTblRow(cellID);
   }
-	// editCellRow=()=>{
-	// 	alert('Edit Clicked');
-	// 	this.setState({editStatus:true});
-	// }
-
-	// deleteCellRow=()=>{
-	// 	alert('Delete Clicked');
-	// }
-
-	// editSave=()=>{
-	// 	this.setState({editStatus:false});
-	// 	alert('Edit Save Clicked');
-	// 	var obj={
-	// 		cellName:this.state.cellNames,
-	// 		cellValue:this.state.cellValues,
-	// 		cellComment:this.state.cellComments,
-	// 	//	cellID:this.props.
-	// 	}
-
-	// 	console.log(obj);
-
-	// 	//this.props.EditCellData(obj);
-	// }
-
-	// handleCellNameChange=(e)=>{
-	// 	this.setState({cellNames:e.target.value});
-	// }
-
-	// handleCellValueChange=(e)=>{
-	// 	this.setState({cellValues:e.target.value});
-	// }
-
-	// handleCellCommentChange=(e)=>{
-	// 	this.setState({cellComments:e.target.value});
-	// }
-
+	
 	render(){
 	console.log(this.props.cellData);	
 		if(this.props.cellData.Length!=0){

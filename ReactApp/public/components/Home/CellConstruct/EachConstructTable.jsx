@@ -31,16 +31,16 @@ export default class EachConstructTable extends React.Component{
 		openSnackBar:false
 	}
 
-	editTblRow=(e)=>{
-		e.preventDefault();
+	editTblRow=()=>{
+		// e.preventDefault();
 		this.setState({editStatus:true});
 	}
 
 	editCancel=()=>{
 		this.setState({editStatus:false});
 	}
-	editSave=(e)=>{
-		e.preventDefault();
+	editSave=()=>{
+		// e.preventDefault();
 		//alert('Save buttonn clicked');
 		
 		console.log("cell id from Add Constuct table"+this.props.cellID );

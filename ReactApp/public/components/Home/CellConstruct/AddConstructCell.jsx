@@ -6,6 +6,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import AppBar from 'material-ui/AppBar';
+import Divider from 'material-ui/Divider';
 const style = {
   marginRight: 20,
   marginTop:30
@@ -58,6 +60,7 @@ export default class AddConstructCell extends React.Component{
 	render(){
 
 		const actions = [
+    <Divider style={{backgroundColor:'rgb(0, 188, 212)'}}/>,
       <FlatButton
         label="Cancel"
         primary={true}
@@ -71,6 +74,9 @@ export default class AddConstructCell extends React.Component{
       />,
     ];
 
+      let titleBar=<AppBar
+    title="Add Construct Cell"
+  />;
 		return(
 			<div>
 			<FloatingActionButton style={style}
@@ -79,9 +85,9 @@ export default class AddConstructCell extends React.Component{
      		 <ContentAdd />
    		 </FloatingActionButton>
         <Dialog
-          title="Add Cell Construct"
+          title={titleBar}
           actions={actions}
-          modal={false}
+          modal={true}
           open={this.state.openDialogue}
           onRequestClose={this.handleClose}
         >

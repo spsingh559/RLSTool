@@ -7,7 +7,9 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
+import AppBar from 'material-ui/AppBar';
 import _ from 'lodash';
+import Divider from 'material-ui/Divider';
 const style = {
   marginRight: 20,
   marginTop:30
@@ -27,19 +29,28 @@ export default class AddCellLoading extends React.Component{
 		cellID:0,
     startDate:null,
     endDate:null,
-    totalMonth:0
+    totalMonth:0,
+    listName:[],
+    trackName:''
 	}
 
 	openDialogueBar=()=>{
 		this.setState({openDialogue:true});
 	}
 
+handleCellNameChange=(e)=>{
+  this.setState({cellNames:e.target.value});
+}
 	handleClose=()=>{
 		this.setState({openDialogue:false});
 	}
 
-	handleCellNameChange=(e)=>{
-		this.setState({cellNames:e.target.value})
+	handleTrackNameChange=(e)=>{
+    var arr=[];
+    this.setState({trackName:e.target.value});
+    arr.push(trackName);
+		this.setState({listName:arr});
+    console.log(this.state.listName);
 	}
 
 	handlecellValueChange=(e)=>{
@@ -115,9 +126,10 @@ export default class AddCellLoading extends React.Component{
     //                     />
     //                     <br />
     //                      }
-                  
+          let titleBar=<AppBar title="Add Cell Loader" />;        
 
 		const actions = [
+       <Divider style={{backgroundColor:'rgb(0, 188, 212)'}}/>,
       <FlatButton
         label="Cancel"
         primary={true}
@@ -141,9 +153,8 @@ export default class AddCellLoading extends React.Component{
      		 <ContentAdd />
    		 </FloatingActionButton>
         <Dialog
-          title="Add Cell Construct"
+          title={titleBar}
           actions={actions}
-          modal={false}
           open={this.state.openDialogue}
           modal={true}
           onRequestClose={this.handleClose}
@@ -169,8 +180,8 @@ export default class AddCellLoading extends React.Component{
                        <TextField key={i}
                             hintText="Cell Construct Name"
                             floatingLabelText="Enter Cell Construct Name"
-                            value={this.state.cellNames}
-                            onChange={this.handleCellNameChange}
+                            value={this.state.trackName}
+                            onChange={this.handleTrackNameChange}
                         />
                         <br />
                         </div>

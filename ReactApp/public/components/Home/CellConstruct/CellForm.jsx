@@ -12,6 +12,7 @@ import Dialog from 'material-ui/Dialog';
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import Snackbar from 'material-ui/Snackbar';
+import AppBar from 'material-ui/AppBar';
 // injectTapEventPlugin();
 
 
@@ -59,6 +60,7 @@ export default class App extends React.Component{
   }
   render() {
     const actions = [
+    <Divider style={{backgroundColor:'rgb(0, 188, 212)'}}/>,
       <FlatButton
         label="Cancel"
         primary={true}
@@ -72,6 +74,11 @@ export default class App extends React.Component{
       />,
     ];
 
+    var titleBar=<AppBar
+    title="Add Project Detail"
+    style={{height:'auto'}}
+  />
+
     return (
          <div>
               <RaisedButton label="Add Project" 
@@ -80,9 +87,9 @@ export default class App extends React.Component{
               onTouchTap={this.handleOpen}
                />
             <Dialog
-              title="Add Project Detail"
+              title={titleBar}
               actions={actions}
-              modal={false}
+              modal={true}
               open={this.state.open}
               onRequestClose={this.handleClose}
             >
