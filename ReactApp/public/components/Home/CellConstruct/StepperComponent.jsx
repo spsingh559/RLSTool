@@ -17,7 +17,7 @@ export default class StepperComponent extends React.Component{
 	state = {
     finished: false,
     stepIndex: 0,
-    cellData:[{'cellID':9,'cellName':'Credit Suisse','cellValue':1234,'cellComment':'New Track'}]
+    cellData:[]
   };
 
   handleNext = () => {

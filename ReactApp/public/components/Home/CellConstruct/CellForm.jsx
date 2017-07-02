@@ -83,7 +83,7 @@ export default class App extends React.Component{
          <div>
               <RaisedButton label="Add Project" 
               primary={true} 
-              style={{marginTop:'50px', marginLeft:'100px'}} 
+              style={{marginTop:'100px', marginLeft:'100px'}} 
               onTouchTap={this.handleOpen}
                />
             <Dialog

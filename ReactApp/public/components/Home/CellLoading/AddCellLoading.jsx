@@ -19,6 +19,8 @@ const customContentStyle = {
   width: '80%',
   maxWidth: 'none',
 };
+
+// const var monthName=['Jan', 'Feb','March','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
 export default class AddCellLoading extends React.Component{
 
 	state={
@@ -31,7 +33,8 @@ export default class AddCellLoading extends React.Component{
     endDate:null,
     totalMonth:0,
     listName:[],
-    trackName:''
+    trackName:'',
+    monthName:['Jan', 'Feb','March','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec']
 	}
 
 	openDialogueBar=()=>{
@@ -46,11 +49,16 @@ handleCellNameChange=(e)=>{
 	}
 
 	handleTrackNameChange=(e)=>{
-    var arr=[];
-    this.setState({trackName:e.target.value});
-    arr.push(trackName);
-		this.setState({listName:arr});
-    console.log(this.state.listName);
+  //   var arr=[];
+
+  //   for(var i=0; i<this.state.totalMonth;i++){
+  //     this.setState({trackName:e.target.value+i});
+  //   arr.push(trackName);
+  //   }
+  //   // this.setState({trackName:e.target.value});
+  //   // arr.push(trackName);
+		// this.setState({listName:arr});
+  //   console.log(this.state.listName);
 	}
 
 	handlecellValueChange=(e)=>{
@@ -97,6 +105,9 @@ handleCellNameChange=(e)=>{
         month=month+12;
       }
     }
+
+
+
       
     }
 
@@ -180,7 +191,7 @@ handleCellNameChange=(e)=>{
                        <TextField key={i}
                             hintText="Cell Construct Name"
                             floatingLabelText="Enter Cell Construct Name"
-                            value={this.state.trackName}
+                            value={this.state.monthName}
                             onChange={this.handleTrackNameChange}
                         />
                         <br />

@@ -12,7 +12,7 @@ export default class MainApp extends React.Component{
 		projectID:'',
 		projectName:'',
 		id:0,
-		data:[{'id':0,'projectName':'RLS','projectID':1000}]
+		data:[]
 	};
 
 	

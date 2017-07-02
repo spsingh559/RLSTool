@@ -25,6 +25,7 @@ export default class Nav extends React.Component{
              title="RLS Tool"
              iconClassNameRight="muidocs-icon-navigation-expand-more"
              onLeftIconButtonTouchTap={this.handleToggle}
+             style={{position: "fixed",top:'0'}}
            />
            <Drawer
           docked={false}

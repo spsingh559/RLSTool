@@ -40,7 +40,7 @@ export default class AddConstructTable extends React.Component{
 	
 	render(){
 	console.log(this.props.cellData);	
-		if(this.props.cellData.Length!=0){
+		if(this.props.cellData.length!=0){
 		var projectData = this.props.cellData.map(function(cellData,index) {
 	      return (      	
 	      	<div key={index}>
@@ -56,7 +56,7 @@ export default class AddConstructTable extends React.Component{
 	        
 	      );
 	    }.bind(this));
-	}
+	
 	
 		return(				
 			<Table
@@ -76,6 +76,9 @@ export default class AddConstructTable extends React.Component{
 							
 				</TableBody>
 				</Table>
-			);
+			);}
+		else{
+			return null;
+		}
 	}
 }
