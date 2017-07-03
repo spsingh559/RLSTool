@@ -74842,7 +74842,8 @@
 	      totalMonth: 0,
 	      listName: [],
 	      trackName: '',
-	      monthName: ['Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+	      monthName: ['Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+	      text: ''
 	    }, _this.openDialogueBar = function () {
 	      _this.setState({ openDialogue: true });
 	    }, _this.handleCellNameChange = function (e) {
@@ -74896,22 +74897,6 @@
 	      _this.setState({ endDate: date });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
-
-	  // handleConstructSubmit=(e)=>{
-	  // 	 e.preventDefault();
-	  //     this.setState({cellID:this.state.cellID+1})
-	  // 	var obj={
-	  // 		cellID:this.state.cellID,
-	  // 		cellValue:this.state.cellValues,
-	  // 		cellName:this.state.cellNames,
-	  // 		cellComment:this.state.cellComments
-	  // 	};
-	  // 	console.log("object Detail in Add Construct"+ obj.cellValue+obj.cellName+obj.cellComment+obj.cellID);
-	  // 	this.props.handleConstructSubmitData(obj);
-	  // 	this.setState({cellValues:'',cellNames:'',cellComments:'',openDialogue:false});
-
-	  // }
-
 
 	  _createClass(AddCellLoading, [{
 	    key: 'render',
@@ -74980,8 +74965,8 @@
 	              { key: i },
 	              _react2.default.createElement(_TextField2.default, { key: i,
 	                hintText: 'Cell Construct Name',
-	                floatingLabelText: 'Enter Cell Construct Name',
-	                value: _this2.state.monthName,
+	                floatingLabelText: _this2.state.monthName[_this2.state.startDate.getMonth() + i],
+	                value: _this2.state.text,
 	                onChange: _this2.handleTrackNameChange
 	              }),
 	              _react2.default.createElement('br', null)

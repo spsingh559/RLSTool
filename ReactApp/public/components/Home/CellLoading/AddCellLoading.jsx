@@ -34,7 +34,8 @@ export default class AddCellLoading extends React.Component{
     totalMonth:0,
     listName:[],
     trackName:'',
-    monthName:['Jan', 'Feb','March','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec']
+    monthName:['Jan', 'Feb','March','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'],
+    text:''
 	}
 
 	openDialogueBar=()=>{
@@ -69,20 +70,7 @@ handleCellNameChange=(e)=>{
 		this.setState({cellComments:e.target.value});
 	}
 
-	// handleConstructSubmit=(e)=>{
-	// 	 e.preventDefault();
- //     this.setState({cellID:this.state.cellID+1})
-	// 	var obj={
-	// 		cellID:this.state.cellID,
-	// 		cellValue:this.state.cellValues,
-	// 		cellName:this.state.cellNames,
-	// 		cellComment:this.state.cellComments
-	// 	};
-	// 	console.log("object Detail in Add Construct"+ obj.cellValue+obj.cellName+obj.cellComment+obj.cellID);
-	// 	this.props.handleConstructSubmitData(obj);
-	// 	this.setState({cellValues:'',cellNames:'',cellComments:'',openDialogue:false});
-
-	// }
+	
   getTable=()=>{
     // alert(this.state.startDate);
      // console.log(this.state.endDate.getFullYear());
@@ -105,11 +93,7 @@ handleCellNameChange=(e)=>{
         month=month+12;
       }
     }
-
-
-
-      
-    }
+}
 
 
 
@@ -190,13 +174,13 @@ handleCellNameChange=(e)=>{
                 <div key={i}>
                        <TextField key={i}
                             hintText="Cell Construct Name"
-                            floatingLabelText="Enter Cell Construct Name"
-                            value={this.state.monthName}
+                            floatingLabelText={this.state.monthName[this.state.startDate.getMonth()+i]}
+                            value={this.state.text}
                             onChange={this.handleTrackNameChange}
                         />
                         <br />
                         </div>
-                    )};
+                    )}
   {/*<div>
     {
       this.state.totalMonth.map(function(){
