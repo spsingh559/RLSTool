@@ -8,9 +8,10 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import AddConstructCell from './AddConstructCell.jsx';
-import AddConstructTable from './AddConstructTable.jsx';
+import AddNewSummary from './AddNewSummary.jsx';
+import AddNewSummaryTable from './AddNewSummaryTable.jsx';
 import CellLoading from '../CellLoading/CellLoading.jsx';
+import CellConstruct from '../CellConstruct/CellConstruct.jsx'
 
 export default class StepperComponent extends React.Component{
 
@@ -110,10 +111,10 @@ export default class StepperComponent extends React.Component{
       <div style={{maxWidth: 'auto', maxHeight: 'auto', margin: 'auto'}}>
         <Stepper activeStep={stepIndex} orientation="vertical">
           <Step>
-            <StepLabel>Add Cell Construct Detail</StepLabel>
+            <StepLabel>Add New Summary Detail</StepLabel>
             <StepContent>
-            <AddConstructCell handleConstructSubmitData={this.submitCellDetailInfo}/>
-            <AddConstructTable cellData={this.state.cellData} 
+            <AddNewSummary handleConstructSubmitData={this.submitCellDetailInfo}/>
+            <AddNewSummaryTable cellData={this.state.cellData} 
             editDetailTblRow ={this.editTblRow}
             removeDetailTblRow={this.removetTblRow}
             />
@@ -128,14 +129,9 @@ export default class StepperComponent extends React.Component{
             </StepContent>
           </Step>
           <Step>
-            <StepLabel>Create an ad</StepLabel>
+            <StepLabel>Add Cell Construct</StepLabel>
             <StepContent>
-              <p>
-                Try out different ad text to see what brings in the most customers,
-                and learn how to enhance your ads using features like ad extensions.
-                If you run into any problems with your ads, find out how to tell if
-                they're running and how to resolve approval issues.
-              </p>
+              <CellConstruct />
               {this.renderStepActions(2)}
             </StepContent>
           </Step>

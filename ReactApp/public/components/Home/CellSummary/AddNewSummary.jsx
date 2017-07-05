@@ -12,7 +12,7 @@ const style = {
   marginRight: 20,
   marginTop:30
 };
-export default class AddConstructCell extends React.Component{
+export default class AddNewSummary extends React.Component{
 
 	state={
 		openDialogue:false,
@@ -92,15 +92,15 @@ export default class AddConstructCell extends React.Component{
           onRequestClose={this.handleClose}
         >
           <TextField
-                hintText="Cell Construct Name"
-                floatingLabelText="Enter Cell Construct Name"
+                hintText="Track Name"
+                floatingLabelText="Enter Track Name"
                 value={this.state.cellNames}
                 onChange={this.handleCellNameChange}
             />
             <br />
             <TextField
-               hintText="Cell Construct Value"
-               floatingLabelText="Enter Cell Construct Value"
+               hintText="Estimated Per Day Value"
+               floatingLabelText="Enter Estimated Per Day Value"
                value={this.state.cellValues}
                onChange={this.handlecellValueChange}
              />

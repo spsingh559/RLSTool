@@ -21,7 +21,7 @@ import FontIcon from 'material-ui/FontIcon';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import Snackbar from 'material-ui/Snackbar';
 
-export default class EachConstructTable extends React.Component{
+export default class EachNewSummaryTable extends React.Component{
 
 	state={
 		editStatus:false,
@@ -52,8 +52,9 @@ export default class EachConstructTable extends React.Component{
 		console.log("inside  edit"+"obj detail"+ obj.cellName+" "+obj.cellValue );
 		var cellID=this.props.cellID;
 		this.props.editDetail(obj,cellID);
+		// this.setState({cellName:'',cellValue:'',cellComment:''});
 		this.setState({editStatus:false});
-
+		this.setState({cellName:'',cellValue:'',cellComment:''});
 	}
 
 	removeTblRow=()=>{

@@ -4,8 +4,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import ParentComponent from './Home/CellConstruct/ParentComponent.jsx';
-import MainApp from './Home/CellConstruct/MainApp.jsx';
+import ParentComponent from './Home/CellSummary/ParentComponent.jsx';
+import MainApp from './Home/CellSummary/MainApp.jsx';
 import Dashboard from './Dashboard/Dashboard.jsx';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 

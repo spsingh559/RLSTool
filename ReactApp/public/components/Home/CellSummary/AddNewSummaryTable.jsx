@@ -15,9 +15,9 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 //const ID;
-import EachConstructTable from './EachConstructTable.jsx';
+import EachNewSummaryTable from './EachNewSummaryTable.jsx';
 
-export default class AddConstructTable extends React.Component{
+export default class AddNewSummaryTable extends React.Component{
 
 	state={
 		selectable: false,
@@ -44,7 +44,7 @@ export default class AddConstructTable extends React.Component{
 		var projectData = this.props.cellData.map(function(cellData,index) {
 	      return (      	
 	      	<div key={index}>
-	        <EachConstructTable 
+	        <EachNewSummaryTable 
 	        cellName={cellData.cellName}
 	        cellValue={cellData.cellValue}
 	        cellComment={cellData.cellComment}
