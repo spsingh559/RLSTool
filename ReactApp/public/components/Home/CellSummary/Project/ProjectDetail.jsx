@@ -5,35 +5,35 @@ import EachProjectDetail from './EachProjectDetail.jsx';
 export default class ProjectDetail extends React.Component {
 
 
-	saveEditProjectDetail=(pName,id)=>{
-		this.props.saveEditProjectDetail(pName,id);
+	saveEditProjectDetail=(obj,_id)=>{
+		this.props.saveEditProjectDetail(obj,_id);
 	};
 
-	removeProjectDetail=(id)=>{
-		this.props.removeProjectDetail(id);
+	removeProjectDetail=(_id)=>{
+		this.props.removeProjectDetail(_id);
 	}
 
 	render(){
-		console.log(this.props.data);	
+		console.log(this.props.data);
 		if(this.props.data.Length!=0){
 		var projectData = this.props.data.map(function(data) {
-	      return (      	
-	      	<div key={data.projectID}>
-	        <EachProjectDetail 
+	      return (
+	      	<div key={data._id}>
+	        <EachProjectDetail
 	        projectName={data.projectName}
 	        projectID={data.projectID}
-	        id={data.id}
+	        _id={data._id}
 	        saveEditProjectDetail={this.saveEditProjectDetail}
 	        removeProjectDetail={this.removeProjectDetail}
-	        />  
-	         </div>      
-	        
+	        />
+	         </div>
+
 	      );
 	    }.bind(this));
 	}
 		return(
-			<div>			      	
-				{projectData}				
+			<div>
+				{projectData}
 			</div>
 			);
 	}

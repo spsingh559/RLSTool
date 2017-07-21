@@ -35,7 +35,10 @@ export default class AddCellLoading extends React.Component{
     listName:[],
     trackName:'',
     monthName:['Jan', 'Feb','March','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'],
-    text:[]
+    totalMonthList:[],
+    txtValue:'',
+    name:'',
+    obj:{}
 	}
 
 	openDialogueBar=()=>{
@@ -50,8 +53,10 @@ handleCellNameChange=(e)=>{
 	}
 
 	handleTrackNameChange=(e)=>{
+
+    this.setState({txtValue:e.target.value,name:e.target.name});
   //   var arr=[];
-  // this.setState({trackName:e.target.value})
+  // this.setStathandleTrackNameChangee({trackName:e.target.value})
   // //   for(var i=0; i<this.state.totalMonth;i++){
   // //     this.setState({trackName:e.target.value+i});
   //    this.state.text.push(this.state.trackName);
@@ -59,7 +64,7 @@ handleCellNameChange=(e)=>{
   //   // this.setState({trackName:e.target.value});
   //   // arr.push(trackName);
 		// this.setState({listName:arr});
-     console.log(this.state.text);
+    //  console.log(this.state.text);
 	}
 
 	handlecellValueChange=(e)=>{
@@ -70,32 +75,59 @@ handleCellNameChange=(e)=>{
 		this.setState({cellComments:e.target.value});
 	}
 
-	
+  handleBlur=()=>{
+    console.log('name is '+this.state.name +'and value is'+ this.state.txtValue);
+    this.state.obj[this.state.name]=this.state.txtValue;
+  }
+
+
   getTable=()=>{
     // alert(this.state.startDate);
      // console.log(this.state.endDate.getFullYear());
-    var numberOfYear=this.state.endDate.getFullYear()-this.state.startDate.getFullYear();
+       var currentMonth=this.state.startDate.getMonth()+1;
+       let lastMonth=this.state.endDate.getMonth()+1;
+       let currentYear=this.state.startDate.getFullYear();
+       let lastYear=this.state.endDate.getFullYear();
+    var numberOfYear=lastYear-currentYear;
     // console.log("total year is"+ numberOfYear);
 
     // console.log("current month is");
     var month=0;
     // console.log("month in current year is "+ month);
     if(numberOfYear==0){
-      month=(this.state.endDate.getMonth()+1)-(this.state.startDate.getMonth()+1);
+      month=(this.state.endDate.getMonth()+1)-(this.state.startDate.getMonth()+1)+1;
     }else{
-      var currentMonth=this.state.startDate.getMonth()+1;
+
     // console.log(currentMonth);
-    var month = 12- currentMonth;
+    var month = 12- currentMonth+1;
     for (var i =1; i <=numberOfYear ; i++) {
       if(i==numberOfYear){
-        month=month+this.state.endDate.getMonth()+1;
+        month=month+lastMonth;
       }else{
         month=month+12;
       }
     }
 }
-    this.setState({totalMonth:month});
-    console.log("total month is"+ month);
+let tmpArr=[];
+let lstTmpArr=[];
+
+  let counter=currentMonth;
+  for(let i=0; i<month;i++){
+    if(counter>12){
+      console.log('inside if loop');
+      console.log('counter is'+ counter);
+      counter=counter%12;
+      currentYear++;
+    }
+    tmpArr.push(this.state.monthName[counter-1]+currentYear);
+    counter++;
+  }
+  console.log('array is');
+  console.log(tmpArr);
+    this.setState({totalMonth:month,totalMonthList:tmpArr});
+    console.log("total month is"+ this.state.totalMonth);
+    console.log('total month list is'+ this.state.totalMonthList);
+
   }
 
   handleStatrtDate=(e,date)=>{
@@ -106,9 +138,11 @@ handleCellNameChange=(e)=>{
     this.setState({endDate:date});
   }
 
-  onAddingTitle=(key)=> { 
+  onAddingTitle=(key)=> {
       event.preventDefault();
-    ///  console.log(key.value); 
+      console.log('object is');
+      console.log(this.state.obj);
+    ///  console.log(key.value);
     // let formElements = event.target.value;
     // console.log(event.target.elements);
     // let formData = {
@@ -133,7 +167,7 @@ handleCellNameChange=(e)=>{
     //                     />
     //                     <br />
     //                      }
-          let titleBar=<AppBar title="Add Cell Loader" />;        
+          let titleBar=<AppBar title="Add Cell Loader" />;
 
 		const actions = [
        <Divider style={{backgroundColor:'rgb(0, 188, 212)'}}/>,
@@ -184,28 +218,30 @@ handleCellNameChange=(e)=>{
                 onChange={this.handleCellNameChange}
             />
             <br />
-           <DatePicker hintText="Select Start Date" 
+           <DatePicker hintText="Select Start Date"
            onChange={this.handleStatrtDate}/>
              <br />
-              <DatePicker hintText="Select End Date" onChange={this.handleendDate} /> 
+              <DatePicker hintText="Select End Date" onChange={this.handleendDate} />
               <FlatButton label="Genrate Table" primary={true} onTouchTap={this.getTable}/>
-             <br />     
+             <br />
 
-            
+
               {_.times(this.state.totalMonth, i =>
                 <div key={i}>
                        <TextField id={i}
                             hintText="Cell Construct Name"
-                            floatingLabelText={this.state.monthName[this.state.startDate.getMonth()+i]}
-                            value={this.state.text}
+                            name={this.state.totalMonthList[i]}
+                            floatingLabelText={this.state.totalMonthList[i]}
+                            // value={this.state.text}
+                            onBlur={this.handleBlur}
                             onChange={this.handleTrackNameChange}
                         />
                         <br />
                         </div>
                     )}
-                  
+
         </Dialog>
 			</div>
 			)
 	}
-} 
+}

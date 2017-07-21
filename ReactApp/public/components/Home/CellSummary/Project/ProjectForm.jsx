@@ -15,7 +15,18 @@ import Snackbar from 'material-ui/Snackbar';
 import AppBar from 'material-ui/AppBar';
 // injectTapEventPlugin();
 
-
+const styles={
+  dividerStyle:{
+    backgroundColor:'rgb(0, 188, 212)'
+  },
+  titleBarStyle: {
+    height:'auto'
+  },
+  addProjectStyle:{
+    marginTop:'100px',
+    marginLeft:'100px'
+  }
+}
 
 export default class App extends React.Component{
 // class HelloMessage extends React.Component {
@@ -36,7 +47,7 @@ export default class App extends React.Component{
   };
 
   handlePorjectIDChange=(e)=>{
-    this.setState({projectID:e.target.value});  
+    this.setState({projectID:e.target.value});
   };
 
   handlePorjectNameChange=(e)=>{
@@ -50,9 +61,12 @@ export default class App extends React.Component{
           return;
        }
        var obj={
+        _id:Date.now(),
         projectID:this.state.projectID,
         projectName:this.state.projectName
        };
+       console.log('obj in Project Form');
+        console.log(obj);
        this.props.submitProjectDetail(obj);
         this.setState({open: false,openSnackBar:true,projectID:'',projectName:''});
      //  this.handleClose();
@@ -60,7 +74,6 @@ export default class App extends React.Component{
   }
   render() {
     const actions = [
-    <Divider style={{backgroundColor:'rgb(0, 188, 212)'}}/>,
       <FlatButton
         label="Cancel"
         primary={true}
@@ -71,19 +84,19 @@ export default class App extends React.Component{
         primary={true}
         keyboardFocused={true}
         onTouchTap={this.submitProjectDetail}
-      />,
+      />
     ];
 
     var titleBar=<AppBar
     title="Add Project Detail"
-    style={{height:'auto'}}
+    style={styles.titleBarStyle}
   />
 
     return (
          <div>
-              <RaisedButton label="Add Project" 
-              primary={true} 
-              style={{marginTop:'100px', marginLeft:'100px'}} 
+              <RaisedButton label="Add Project"
+              primary={true}
+              style={styles.addProjectStyle}
               onTouchTap={this.handleOpen}
                />
             <Dialog
@@ -106,7 +119,7 @@ export default class App extends React.Component{
                value={this.state.projectID}
                onChange={this.handlePorjectIDChange}
              />
-             <br />         
+             <br />
         </Dialog>
          <Snackbar
           open={this.state.openSnackBar}
@@ -114,10 +127,10 @@ export default class App extends React.Component{
           autoHideDuration={4000}
           onRequestClose={this.handleClose}
         />
-        </div>   
+        </div>
       );
     }
-} 
+}
 
 
 

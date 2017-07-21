@@ -29,13 +29,13 @@ export default class AddNewSummaryTable extends React.Component{
 		cellComments:''
 	}
 
-  editDetails=(obj,cellID)=>{
-    console.log("obj in Add Construct"+obj.cellID);
-    this.props.editDetailTblRow(obj,cellID);
+  editDetails=(obj,_id)=>{
+    console.log("obj in Add Construct"+obj._id);
+    this.props.editDetailTblRow(obj,_id);
   }
 
-  removeDetails=(cellID)=>{
-  	this.props.removeDetailTblRow(cellID);
+  removeDetails=(_id)=>{
+  	this.props.removeDetailTblRow(_id);
   }
 	
 	render(){
@@ -43,12 +43,12 @@ export default class AddNewSummaryTable extends React.Component{
 		if(this.props.cellData.length!=0){
 		var projectData = this.props.cellData.map(function(cellData,index) {
 	      return (      	
-	      	<div key={index}>
+	      	<div key={cellData._id}>
 	        <EachNewSummaryTable 
 	        cellName={cellData.cellName}
 	        cellValue={cellData.cellValue}
 	        cellComment={cellData.cellComment}
-          cellID={cellData.cellID}
+          _id={cellData._id}
           editDetail={this.editDetails}
           removeDetail={this.removeDetails}
 	        />  

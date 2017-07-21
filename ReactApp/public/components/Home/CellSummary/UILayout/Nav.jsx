@@ -39,6 +39,9 @@ export default class Nav extends React.Component{
           <MenuItem onTouchTap={this.handleClose}>
           <Link to ="/dashboard"> Dashboard </Link>
           </MenuItem>
+					<MenuItem onTouchTap={this.handleClose}>
+          <Link to ="/settings">Settings</Link>
+          </MenuItem>
         </Drawer>
         </div>
 			)

@@ -39,27 +39,24 @@ export default class EachNewSummaryTable extends React.Component{
 	editCancel=()=>{
 		this.setState({editStatus:false});
 	}
-	editSave=()=>{
-		// e.preventDefault();
-		//alert('Save buttonn clicked');
-		
-		console.log("cell id from Add Constuct table"+this.props.cellID );
+	editSave=(e)=>{
+		e.preventDefault();
+		console.log("cell id from Add Constuct table"+this.props._id );
 		var obj={
+			_id:this.props._id,
 			cellName:this.state.cellName,
 			cellValue:this.state.cellValue,
 			cellComment:this.state.cellComment
 		};
 		console.log("inside  edit"+"obj detail"+ obj.cellName+" "+obj.cellValue );
-		var cellID=this.props.cellID;
-		this.props.editDetail(obj,cellID);
-		// this.setState({cellName:'',cellValue:'',cellComment:''});
+		this.props.editDetail(obj,this.props._id);
 		this.setState({editStatus:false});
 		this.setState({cellName:'',cellValue:'',cellComment:''});
 	}
 
 	removeTblRow=()=>{
-		var cellID=this.props.cellID;
-		this.props.removeDetail(cellID);
+		// var cellID=this.props.cellID;
+		this.props.removeDetail(this.props._id);
 		this.setState({openSnackBar:true});
 	}
 
@@ -83,12 +80,12 @@ export default class EachNewSummaryTable extends React.Component{
 
 		if(this.state.editStatus==false){
 		return(
-			
+
 			<TableRow >
-                <TableRowColumn>{this.props.cellName}</TableRowColumn>
-                <TableRowColumn >{this.props.cellValue}</TableRowColumn>
-                <TableRowColumn >{this.props.cellComment}</TableRowColumn>
-                <TableRowColumn >
+                <TableRowColumn style={{width:'300px'}}>{this.props.cellName}</TableRowColumn>
+                <TableRowColumn style={{width:'300px'}}>{this.props.cellValue}</TableRowColumn>
+                <TableRowColumn style={{width:'300px'}}>{this.props.cellComment}</TableRowColumn>
+                <TableRowColumn style={{width:'300px'}}>
                 <IconMenu
       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
       anchorOrigin={{horizontal: 'left', vertical: 'top'}}
@@ -101,7 +98,7 @@ export default class EachNewSummaryTable extends React.Component{
 
               </TableRow>
 
-        
+
 			)}
 		else{
 			return(
@@ -134,7 +131,7 @@ export default class EachNewSummaryTable extends React.Component{
                 <IconButton touch={true} onTouchTap={this.editSave} >
      			 <ActionDone color={blue500}/>
    				 </IconButton>
-    
+
                 <IconButton touch={true} onTouchTap={this.editCancel} >
      			 <ContentClear color={red500}/>
    				 </IconButton>

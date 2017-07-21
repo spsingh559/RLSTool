@@ -28,6 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/api/v1', require('./router'));
 app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -53,8 +54,8 @@ res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
 // app.post('/api/v1/createDB',function(req,res){
 
-// 	console.log('createDB in server');
-// 	console.log(req.body);
+//  console.log('createDB in server');
+//  console.log(req.body);
 // });
 
 // router.get('/', function(req, res) {

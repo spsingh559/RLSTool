@@ -11,7 +11,7 @@ import { Grid,Row } from 'react-bootstrap';
 import StepperComponent from './StepperComponent.jsx';
 import TextField from 'material-ui/TextField';
 export default class EachProjectDetail extends React.Component {
-  
+
   state={
     editStatus:false,
     pName:this.props.projectName
@@ -23,7 +23,7 @@ export default class EachProjectDetail extends React.Component {
   }
 
   removeProjectDetail=()=>{
-    this.props.removeProjectDetail(this.props.id);
+    this.props.removeProjectDetail(this.props._id);
   }
   editProjectDetail=()=>{
     this.setState({editStatus:true});
@@ -31,10 +31,11 @@ export default class EachProjectDetail extends React.Component {
 
   editSave=()=>{
     var obj={
+      _id:this.props._id,
       projectName:this.state.pName,
       projectID:this.props.projectID
     };
-    this.props.saveEditProjectDetail(obj,this.props.id);
+    this.props.saveEditProjectDetail(obj,this.props._id);
     this.setState({editStatus:false});
   }
 
@@ -44,7 +45,7 @@ export default class EachProjectDetail extends React.Component {
 		return(
 			<div style={{marginTop:'20px'}}>
         <Grid>
-  <Row>
+          <Row>
         <Card>
     <CardHeader
       title={this.props.projectName}
@@ -56,12 +57,12 @@ export default class EachProjectDetail extends React.Component {
       <FlatButton label="Edit" onTouchTap={this.editProjectDetail} />
       <FlatButton label="Remove" onTouchTap={this.removeProjectDetail}/>
     </CardActions>
-    <CardText expandable={true}>    
+    <CardText expandable={true}>
      <StepperComponent />
     </CardText>
   </Card>
   </Row>
-  </Grid>  
+  </Grid>
 			</div>
 			)}
     else{
@@ -82,7 +83,7 @@ export default class EachProjectDetail extends React.Component {
       floatingLabelText="Edit Project Name"
       value={this.state.pName}
       onChange={this.handleProjectNameChange}
-    /> 
+    />
     </CardText>
     <CardActions>
       <FlatButton label="Save" onTouchTap={this.editSave}/>
@@ -91,7 +92,7 @@ export default class EachProjectDetail extends React.Component {
   </Card>
   </Row>
   </Grid>
-  
+
       </div>
     )};
 	}

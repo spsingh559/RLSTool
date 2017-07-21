@@ -7,12 +7,12 @@ var router = express.Router();
 res.render('index');
 });
 
-router.post('/api/v1/createDB',function(req,res){
-
-	console.log('createDB in server');
-	console.log(req.body.projectID);
-	res.send("Connnected to server");
-});
+// router.post('/api/v1/createDB',function(req,res){
+//
+// 	console.log('createDB in server');
+// 	console.log(req.body.projectID);
+// 	res.send("Connnected to server");
+// });
 
 
 

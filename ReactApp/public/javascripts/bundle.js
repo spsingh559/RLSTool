@@ -62,17 +62,21 @@
 
 	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 
-	var _ParentComponent = __webpack_require__(822);
+	var _ParentComponent = __webpack_require__(334);
 
 	var _ParentComponent2 = _interopRequireDefault(_ParentComponent);
 
-	var _MainApp = __webpack_require__(825);
+	var _MainApp = __webpack_require__(471);
 
 	var _MainApp2 = _interopRequireDefault(_MainApp);
 
-	var _Dashboard = __webpack_require__(817);
+	var _Dashboard = __webpack_require__(826);
 
 	var _Dashboard2 = _interopRequireDefault(_Dashboard);
+
+	var _Settings = __webpack_require__(827);
+
+	var _Settings2 = _interopRequireDefault(_Settings);
 
 	var _reactRouter = __webpack_require__(409);
 
@@ -90,6 +94,7 @@
 				_reactRouter.Route,
 				{ path: '/', component: _ParentComponent2.default },
 				_react2.default.createElement(_reactRouter.Route, { path: '/dashboard', component: _Dashboard2.default }),
+				_react2.default.createElement(_reactRouter.Route, { path: '/settings', component: _Settings2.default }),
 				_react2.default.createElement(_reactRouter.IndexRoute, { component: _MainApp2.default })
 			)
 		)
@@ -29083,8 +29088,199 @@
 	module.exports = keyOf;
 
 /***/ }),
-/* 334 */,
-/* 335 */,
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _Nav = __webpack_require__(335);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
+	var _Footer = __webpack_require__(470);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ParentComponent = function (_React$Component) {
+		_inherits(ParentComponent, _React$Component);
+
+		function ParentComponent() {
+			_classCallCheck(this, ParentComponent);
+
+			return _possibleConstructorReturn(this, (ParentComponent.__proto__ || Object.getPrototypeOf(ParentComponent)).apply(this, arguments));
+		}
+
+		_createClass(ParentComponent, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(_Nav2.default, null),
+					this.props.children,
+					_react2.default.createElement(_Footer2.default, null)
+				);
+			}
+		}]);
+
+		return ParentComponent;
+	}(_react2.default.Component);
+
+	exports.default = ParentComponent;
+
+/***/ }),
+/* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _AppBar = __webpack_require__(336);
+
+	var _AppBar2 = _interopRequireDefault(_AppBar);
+
+	var _Drawer = __webpack_require__(382);
+
+	var _Drawer2 = _interopRequireDefault(_Drawer);
+
+	var _MenuItem = __webpack_require__(388);
+
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+	var _FontIcon = __webpack_require__(365);
+
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+
+	var _reactRouter = __webpack_require__(409);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Nav = function (_React$Component) {
+	  _inherits(Nav, _React$Component);
+
+	  function Nav() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, Nav);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Nav.__proto__ || Object.getPrototypeOf(Nav)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      openDrawer: false
+	    }, _this.handleClose = function () {
+	      return _this.setState({ openDrawer: false });
+	    }, _this.handleToggle = function () {
+	      return _this.setState({ openDrawer: !_this.state.openDrawer });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(Nav, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_AppBar2.default, {
+	          title: 'RLS Tool',
+	          iconClassNameRight: 'muidocs-icon-navigation-expand-more',
+	          onLeftIconButtonTouchTap: this.handleToggle,
+	          style: { position: "fixed", top: '0' }
+	        }),
+	        _react2.default.createElement(
+	          _Drawer2.default,
+	          {
+	            docked: false,
+	            width: 200,
+	            open: this.state.openDrawer,
+	            onRequestChange: function onRequestChange(openDrawer) {
+	              return _this2.setState({ openDrawer: openDrawer });
+	            }
+	          },
+	          _react2.default.createElement(
+	            _MenuItem2.default,
+	            { onTouchTap: this.handleClose },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/' },
+	              ' Home '
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _MenuItem2.default,
+	            { onTouchTap: this.handleClose },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/dashboard' },
+	              ' Dashboard '
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _MenuItem2.default,
+	            { onTouchTap: this.handleClose },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/settings' },
+	              'Settings'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Nav;
+	}(_react2.default.Component);
+
+	exports.default = Nav;
+
+/***/ }),
 /* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43649,9 +43845,467 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 470 */,
-/* 471 */,
-/* 472 */,
+/* 470 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var style = {
+	  backgroundColor: "rgb(0, 188, 212)",
+	  borderTop: "1px solid #E7E7E7",
+	  textAlign: "center",
+	  padding: "20px",
+	  position: "fixed",
+	  left: "0",
+	  bottom: "0",
+	  height: "60px",
+	  width: "100%"
+	};
+
+	var phantom = {
+	  display: 'block',
+	  padding: '20px',
+	  height: '60px',
+	  width: '100%'
+	};
+
+	var Footer = function (_React$Component) {
+	  _inherits(Footer, _React$Component);
+
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+
+	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	  }
+
+	  _createClass(Footer, [{
+	    key: "render",
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement("div", { style: phantom }),
+	        _react2.default.createElement("div", { style: style })
+	      );
+	    }
+	  }]);
+
+	  return Footer;
+	}(_react2.default.Component);
+
+	exports.default = Footer;
+
+/***/ }),
+/* 471 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _MuiThemeProvider = __webpack_require__(184);
+
+	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _Paper = __webpack_require__(380);
+
+	var _Paper2 = _interopRequireDefault(_Paper);
+
+	var _ProjectForm = __webpack_require__(472);
+
+	var _ProjectForm2 = _interopRequireDefault(_ProjectForm);
+
+	var _ProjectDetail = __webpack_require__(745);
+
+	var _ProjectDetail2 = _interopRequireDefault(_ProjectDetail);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MainApp = function (_React$Component) {
+	  _inherits(MainApp, _React$Component);
+
+	  function MainApp() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, MainApp);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MainApp.__proto__ || Object.getPrototypeOf(MainApp)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      projectid: '',
+	      projectName: '',
+	      data: []
+	    }, _this.componentWillMount = function () {
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/ProjectDetail',
+	        type: 'GET',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Main APP Comp for get');
+	          console.log(data);
+	          this.setState({ data: data.message });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Main APP Comp');
+	        }.bind(_this)
+	      });
+	      console.log("CWM is called");
+	    }, _this.submitProjectInfo = function (obj) {
+	      var currentState = _this.state.data;
+	      console.log('inside Add role Component');
+	      //  console.log('name ' + roleName + 'id is '+ id);
+	      var projObj = {
+	        _id: obj._id,
+	        projectID: obj.projectID,
+	        projectName: obj.projectName
+	      };
+
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/ProjectDetail',
+	        type: 'POST',
+	        data: projObj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add role');
+	          console.log(data);
+	          var newData = [data.message].concat(currentState);
+	          this.setState({ data: newData });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add role');
+	          this.setState({ data: currentState });
+	        }.bind(_this)
+	      });
+	    }, _this.saveEditProjectDetail = function (obj, _id) {
+	      var tmp = _this.state.data;
+	      var dataCurrentState = _this.state.data;
+	      var index;
+	      for (var i = 0; i < dataCurrentState.length; i++) {
+	        if (dataCurrentState[i]._id == _id) {
+	          // index=obj.cellID;
+	          var editData = dataCurrentState.splice(i, 1, obj);
+	          editData = null;
+	          break;
+	        }
+	      };
+	      console.log("data after edit");
+	      console.log(dataCurrentState);
+
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/ProjectDetail',
+	        type: 'PUT',
+	        data: obj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Main APP Comp for put');
+	          console.log(data.message);
+
+	          this.setState({ data: dataCurrentState });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Main APP Comp for put');
+	          this.setState({ data: tmp });
+	        }.bind(_this)
+	      });
+	    }, _this.removeProjectDetail = function (_id) {
+	      var tmp = _this.state.data;
+	      var dataCurrentState = _this.state.data;
+	      var index;
+	      for (var i = 0; i < dataCurrentState.length; i++) {
+	        if (dataCurrentState[i]._id == _id) {
+	          // index=obj.cellID;
+	          var editData = dataCurrentState.splice(i, 1);
+	          editData = null;
+	          break;
+	        }
+	      };
+
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/ProjectDetail/' + _id,
+	        type: 'DELETE',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from MainApp for remove');
+	          console.log(data);
+
+	          this.setState({ data: dataCurrentState });
+	          // /       this.setState({roleData:data.message});
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from MainApp for remove');
+	          this.setState({ data: tmp });
+	        }.bind(_this)
+	      });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(MainApp, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_ProjectForm2.default, { submitProjectDetail: this.submitProjectInfo }),
+	        _react2.default.createElement(_ProjectDetail2.default, { data: this.state.data,
+	          saveEditProjectDetail: this.saveEditProjectDetail,
+	          removeProjectDetail: this.removeProjectDetail
+	        })
+	      );
+	    }
+	  }]);
+
+	  return MainApp;
+	}(_react2.default.Component);
+
+	// ReactDOM.render(<MainApp  />,
+	//  document.getElementBy_id('BindMainComponent'));
+
+
+	exports.default = MainApp;
+
+/***/ }),
+/* 472 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _MuiThemeProvider = __webpack_require__(184);
+
+	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _reactTapEventPlugin = __webpack_require__(328);
+
+	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
+	var _reactBootstrap = __webpack_require__(478);
+
+	var _Dialog = __webpack_require__(731);
+
+	var _Dialog2 = _interopRequireDefault(_Dialog);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _Divider = __webpack_require__(739);
+
+	var _Divider2 = _interopRequireDefault(_Divider);
+
+	var _Snackbar = __webpack_require__(741);
+
+	var _Snackbar2 = _interopRequireDefault(_Snackbar);
+
+	var _AppBar = __webpack_require__(336);
+
+	var _AppBar2 = _interopRequireDefault(_AppBar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// Integrated React Bootstrap
+
+
+	// injectTapEventPlugin();
+
+	var styles = {
+	  dividerStyle: {
+	    backgroundColor: 'rgb(0, 188, 212)'
+	  },
+	  titleBarStyle: {
+	    height: 'auto'
+	  },
+	  addProjectStyle: {
+	    marginTop: '100px',
+	    marginLeft: '100px'
+	  }
+	};
+
+	var App = function (_React$Component) {
+	  _inherits(App, _React$Component);
+
+	  function App() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, App);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      open: false,
+	      openSnackBar: false,
+	      projectID: '',
+	      projectName: ''
+	    }, _this.handleOpen = function () {
+	      _this.setState({ open: true });
+	    }, _this.handleClose = function () {
+	      _this.setState({ open: false, openSnackBar: false });
+	    }, _this.handlePorjectIDChange = function (e) {
+	      _this.setState({ projectID: e.target.value });
+	    }, _this.handlePorjectNameChange = function (e) {
+	      _this.setState({ projectName: e.target.value });
+	    }, _this.submitProjectDetail = function (e) {
+	      e.preventDefault();
+	      console.log(_this.state.projectName);
+	      if (!_this.state.projectID && !_this.state.projectName) {
+	        return;
+	      }
+	      var obj = {
+	        _id: Date.now(),
+	        projectID: _this.state.projectID,
+	        projectName: _this.state.projectName
+	      };
+	      console.log('obj in Project Form');
+	      console.log(obj);
+	      _this.props.submitProjectDetail(obj);
+	      _this.setState({ open: false, openSnackBar: true, projectID: '', projectName: '' });
+	      //  this.handleClose();
+	      // this.props.submitProjectName();
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+	  // class HelloMessage extends React.Component {
+
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      var actions = [_react2.default.createElement(_FlatButton2.default, {
+	        label: 'Cancel',
+	        primary: true,
+	        onTouchTap: this.handleClose
+	      }), _react2.default.createElement(_RaisedButton2.default, {
+	        label: 'Submit',
+	        primary: true,
+	        keyboardFocused: true,
+	        onTouchTap: this.submitProjectDetail
+	      })];
+
+	      var titleBar = _react2.default.createElement(_AppBar2.default, {
+	        title: 'Add Project Detail',
+	        style: styles.titleBarStyle
+	      });
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_RaisedButton2.default, { label: 'Add Project',
+	          primary: true,
+	          style: styles.addProjectStyle,
+	          onTouchTap: this.handleOpen
+	        }),
+	        _react2.default.createElement(
+	          _Dialog2.default,
+	          {
+	            title: titleBar,
+	            actions: actions,
+	            modal: true,
+	            open: this.state.open,
+	            onRequestClose: this.handleClose
+	          },
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Project Name',
+	            floatingLabelText: 'Enter Project Name',
+	            value: this.state.projectName,
+	            onChange: this.handlePorjectNameChange
+	          }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Project ID',
+	            floatingLabelText: 'Enter Project Unique ID',
+	            value: this.state.projectID,
+	            onChange: this.handlePorjectIDChange
+	          }),
+	          _react2.default.createElement('br', null)
+	        ),
+	        _react2.default.createElement(_Snackbar2.default, {
+	          open: this.state.openSnackBar,
+	          message: 'Project Detail Submitted Successfully!!',
+	          autoHideDuration: 4000,
+	          onRequestClose: this.handleClose
+	        })
+	      );
+	    }
+	  }]);
+
+	  return App;
+	}(_react2.default.Component);
+
+	// ReactDOM.render(<HelloMessage name="Jane" />,
+	//  document.getElementById('BindMainComponent'));
+
+
+	exports.default = App;
+
+/***/ }),
 /* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66457,8 +67111,272 @@
 	}
 
 /***/ }),
-/* 745 */,
-/* 746 */,
+/* 745 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _EachProjectDetail = __webpack_require__(746);
+
+	var _EachProjectDetail2 = _interopRequireDefault(_EachProjectDetail);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ProjectDetail = function (_React$Component) {
+		_inherits(ProjectDetail, _React$Component);
+
+		function ProjectDetail() {
+			var _ref;
+
+			var _temp, _this, _ret;
+
+			_classCallCheck(this, ProjectDetail);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectDetail.__proto__ || Object.getPrototypeOf(ProjectDetail)).call.apply(_ref, [this].concat(args))), _this), _this.saveEditProjectDetail = function (obj, _id) {
+				_this.props.saveEditProjectDetail(obj, _id);
+			}, _this.removeProjectDetail = function (_id) {
+				_this.props.removeProjectDetail(_id);
+			}, _temp), _possibleConstructorReturn(_this, _ret);
+		}
+
+		_createClass(ProjectDetail, [{
+			key: 'render',
+			value: function render() {
+				console.log(this.props.data);
+				if (this.props.data.Length != 0) {
+					var projectData = this.props.data.map(function (data) {
+						return _react2.default.createElement(
+							'div',
+							{ key: data._id },
+							_react2.default.createElement(_EachProjectDetail2.default, {
+								projectName: data.projectName,
+								projectID: data.projectID,
+								_id: data._id,
+								saveEditProjectDetail: this.saveEditProjectDetail,
+								removeProjectDetail: this.removeProjectDetail
+							})
+						);
+					}.bind(this));
+				}
+				return _react2.default.createElement(
+					'div',
+					null,
+					projectData
+				);
+			}
+		}]);
+
+		return ProjectDetail;
+	}(_react2.default.Component);
+
+	exports.default = ProjectDetail;
+
+/***/ }),
+/* 746 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _List = __webpack_require__(747);
+
+	var _Avatar = __webpack_require__(749);
+
+	var _Avatar2 = _interopRequireDefault(_Avatar);
+
+	var _colors = __webpack_require__(284);
+
+	var _Subheader = __webpack_require__(404);
+
+	var _Subheader2 = _interopRequireDefault(_Subheader);
+
+	var _Divider = __webpack_require__(739);
+
+	var _Divider2 = _interopRequireDefault(_Divider);
+
+	var _Card = __webpack_require__(751);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _reactBootstrap = __webpack_require__(478);
+
+	var _StepperComponent = __webpack_require__(761);
+
+	var _StepperComponent2 = _interopRequireDefault(_StepperComponent);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EachProjectDetail = function (_React$Component) {
+	  _inherits(EachProjectDetail, _React$Component);
+
+	  function EachProjectDetail() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, EachProjectDetail);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EachProjectDetail.__proto__ || Object.getPrototypeOf(EachProjectDetail)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      editStatus: false,
+	      pName: _this.props.projectName
+
+	    }, _this.handleProjectNameChange = function (e) {
+	      _this.setState({ pName: e.target.value });
+	    }, _this.removeProjectDetail = function () {
+	      _this.props.removeProjectDetail(_this.props._id);
+	    }, _this.editProjectDetail = function () {
+	      _this.setState({ editStatus: true });
+	    }, _this.editSave = function () {
+	      var obj = {
+	        _id: _this.props._id,
+	        projectName: _this.state.pName,
+	        projectID: _this.props.projectID
+	      };
+	      _this.props.saveEditProjectDetail(obj, _this.props._id);
+	      _this.setState({ editStatus: false });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(EachProjectDetail, [{
+	    key: 'render',
+	    value: function render() {
+	      if (this.state.editStatus == false) {
+
+	        return _react2.default.createElement(
+	          'div',
+	          { style: { marginTop: '20px' } },
+	          _react2.default.createElement(
+	            _reactBootstrap.Grid,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Row,
+	              null,
+	              _react2.default.createElement(
+	                _Card.Card,
+	                null,
+	                _react2.default.createElement(_Card.CardHeader, {
+	                  title: this.props.projectName,
+	                  subtitle: this.props.projectID,
+	                  actAsExpander: true,
+	                  showExpandableButton: true
+	                }),
+	                _react2.default.createElement(
+	                  _Card.CardActions,
+	                  null,
+	                  _react2.default.createElement(_FlatButton2.default, { label: 'Edit', onTouchTap: this.editProjectDetail }),
+	                  _react2.default.createElement(_FlatButton2.default, { label: 'Remove', onTouchTap: this.removeProjectDetail })
+	                ),
+	                _react2.default.createElement(
+	                  _Card.CardText,
+	                  { expandable: true },
+	                  _react2.default.createElement(_StepperComponent2.default, null)
+	                )
+	              )
+	            )
+	          )
+	        );
+	      } else {
+	        return _react2.default.createElement(
+	          'div',
+	          { style: { marginTop: '20px' } },
+	          _react2.default.createElement(
+	            _reactBootstrap.Grid,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.Row,
+	              null,
+	              _react2.default.createElement(
+	                _Card.Card,
+	                null,
+	                _react2.default.createElement(_Card.CardHeader, {
+	                  title: 'Edit Project Name',
+	                  subtitle: this.props.projectID,
+	                  actAsExpander: true,
+	                  showExpandableButton: true
+	                }),
+	                _react2.default.createElement(
+	                  _Card.CardText,
+	                  null,
+	                  _react2.default.createElement(_TextField2.default, {
+	                    hintText: 'Project Name',
+	                    floatingLabelText: 'Edit Project Name',
+	                    value: this.state.pName,
+	                    onChange: this.handleProjectNameChange
+	                  })
+	                ),
+	                _react2.default.createElement(
+	                  _Card.CardActions,
+	                  null,
+	                  _react2.default.createElement(_FlatButton2.default, { label: 'Save', onTouchTap: this.editSave }),
+	                  _react2.default.createElement(_FlatButton2.default, { label: 'Cancel' })
+	                )
+	              )
+	            )
+	          )
+	        );
+	      };
+	    }
+	  }]);
+
+	  return EachProjectDetail;
+	}(_react2.default.Component);
+
+	exports.default = EachProjectDetail;
+
+/***/ }),
 /* 747 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -68038,7 +68956,316 @@
 	exports.default = CardActions;
 
 /***/ }),
-/* 761 */,
+/* 761 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _Stepper = __webpack_require__(762);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _AddNewSummary = __webpack_require__(772);
+
+	var _AddNewSummary2 = _interopRequireDefault(_AddNewSummary);
+
+	var _AddNewSummaryTable = __webpack_require__(782);
+
+	var _AddNewSummaryTable2 = _interopRequireDefault(_AddNewSummaryTable);
+
+	var _CellLoading = __webpack_require__(802);
+
+	var _CellLoading2 = _interopRequireDefault(_CellLoading);
+
+	var _CellConstruct = __webpack_require__(822);
+
+	var _CellConstruct2 = _interopRequireDefault(_CellConstruct);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var StepperComponent = function (_React$Component) {
+	  _inherits(StepperComponent, _React$Component);
+
+	  function StepperComponent() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, StepperComponent);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = StepperComponent.__proto__ || Object.getPrototypeOf(StepperComponent)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      finished: false,
+	      stepIndex: 0,
+	      cellData: []
+	    }, _this.handleNext = function () {
+	      var stepIndex = _this.state.stepIndex;
+
+	      _this.setState({
+	        stepIndex: stepIndex + 1,
+	        finished: stepIndex >= 2
+	      });
+	    }, _this.handlePrev = function () {
+	      var stepIndex = _this.state.stepIndex;
+
+	      if (stepIndex > 0) {
+	        _this.setState({ stepIndex: stepIndex - 1 });
+	      }
+	    }, _this.componentWillMount = function () {
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/cellSummary',
+	        type: 'GET',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Stepper (cellSummary) for get');
+	          console.log(data);
+	          // data.length>0?this.setState({addProjectStatus:false}):this.setState({addProjectStatus:true})
+	          this.setState({ cellData: data.message });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Stepper (cellSummary) Comp');
+	        }.bind(_this)
+	      });
+	      console.log("CWM is called");
+	    }, _this.submitCellDetailInfo = function (obj) {
+
+	      var currentState = _this.state.cellData;
+	      console.log('inside Stepper for Cell Summary Component');
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/cellSummary',
+	        type: 'POST',
+	        data: obj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Stepper for Cell Summary');
+	          console.log(data);
+	          var newPostData = currentState.concat([data.message]);
+	          this.setState({ cellData: newPostData });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add role');
+	          this.setState({ data: currentState });
+	        }.bind(_this)
+	      });
+	    }, _this.editTblRow = function (obj, _id) {
+	      var tmp = _this.state.cellData;
+	      var dataCurrentState = _this.state.cellData;
+	      var index;
+	      for (var i = 0; i < dataCurrentState.length; i++) {
+	        if (dataCurrentState[i]._id == _id) {
+	          // index=obj.cellID;
+	          var editData = dataCurrentState.splice(i, 1, obj);
+	          editData = null;
+	          break;
+	        }
+	      };
+	      console.log("data after edit");
+	      console.log(dataCurrentState);
+
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/cellSummary',
+	        type: 'PUT',
+	        data: obj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Stepper (cellSummary) for put');
+	          console.log(data.message);
+	          this.setState({ cellData: dataCurrentState });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Stepper (cellSummary) for put');
+	          this.setState({ cellData: tmp });
+	        }.bind(_this)
+	      });
+	    }, _this.removetTblRow = function (_id) {
+	      var tmp = _this.state.cellData;
+	      var dataCurrentState = _this.state.cellData;
+	      var index;
+	      for (var i = 0; i < dataCurrentState.length; i++) {
+	        if (dataCurrentState[i]._id == _id) {
+	          // index=obj.cellID;
+	          var editData = dataCurrentState.splice(i, 1);
+	          editData = null;
+	          break;
+	        }
+	      };
+
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/cellSummary/' + _id,
+	        type: 'DELETE',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Stepper (cellSummary) for remove');
+	          console.log(data);
+
+	          this.setState({ cellData: dataCurrentState });
+	          // /       this.setState({roleData:data.message});
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Stepper (cellSummary) for remove');
+	          this.setState({ cellData: tmp });
+	        }.bind(_this)
+	      });
+	      // var currentData=this.state.cellData;
+	      //  for (var i = 0; i < currentData.length; i++) {
+	      //   if(currentData[i]._id==_id){
+	      //    // index=obj.cellID;
+	      //    var editData=currentData.splice(i,1);
+	      //    editData=null;
+	      //     break;
+	      //   }
+	      // };
+	      // this.setState({cellData:currentData});
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(StepperComponent, [{
+	    key: 'renderStepActions',
+	    value: function renderStepActions(step) {
+	      var stepIndex = this.state.stepIndex;
+
+
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { margin: '12px 0' } },
+	        _react2.default.createElement(_RaisedButton2.default, {
+	          label: stepIndex === 2 ? 'Finish' : 'Next',
+	          disableTouchRipple: true,
+	          disableFocusRipple: true,
+	          primary: true,
+	          onTouchTap: this.handleNext,
+	          style: { marginRight: 12 }
+	        }),
+	        step > 0 && _react2.default.createElement(_FlatButton2.default, {
+	          label: 'Back',
+	          disabled: stepIndex === 0,
+	          disableTouchRipple: true,
+	          disableFocusRipple: true,
+	          onTouchTap: this.handlePrev
+	        })
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var _state = this.state,
+	          finished = _state.finished,
+	          stepIndex = _state.stepIndex;
+
+
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { maxWidth: 'auto', maxHeight: 'auto', margin: 'auto' } },
+	        _react2.default.createElement(
+	          _Stepper.Stepper,
+	          { activeStep: stepIndex, orientation: 'vertical' },
+	          _react2.default.createElement(
+	            _Stepper.Step,
+	            null,
+	            _react2.default.createElement(
+	              _Stepper.StepLabel,
+	              null,
+	              'Add New Summary Detail'
+	            ),
+	            _react2.default.createElement(
+	              _Stepper.StepContent,
+	              null,
+	              _react2.default.createElement(_AddNewSummary2.default, { handleConstructSubmitData: this.submitCellDetailInfo }),
+	              _react2.default.createElement(_AddNewSummaryTable2.default, { cellData: this.state.cellData,
+	                editDetailTblRow: this.editTblRow,
+	                removeDetailTblRow: this.removetTblRow
+	              }),
+	              this.renderStepActions(0)
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _Stepper.Step,
+	            null,
+	            _react2.default.createElement(
+	              _Stepper.StepLabel,
+	              null,
+	              'Cell Loading '
+	            ),
+	            _react2.default.createElement(
+	              _Stepper.StepContent,
+	              null,
+	              _react2.default.createElement(_CellLoading2.default, null),
+	              this.renderStepActions(1)
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _Stepper.Step,
+	            null,
+	            _react2.default.createElement(
+	              _Stepper.StepLabel,
+	              null,
+	              'Add Cell Construct'
+	            ),
+	            _react2.default.createElement(
+	              _Stepper.StepContent,
+	              null,
+	              _react2.default.createElement(_CellConstruct2.default, null),
+	              this.renderStepActions(2)
+	            )
+	          )
+	        ),
+	        finished && _react2.default.createElement(
+	          'p',
+	          { style: { margin: '20px 0', textAlign: 'center' } },
+	          _react2.default.createElement(
+	            'a',
+	            {
+	              href: '#',
+	              onClick: function onClick(event) {
+	                event.preventDefault();
+	                _this2.setState({ stepIndex: 0, finished: false });
+	              }
+	            },
+	            'Click here'
+	          ),
+	          ' to reset the example.'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return StepperComponent;
+	}(_react2.default.Component);
+
+	exports.default = StepperComponent;
+
+/***/ }),
 /* 762 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -69364,7 +70591,218 @@
 	exports.default = (0, _pure2.default)(StepConnector);
 
 /***/ }),
-/* 772 */,
+/* 772 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _FloatingActionButton = __webpack_require__(773);
+
+	var _FloatingActionButton2 = _interopRequireDefault(_FloatingActionButton);
+
+	var _add = __webpack_require__(775);
+
+	var _add2 = _interopRequireDefault(_add);
+
+	var _Dialog = __webpack_require__(731);
+
+	var _Dialog2 = _interopRequireDefault(_Dialog);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _AppBar = __webpack_require__(336);
+
+	var _AppBar2 = _interopRequireDefault(_AppBar);
+
+	var _Divider = __webpack_require__(739);
+
+	var _Divider2 = _interopRequireDefault(_Divider);
+
+	var _DropDownMenu = __webpack_require__(776);
+
+	var _DropDownMenu2 = _interopRequireDefault(_DropDownMenu);
+
+	var _MenuItem = __webpack_require__(388);
+
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var style = {
+	  marginRight: 20,
+	  marginTop: 30
+	};
+
+	var AddNewSummary = function (_React$Component) {
+	  _inherits(AddNewSummary, _React$Component);
+
+	  function AddNewSummary() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, AddNewSummary);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddNewSummary.__proto__ || Object.getPrototypeOf(AddNewSummary)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      openDialogue: false,
+	      cellValues: '',
+	      cellComments: '',
+	      value: '',
+	      items: []
+	    }, _this.openDialogueBar = function () {
+	      _this.setState({ openDialogue: true });
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/trackSetting',
+	        type: 'GET',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add Track for get');
+	          console.log(data);
+	          // this.setState({trackData:data.message});
+	          for (var i = 0; i < data.message.length; i++) {
+	            this.state.items.push(_react2.default.createElement(_MenuItem2.default, { value: data.message[i].trackName, key: i, primaryText: data.message[i].trackName }));
+	          }
+	          console.log("items");
+	          // console.log(items);
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add track');
+	        }.bind(_this)
+	      });
+	      console.log("Drop down for track in CellSummary");
+	    }, _this.handleClose = function () {
+	      _this.setState({ openDialogue: false });
+	    }, _this.handlecellValueChange = function (e) {
+	      _this.setState({ cellValues: e.target.value });
+	    }, _this.handleCellCommentChange = function (e) {
+	      _this.setState({ cellComments: e.target.value });
+	    }, _this.handleConstructSubmit = function (e) {
+	      e.preventDefault();
+	      // this.setState({cellID:this.state.cellID+1})
+	      var _id = Date.now();
+	      var obj = {
+	        _id: _id,
+	        cellValue: _this.state.cellValues,
+	        cellName: _this.state.value,
+	        cellComment: _this.state.cellComments
+	      };
+	      console.log("object Detail in Add Construct" + obj.cellValue + obj.cellName + obj.cellComment + obj._id);
+	      _this.props.handleConstructSubmitData(obj);
+	      _this.setState({ cellValues: '', cellNames: '', cellComments: '', openDialogue: false });
+	    }, _this.handleDrpDwnChange = function (event, index, value) {
+	      return _this.setState({ value: value });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  // handleCellNameChange=(e)=>{
+	  // 	this.setState({cellNames:e.target.value})
+	  // }
+
+	  _createClass(AddNewSummary, [{
+	    key: 'render',
+	    value: function render() {
+
+	      var actions = [_react2.default.createElement(_Divider2.default, { style: { backgroundColor: 'rgb(0, 188, 212)' } }), _react2.default.createElement(_FlatButton2.default, {
+	        label: 'Cancel',
+	        primary: true,
+	        onTouchTap: this.handleClose
+	      }), _react2.default.createElement(_FlatButton2.default, {
+	        label: 'Submit',
+	        primary: true,
+	        keyboardFocused: true,
+	        onTouchTap: this.handleConstructSubmit
+	      })];
+
+	      var titleBar = _react2.default.createElement(_AppBar2.default, {
+	        title: 'Add Construct Cell'
+	      });
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _FloatingActionButton2.default,
+	          { style: style,
+	            onTouchTap: this.openDialogueBar,
+	            mini: true },
+	          _react2.default.createElement(_add2.default, null)
+	        ),
+	        _react2.default.createElement(
+	          _Dialog2.default,
+	          {
+	            title: titleBar,
+	            actions: actions,
+	            modal: true,
+	            open: this.state.openDialogue,
+	            onRequestClose: this.handleClose
+	          },
+	          _react2.default.createElement(
+	            _DropDownMenu2.default,
+	            { maxHeight: 300, value: this.state.value,
+	              onChange: this.handleDrpDwnChange,
+	              style: { width: '300px' }
+	            },
+	            this.state.items
+	          ),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Estimated Per Day Value',
+	            floatingLabelText: 'Enter Estimated Per Day Value',
+	            value: this.state.cellValues,
+	            onChange: this.handlecellValueChange
+	          }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Comment',
+	            floatingLabelText: 'Enter Comment',
+	            value: this.state.cellComments,
+	            onChange: this.handleCellCommentChange
+	          }),
+	          _react2.default.createElement('br', null)
+	        )
+	      );
+	    }
+	  }]);
+
+	  return AddNewSummary;
+	}(_react2.default.Component);
+
+	exports.default = AddNewSummary;
+
+/***/ }),
 /* 773 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -69780,8 +71218,983 @@
 	exports.default = ContentAdd;
 
 /***/ }),
-/* 776 */,
+/* 776 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = exports.MenuItem = exports.DropDownMenu = undefined;
+
+	var _DropDownMenu2 = __webpack_require__(777);
+
+	var _DropDownMenu3 = _interopRequireDefault(_DropDownMenu2);
+
+	var _MenuItem2 = __webpack_require__(389);
+
+	var _MenuItem3 = _interopRequireDefault(_MenuItem2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.DropDownMenu = _DropDownMenu3.default;
+	exports.MenuItem = _MenuItem3.default;
+	exports.default = _DropDownMenu3.default;
+
+/***/ }),
 /* 777 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _simpleAssign = __webpack_require__(338);
+
+	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _transitions = __webpack_require__(341);
+
+	var _transitions2 = _interopRequireDefault(_transitions);
+
+	var _arrowDropDown = __webpack_require__(778);
+
+	var _arrowDropDown2 = _interopRequireDefault(_arrowDropDown);
+
+	var _Menu = __webpack_require__(406);
+
+	var _Menu2 = _interopRequireDefault(_Menu);
+
+	var _ClearFix = __webpack_require__(779);
+
+	var _ClearFix2 = _interopRequireDefault(_ClearFix);
+
+	var _Popover = __webpack_require__(390);
+
+	var _Popover2 = _interopRequireDefault(_Popover);
+
+	var _PopoverAnimationVertical = __webpack_require__(781);
+
+	var _PopoverAnimationVertical2 = _interopRequireDefault(_PopoverAnimationVertical);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var anchorOrigin = {
+	  vertical: 'top',
+	  horizontal: 'left'
+	};
+
+	function getStyles(props, context) {
+	  var disabled = props.disabled;
+
+	  var spacing = context.muiTheme.baseTheme.spacing;
+	  var palette = context.muiTheme.baseTheme.palette;
+	  var accentColor = context.muiTheme.dropDownMenu.accentColor;
+	  return {
+	    control: {
+	      cursor: disabled ? 'not-allowed' : 'pointer',
+	      height: '100%',
+	      position: 'relative',
+	      width: '100%'
+	    },
+	    icon: {
+	      fill: accentColor,
+	      position: 'absolute',
+	      right: spacing.desktopGutterLess,
+	      top: (spacing.desktopToolbarHeight - 24) / 2
+	    },
+	    label: {
+	      color: disabled ? palette.disabledColor : palette.textColor,
+	      lineHeight: spacing.desktopToolbarHeight + 'px',
+	      opacity: 1,
+	      position: 'relative',
+	      paddingLeft: spacing.desktopGutter,
+	      paddingRight: spacing.iconSize + spacing.desktopGutterLess + spacing.desktopGutterMini,
+	      top: 0
+	    },
+	    labelWhenOpen: {
+	      opacity: 0,
+	      top: spacing.desktopToolbarHeight / 8
+	    },
+	    root: {
+	      display: 'inline-block',
+	      fontSize: spacing.desktopDropDownMenuFontSize,
+	      height: spacing.desktopSubheaderHeight,
+	      fontFamily: context.muiTheme.baseTheme.fontFamily,
+	      outline: 'none',
+	      position: 'relative',
+	      transition: _transitions2.default.easeOut()
+	    },
+	    rootWhenOpen: {
+	      opacity: 1
+	    },
+	    underline: {
+	      borderTop: 'solid 1px ' + accentColor,
+	      bottom: 1,
+	      left: 0,
+	      margin: '-1px ' + spacing.desktopGutter + 'px',
+	      right: 0,
+	      position: 'absolute'
+	    }
+	  };
+	}
+
+	var DropDownMenu = function (_Component) {
+	  _inherits(DropDownMenu, _Component);
+
+	  function DropDownMenu() {
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, DropDownMenu);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(DropDownMenu)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+	      open: false
+	    }, _this.handleTouchTapControl = function (event) {
+	      event.preventDefault();
+	      if (!_this.props.disabled) {
+	        _this.setState({
+	          open: !_this.state.open,
+	          anchorEl: _this.refs.root
+	        });
+	      }
+	    }, _this.handleRequestCloseMenu = function () {
+	      _this.setState({
+	        open: false,
+	        anchorEl: null
+	      });
+	    }, _this.handleItemTouchTap = function (event, child, index) {
+	      event.persist();
+	      _this.setState({
+	        open: false
+	      }, function () {
+	        if (_this.props.onChange) {
+	          _this.props.onChange(event, index, child.props.value);
+	        }
+	      });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  // The nested styles for drop-down-menu are modified by toolbar and possibly
+	  // other user components, so it will give full access to its js styles rather
+	  // than just the parent.
+
+
+	  _createClass(DropDownMenu, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+
+	      if (this.props.autoWidth) {
+	        this.setWidth();
+	      }
+	      if (this.props.openImmediately) {
+	        // TODO: Temporary fix to make openImmediately work with popover.
+	        /* eslint-disable react/no-did-mount-set-state */
+	        setTimeout(function () {
+	          return _this2.setState({ open: true, anchorEl: _this2.refs.root });
+	        });
+	        setTimeout(function () {
+	          return _this2.setState({
+	            open: true,
+	            anchorEl: _this2.refs.root
+	          });
+	        }, 0);
+	        /* eslint-enable react/no-did-mount-set-state */
+	      }
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps() {
+	      if (this.props.autoWidth) {
+	        this.setWidth();
+	      }
+	    }
+
+	    /**
+	     * This method is deprecated but still here because the TextField
+	     * need it in order to work. TODO: That will be addressed later.
+	     */
+
+	  }, {
+	    key: 'getInputNode',
+	    value: function getInputNode() {
+	      var _this3 = this;
+
+	      var root = this.refs.root;
+
+	      root.focus = function () {
+	        if (!_this3.props.disabled) {
+	          _this3.setState({
+	            open: !_this3.state.open,
+	            anchorEl: _this3.refs.root
+	          });
+	        }
+	      };
+
+	      return root;
+	    }
+	  }, {
+	    key: 'setWidth',
+	    value: function setWidth() {
+	      var el = this.refs.root;
+	      if (!this.props.style || !this.props.style.hasOwnProperty('width')) {
+	        el.style.width = 'auto';
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var animated = _props.animated;
+	      var animation = _props.animation;
+	      var autoWidth = _props.autoWidth;
+	      var children = _props.children;
+	      var className = _props.className;
+	      var iconStyle = _props.iconStyle;
+	      var labelStyle = _props.labelStyle;
+	      var listStyle = _props.listStyle;
+	      var maxHeight = _props.maxHeight;
+	      var menuStyleProp = _props.menuStyle;
+	      var openImmediately = _props.openImmediately;
+	      var style = _props.style;
+	      var underlineStyle = _props.underlineStyle;
+	      var value = _props.value;
+
+	      var other = _objectWithoutProperties(_props, ['animated', 'animation', 'autoWidth', 'children', 'className', 'iconStyle', 'labelStyle', 'listStyle', 'maxHeight', 'menuStyle', 'openImmediately', 'style', 'underlineStyle', 'value']);
+
+	      var _state = this.state;
+	      var anchorEl = _state.anchorEl;
+	      var open = _state.open;
+	      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+	      var styles = getStyles(this.props, this.context);
+
+	      var displayValue = '';
+	      _react2.default.Children.forEach(children, function (child) {
+	        if (value === child.props.value) {
+	          // This will need to be improved (in case primaryText is a node)
+	          displayValue = child.props.label || child.props.primaryText;
+	        }
+	      });
+
+	      var menuStyle = void 0;
+	      if (anchorEl && !autoWidth) {
+	        menuStyle = (0, _simpleAssign2.default)({
+	          width: anchorEl.clientWidth
+	        }, menuStyleProp);
+	      } else {
+	        menuStyle = menuStyleProp;
+	      }
+
+	      return _react2.default.createElement(
+	        'div',
+	        _extends({}, other, {
+	          ref: 'root',
+	          className: className,
+	          style: prepareStyles((0, _simpleAssign2.default)({}, styles.root, open && styles.rootWhenOpen, style))
+	        }),
+	        _react2.default.createElement(
+	          _ClearFix2.default,
+	          { style: styles.control, onTouchTap: this.handleTouchTapControl },
+	          _react2.default.createElement(
+	            'div',
+	            {
+	              style: prepareStyles((0, _simpleAssign2.default)({}, styles.label, open && styles.labelWhenOpen, labelStyle))
+	            },
+	            displayValue
+	          ),
+	          _react2.default.createElement(_arrowDropDown2.default, { style: (0, _simpleAssign2.default)({}, styles.icon, iconStyle) }),
+	          _react2.default.createElement('div', { style: prepareStyles((0, _simpleAssign2.default)({}, styles.underline, underlineStyle)) })
+	        ),
+	        _react2.default.createElement(
+	          _Popover2.default,
+	          {
+	            anchorOrigin: anchorOrigin,
+	            anchorEl: anchorEl,
+	            animation: animation || _PopoverAnimationVertical2.default,
+	            open: open,
+	            animated: animated,
+	            onRequestClose: this.handleRequestCloseMenu
+	          },
+	          _react2.default.createElement(
+	            _Menu2.default,
+	            {
+	              maxHeight: maxHeight,
+	              desktop: true,
+	              value: value,
+	              style: menuStyle,
+	              listStyle: listStyle,
+	              onItemTouchTap: this.handleItemTouchTap
+	            },
+	            children
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return DropDownMenu;
+	}(_react.Component);
+
+	DropDownMenu.muiName = 'DropDownMenu';
+	DropDownMenu.propTypes = {
+	  /**
+	   * If true, the popover will apply transitions when
+	   * it gets added to the DOM.
+	   */
+	  animated: _react.PropTypes.bool,
+	  /**
+	   * Override the default animation component used.
+	   */
+	  animation: _react.PropTypes.func,
+	  /**
+	   * The width will automatically be set according to the items inside the menu.
+	   * To control this width in css instead, set this prop to `false`.
+	   */
+	  autoWidth: _react.PropTypes.bool,
+	  /**
+	   * The `MenuItem`s to populate the `Menu` with. If the `MenuItems` have the
+	   * prop `label` that value will be used to render the representation of that
+	   * item within the field.
+	   */
+	  children: _react.PropTypes.node,
+	  /**
+	   * The css class name of the root element.
+	   */
+	  className: _react.PropTypes.string,
+	  /**
+	   * Disables the menu.
+	   */
+	  disabled: _react.PropTypes.bool,
+	  /**
+	   * Overrides the styles of icon element.
+	   */
+	  iconStyle: _react.PropTypes.object,
+	  /**
+	   * Overrides the styles of label when the `DropDownMenu` is inactive.
+	   */
+	  labelStyle: _react.PropTypes.object,
+	  /**
+	   * The style object to use to override underlying list style.
+	   */
+	  listStyle: _react.PropTypes.object,
+	  /**
+	   * The maximum height of the `Menu` when it is displayed.
+	   */
+	  maxHeight: _react.PropTypes.number,
+	  /**
+	   * Overrides the styles of `Menu` when the `DropDownMenu` is displayed.
+	   */
+	  menuStyle: _react.PropTypes.object,
+	  /**
+	   * Callback function fired when a menu item is clicked, other than the one currently selected.
+	   *
+	   * @param {object} event TouchTap event targeting the menu item that was clicked.
+	   * @param {number} key The index of the clicked menu item in the `children` collection.
+	   * @param {any} payload The `value` prop of the clicked menu item.
+	   */
+	  onChange: _react.PropTypes.func,
+	  /**
+	   * Set to true to have the `DropDownMenu` automatically open on mount.
+	   */
+	  openImmediately: _react.PropTypes.bool,
+	  /**
+	   * Override the inline-styles of the root element.
+	   */
+	  style: _react.PropTypes.object,
+	  /**
+	   * Overrides the inline-styles of the underline.
+	   */
+	  underlineStyle: _react.PropTypes.object,
+	  /**
+	   * The value that is currently selected.
+	   */
+	  value: _react.PropTypes.any
+	};
+	DropDownMenu.defaultProps = {
+	  animated: true,
+	  autoWidth: true,
+	  disabled: false,
+	  openImmediately: false,
+	  maxHeight: 500
+	};
+	DropDownMenu.contextTypes = {
+	  muiTheme: _react.PropTypes.object.isRequired
+	};
+	exports.default = DropDownMenu;
+
+/***/ }),
+/* 778 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _pure = __webpack_require__(369);
+
+	var _pure2 = _interopRequireDefault(_pure);
+
+	var _SvgIcon = __webpack_require__(378);
+
+	var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NavigationArrowDropDown = function NavigationArrowDropDown(props) {
+	  return _react2.default.createElement(
+	    _SvgIcon2.default,
+	    props,
+	    _react2.default.createElement('path', { d: 'M7 10l5 5 5-5z' })
+	  );
+	};
+	NavigationArrowDropDown = (0, _pure2.default)(NavigationArrowDropDown);
+	NavigationArrowDropDown.displayName = 'NavigationArrowDropDown';
+	NavigationArrowDropDown.muiName = 'SvgIcon';
+
+	exports.default = NavigationArrowDropDown;
+
+/***/ }),
+/* 779 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _BeforeAfterWrapper = __webpack_require__(780);
+
+	var _BeforeAfterWrapper2 = _interopRequireDefault(_BeforeAfterWrapper);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	var styles = {
+	  before: {
+	    content: "' '",
+	    display: 'table'
+	  },
+	  after: {
+	    content: "' '",
+	    clear: 'both',
+	    display: 'table'
+	  }
+	};
+
+	var ClearFix = function ClearFix(_ref) {
+	  var style = _ref.style;
+	  var children = _ref.children;
+
+	  var other = _objectWithoutProperties(_ref, ['style', 'children']);
+
+	  return _react2.default.createElement(
+	    _BeforeAfterWrapper2.default,
+	    _extends({}, other, {
+	      beforeStyle: styles.before,
+	      afterStyle: styles.after,
+	      style: style
+	    }),
+	    children
+	  );
+	};
+
+	ClearFix.muiName = 'ClearFix';
+
+	ClearFix.propTypes = {
+	  children: _react.PropTypes.node,
+	  /**
+	   * Override the inline-styles of the root element.
+	   */
+	  style: _react.PropTypes.object
+	};
+
+	exports.default = ClearFix;
+
+/***/ }),
+/* 780 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _simpleAssign = __webpack_require__(338);
+
+	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/**
+	 *  BeforeAfterWrapper
+	 *    An alternative for the ::before and ::after css pseudo-elements for
+	 *    components whose styles are defined in javascript instead of css.
+	 *
+	 *  Usage: For the element that we want to apply before and after elements to,
+	 *    wrap its children with BeforeAfterWrapper. For example:
+	 *
+	 *                                            <Paper>
+	 *  <Paper>                                     <div> // See notice
+	 *    <BeforeAfterWrapper>        renders         <div/> // before element
+	 *      [children of paper]       ------>         [children of paper]
+	 *    </BeforeAfterWrapper>                       <div/> // after element
+	 *  </Paper>                                    </div>
+	 *                                            </Paper>
+	 *
+	 *  Notice: Notice that this div bundles together our elements. If the element
+	 *    that we want to apply before and after elements is a HTML tag (i.e. a
+	 *    div, p, or button tag), we can avoid this extra nesting by passing using
+	 *    the BeforeAfterWrapper in place of said tag like so:
+	 *
+	 *  <p>
+	 *    <BeforeAfterWrapper>   do this instead   <BeforeAfterWrapper elementType='p'>
+	 *      [children of p]          ------>         [children of p]
+	 *    </BeforeAfterWrapper>                    </BeforeAfterWrapper>
+	 *  </p>
+	 *
+	 *  BeforeAfterWrapper features spread functionality. This means that we can
+	 *  pass HTML tag properties directly into the BeforeAfterWrapper tag.
+	 *
+	 *  When using BeforeAfterWrapper, ensure that the parent of the beforeElement
+	 *  and afterElement have a defined style position.
+	 */
+
+	var styles = {
+	  box: {
+	    boxSizing: 'border-box'
+	  }
+	};
+
+	var BeforeAfterWrapper = function (_Component) {
+	  _inherits(BeforeAfterWrapper, _Component);
+
+	  function BeforeAfterWrapper() {
+	    _classCallCheck(this, BeforeAfterWrapper);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(BeforeAfterWrapper).apply(this, arguments));
+	  }
+
+	  _createClass(BeforeAfterWrapper, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var beforeStyle = _props.beforeStyle;
+	      var afterStyle = _props.afterStyle;
+	      var beforeElementType = _props.beforeElementType;
+	      var afterElementType = _props.afterElementType;
+	      var elementType = _props.elementType;
+
+	      var other = _objectWithoutProperties(_props, ['beforeStyle', 'afterStyle', 'beforeElementType', 'afterElementType', 'elementType']);
+
+	      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+
+	      var beforeElement = void 0;
+	      var afterElement = void 0;
+
+	      if (beforeStyle) {
+	        beforeElement = _react2.default.createElement(this.props.beforeElementType, {
+	          style: prepareStyles((0, _simpleAssign2.default)({}, styles.box, beforeStyle)),
+	          key: '::before'
+	        });
+	      }
+
+	      if (afterStyle) {
+	        afterElement = _react2.default.createElement(this.props.afterElementType, {
+	          style: prepareStyles((0, _simpleAssign2.default)({}, styles.box, afterStyle)),
+	          key: '::after'
+	        });
+	      }
+
+	      var children = [beforeElement, this.props.children, afterElement];
+
+	      var props = other;
+	      props.style = prepareStyles((0, _simpleAssign2.default)({}, this.props.style));
+
+	      return _react2.default.createElement(this.props.elementType, props, children);
+	    }
+	  }]);
+
+	  return BeforeAfterWrapper;
+	}(_react.Component);
+
+	BeforeAfterWrapper.propTypes = {
+	  afterElementType: _react.PropTypes.string,
+	  afterStyle: _react.PropTypes.object,
+	  beforeElementType: _react.PropTypes.string,
+	  beforeStyle: _react.PropTypes.object,
+	  children: _react.PropTypes.node,
+	  elementType: _react.PropTypes.string,
+	  /**
+	   * Override the inline-styles of the root element.
+	   */
+	  style: _react.PropTypes.object
+	};
+	BeforeAfterWrapper.defaultProps = {
+	  beforeElementType: 'div',
+	  afterElementType: 'div',
+	  elementType: 'div'
+	};
+	BeforeAfterWrapper.contextTypes = {
+	  muiTheme: _react.PropTypes.object.isRequired
+	};
+	exports.default = BeforeAfterWrapper;
+
+/***/ }),
+/* 781 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _simpleAssign = __webpack_require__(338);
+
+	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Paper = __webpack_require__(380);
+
+	var _Paper2 = _interopRequireDefault(_Paper);
+
+	var _transitions = __webpack_require__(341);
+
+	var _transitions2 = _interopRequireDefault(_transitions);
+
+	var _propTypes = __webpack_require__(342);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	function getStyles(props, context, state) {
+	  var targetOrigin = props.targetOrigin;
+	  var open = state.open;
+	  var muiTheme = context.muiTheme;
+
+	  var horizontal = targetOrigin.horizontal.replace('middle', 'vertical');
+
+	  return {
+	    root: {
+	      opacity: open ? 1 : 0,
+	      transform: open ? 'scaleY(1)' : 'scaleY(0)',
+	      transformOrigin: horizontal + ' ' + targetOrigin.vertical,
+	      position: 'fixed',
+	      zIndex: muiTheme.zIndex.popover,
+	      transition: _transitions2.default.easeOut('450ms', ['transform', 'opacity']),
+	      maxHeight: '100%'
+	    }
+	  };
+	}
+
+	var PopoverAnimationVertical = function (_Component) {
+	  _inherits(PopoverAnimationVertical, _Component);
+
+	  function PopoverAnimationVertical() {
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, PopoverAnimationVertical);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(PopoverAnimationVertical)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+	      open: false
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(PopoverAnimationVertical, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.setState({ open: true }); // eslint-disable-line react/no-did-mount-set-state
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      this.setState({
+	        open: nextProps.open
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props;
+	      var className = _props.className;
+	      var style = _props.style;
+	      var zDepth = _props.zDepth;
+
+
+	      var styles = getStyles(this.props, this.context, this.state);
+
+	      return _react2.default.createElement(
+	        _Paper2.default,
+	        {
+	          style: (0, _simpleAssign2.default)(styles.root, style),
+	          zDepth: zDepth,
+	          className: className
+	        },
+	        this.props.children
+	      );
+	    }
+	  }]);
+
+	  return PopoverAnimationVertical;
+	}(_react.Component);
+
+	PopoverAnimationVertical.propTypes = {
+	  children: _react.PropTypes.node,
+	  className: _react.PropTypes.string,
+	  open: _react.PropTypes.bool.isRequired,
+	  /**
+	   * Override the inline-styles of the root element.
+	   */
+	  style: _react.PropTypes.object,
+	  targetOrigin: _propTypes2.default.origin,
+	  zDepth: _propTypes2.default.zDepth
+	};
+	PopoverAnimationVertical.defaultProps = {
+	  style: {},
+	  zDepth: 1
+	};
+	PopoverAnimationVertical.contextTypes = {
+	  muiTheme: _react.PropTypes.object.isRequired
+	};
+	exports.default = PopoverAnimationVertical;
+
+/***/ }),
+/* 782 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _Table = __webpack_require__(783);
+
+	var _IconMenu = __webpack_require__(796);
+
+	var _IconMenu2 = _interopRequireDefault(_IconMenu);
+
+	var _MenuItem = __webpack_require__(388);
+
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+	var _IconButton = __webpack_require__(339);
+
+	var _IconButton2 = _interopRequireDefault(_IconButton);
+
+	var _moreVert = __webpack_require__(798);
+
+	var _moreVert2 = _interopRequireDefault(_moreVert);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _EachNewSummaryTable = __webpack_require__(799);
+
+	var _EachNewSummaryTable2 = _interopRequireDefault(_EachNewSummaryTable);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	//const ID;
+
+
+	var AddNewSummaryTable = function (_React$Component) {
+		_inherits(AddNewSummaryTable, _React$Component);
+
+		function AddNewSummaryTable() {
+			var _ref;
+
+			var _temp, _this, _ret;
+
+			_classCallCheck(this, AddNewSummaryTable);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddNewSummaryTable.__proto__ || Object.getPrototypeOf(AddNewSummaryTable)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+				selectable: false,
+				showCheckboxes: false,
+				stripedRows: true,
+				editStatus: false,
+				cellNames: '',
+				cellValues: '',
+				cellComments: ''
+			}, _this.editDetails = function (obj, _id) {
+				console.log("obj in Add Construct" + obj._id);
+				_this.props.editDetailTblRow(obj, _id);
+			}, _this.removeDetails = function (_id) {
+				_this.props.removeDetailTblRow(_id);
+			}, _temp), _possibleConstructorReturn(_this, _ret);
+		}
+
+		_createClass(AddNewSummaryTable, [{
+			key: 'render',
+			value: function render() {
+				console.log(this.props.cellData);
+				if (this.props.cellData.length != 0) {
+					var projectData = this.props.cellData.map(function (cellData, index) {
+						return _react2.default.createElement(
+							'div',
+							{ key: cellData._id },
+							_react2.default.createElement(_EachNewSummaryTable2.default, {
+								cellName: cellData.cellName,
+								cellValue: cellData.cellValue,
+								cellComment: cellData.cellComment,
+								_id: cellData._id,
+								editDetail: this.editDetails,
+								removeDetail: this.removeDetails
+							})
+						);
+					}.bind(this));
+
+					return _react2.default.createElement(
+						_Table.Table,
+						{
+							selectable: this.state.selectable,
+							style: { height: 'auto' }
+						},
+						_react2.default.createElement(
+							_Table.TableHeader,
+							null,
+							_react2.default.createElement(
+								_Table.TableRow,
+								null,
+								_react2.default.createElement(
+									_Table.TableHeaderColumn,
+									null,
+									'Cell Name'
+								),
+								_react2.default.createElement(
+									_Table.TableHeaderColumn,
+									null,
+									'Cell Value'
+								),
+								_react2.default.createElement(
+									_Table.TableHeaderColumn,
+									null,
+									'Comment'
+								),
+								_react2.default.createElement(
+									_Table.TableHeaderColumn,
+									null,
+									'Action'
+								)
+							)
+						),
+						_react2.default.createElement(
+							_Table.TableBody,
+							{ displayRowCheckbox: this.state.showCheckboxes },
+							projectData
+						)
+					);
+				} else {
+					return null;
+				}
+			}
+		}]);
+
+		return AddNewSummaryTable;
+	}(_react2.default.Component);
+
+	exports.default = AddNewSummaryTable;
+
+/***/ }),
+/* 783 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -69791,31 +72204,31 @@
 	});
 	exports.default = exports.TableRowColumn = exports.TableRow = exports.TableHeaderColumn = exports.TableHeader = exports.TableFooter = exports.TableBody = exports.Table = undefined;
 
-	var _Table2 = __webpack_require__(778);
+	var _Table2 = __webpack_require__(784);
 
 	var _Table3 = _interopRequireDefault(_Table2);
 
-	var _TableBody2 = __webpack_require__(779);
+	var _TableBody2 = __webpack_require__(785);
 
 	var _TableBody3 = _interopRequireDefault(_TableBody2);
 
-	var _TableFooter2 = __webpack_require__(786);
+	var _TableFooter2 = __webpack_require__(792);
 
 	var _TableFooter3 = _interopRequireDefault(_TableFooter2);
 
-	var _TableHeader2 = __webpack_require__(787);
+	var _TableHeader2 = __webpack_require__(793);
 
 	var _TableHeader3 = _interopRequireDefault(_TableHeader2);
 
-	var _TableHeaderColumn2 = __webpack_require__(788);
+	var _TableHeaderColumn2 = __webpack_require__(794);
 
 	var _TableHeaderColumn3 = _interopRequireDefault(_TableHeaderColumn2);
 
-	var _TableRow2 = __webpack_require__(789);
+	var _TableRow2 = __webpack_require__(795);
 
 	var _TableRow3 = _interopRequireDefault(_TableRow2);
 
-	var _TableRowColumn2 = __webpack_require__(785);
+	var _TableRowColumn2 = __webpack_require__(791);
 
 	var _TableRowColumn3 = _interopRequireDefault(_TableRowColumn2);
 
@@ -69831,7 +72244,7 @@
 	exports.default = _Table3.default;
 
 /***/ }),
-/* 778 */
+/* 784 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -70181,7 +72594,7 @@
 	exports.default = Table;
 
 /***/ }),
-/* 779 */
+/* 785 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -70204,11 +72617,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Checkbox = __webpack_require__(780);
+	var _Checkbox = __webpack_require__(786);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _TableRowColumn = __webpack_require__(785);
+	var _TableRowColumn = __webpack_require__(791);
 
 	var _TableRowColumn2 = _interopRequireDefault(_TableRowColumn);
 
@@ -70690,7 +73103,7 @@
 	exports.default = TableBody;
 
 /***/ }),
-/* 780 */
+/* 786 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -70700,7 +73113,7 @@
 	});
 	exports.default = undefined;
 
-	var _Checkbox = __webpack_require__(781);
+	var _Checkbox = __webpack_require__(787);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
@@ -70709,7 +73122,7 @@
 	exports.default = _Checkbox2.default;
 
 /***/ }),
-/* 781 */
+/* 787 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -70730,7 +73143,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _EnhancedSwitch = __webpack_require__(782);
+	var _EnhancedSwitch = __webpack_require__(788);
 
 	var _EnhancedSwitch2 = _interopRequireDefault(_EnhancedSwitch);
 
@@ -70738,11 +73151,11 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _checkBoxOutlineBlank = __webpack_require__(783);
+	var _checkBoxOutlineBlank = __webpack_require__(789);
 
 	var _checkBoxOutlineBlank2 = _interopRequireDefault(_checkBoxOutlineBlank);
 
-	var _checkBox = __webpack_require__(784);
+	var _checkBox = __webpack_require__(790);
 
 	var _checkBox2 = _interopRequireDefault(_checkBox);
 
@@ -71001,7 +73414,7 @@
 	exports.default = Checkbox;
 
 /***/ }),
-/* 782 */
+/* 788 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -71445,7 +73858,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 783 */
+/* 789 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71482,7 +73895,7 @@
 	exports.default = ToggleCheckBoxOutlineBlank;
 
 /***/ }),
-/* 784 */
+/* 790 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71519,7 +73932,7 @@
 	exports.default = ToggleCheckBox;
 
 /***/ }),
-/* 785 */
+/* 791 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71690,7 +74103,7 @@
 	exports.default = TableRowColumn;
 
 /***/ }),
-/* 786 */
+/* 792 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71711,7 +74124,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _TableRowColumn = __webpack_require__(785);
+	var _TableRowColumn = __webpack_require__(791);
 
 	var _TableRowColumn2 = _interopRequireDefault(_TableRowColumn);
 
@@ -71828,7 +74241,7 @@
 	exports.default = TableFooter;
 
 /***/ }),
-/* 787 */
+/* 793 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71847,11 +74260,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Checkbox = __webpack_require__(780);
+	var _Checkbox = __webpack_require__(786);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _TableHeaderColumn = __webpack_require__(788);
+	var _TableHeaderColumn = __webpack_require__(794);
 
 	var _TableHeaderColumn2 = _interopRequireDefault(_TableHeaderColumn);
 
@@ -72068,7 +74481,7 @@
 	exports.default = TableHeader;
 
 /***/ }),
-/* 788 */
+/* 794 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72258,7 +74671,7 @@
 	exports.default = TableHeaderColumn;
 
 /***/ }),
-/* 789 */
+/* 795 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72524,7 +74937,7 @@
 	exports.default = TableRow;
 
 /***/ }),
-/* 790 */
+/* 796 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72534,7 +74947,7 @@
 	});
 	exports.default = exports.MenuItem = exports.IconMenu = undefined;
 
-	var _IconMenu2 = __webpack_require__(791);
+	var _IconMenu2 = __webpack_require__(797);
 
 	var _IconMenu3 = _interopRequireDefault(_IconMenu2);
 
@@ -72549,7 +74962,7 @@
 	exports.default = _IconMenu3.default;
 
 /***/ }),
-/* 791 */
+/* 797 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72941,7 +75354,7 @@
 	exports.default = IconMenu;
 
 /***/ }),
-/* 792 */
+/* 798 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -72978,8 +75391,236 @@
 	exports.default = NavigationMoreVert;
 
 /***/ }),
-/* 793 */,
-/* 794 */
+/* 799 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(37);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _Table = __webpack_require__(783);
+
+	var _IconMenu = __webpack_require__(796);
+
+	var _IconMenu2 = _interopRequireDefault(_IconMenu);
+
+	var _MenuItem = __webpack_require__(388);
+
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+
+	var _IconButton = __webpack_require__(339);
+
+	var _IconButton2 = _interopRequireDefault(_IconButton);
+
+	var _moreVert = __webpack_require__(798);
+
+	var _moreVert2 = _interopRequireDefault(_moreVert);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _done = __webpack_require__(800);
+
+	var _done2 = _interopRequireDefault(_done);
+
+	var _clear = __webpack_require__(801);
+
+	var _clear2 = _interopRequireDefault(_clear);
+
+	var _FontIcon = __webpack_require__(365);
+
+	var _FontIcon2 = _interopRequireDefault(_FontIcon);
+
+	var _colors = __webpack_require__(284);
+
+	var _Snackbar = __webpack_require__(741);
+
+	var _Snackbar2 = _interopRequireDefault(_Snackbar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EachNewSummaryTable = function (_React$Component) {
+		_inherits(EachNewSummaryTable, _React$Component);
+
+		function EachNewSummaryTable() {
+			var _ref;
+
+			var _temp, _this, _ret;
+
+			_classCallCheck(this, EachNewSummaryTable);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EachNewSummaryTable.__proto__ || Object.getPrototypeOf(EachNewSummaryTable)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+				editStatus: false,
+				cellName: _this.props.cellName,
+				cellValue: _this.props.cellValue,
+				cellComment: _this.props.cellComment,
+				openSnackBar: false
+			}, _this.editTblRow = function () {
+				// e.preventDefault();
+				_this.setState({ editStatus: true });
+			}, _this.editCancel = function () {
+				_this.setState({ editStatus: false });
+			}, _this.editSave = function (e) {
+				e.preventDefault();
+				console.log("cell id from Add Constuct table" + _this.props._id);
+				var obj = {
+					_id: _this.props._id,
+					cellName: _this.state.cellName,
+					cellValue: _this.state.cellValue,
+					cellComment: _this.state.cellComment
+				};
+				console.log("inside  edit" + "obj detail" + obj.cellName + " " + obj.cellValue);
+				_this.props.editDetail(obj, _this.props._id);
+				_this.setState({ editStatus: false });
+				_this.setState({ cellName: '', cellValue: '', cellComment: '' });
+			}, _this.removeTblRow = function () {
+				// var cellID=this.props.cellID;
+				_this.props.removeDetail(_this.props._id);
+				_this.setState({ openSnackBar: true });
+			}, _this.handleCellNameChange = function (e) {
+				_this.setState({ cellName: e.target.value });
+			}, _this.handleCellValueChange = function (e) {
+				_this.setState({ cellValue: e.target.value });
+			}, _this.handleCellCommentChange = function (e) {
+				_this.setState({ cellComment: e.target.value });
+			}, _this.handleClose = function () {
+				_this.setState({ openSnackBar: false });
+			}, _temp), _possibleConstructorReturn(_this, _ret);
+		}
+
+		_createClass(EachNewSummaryTable, [{
+			key: 'render',
+			value: function render() {
+
+				if (this.state.editStatus == false) {
+					return _react2.default.createElement(
+						_Table.TableRow,
+						null,
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							{ style: { width: '300px' } },
+							this.props.cellName
+						),
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							{ style: { width: '300px' } },
+							this.props.cellValue
+						),
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							{ style: { width: '300px' } },
+							this.props.cellComment
+						),
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							{ style: { width: '300px' } },
+							_react2.default.createElement(
+								_IconMenu2.default,
+								{
+									iconButtonElement: _react2.default.createElement(
+										_IconButton2.default,
+										null,
+										_react2.default.createElement(_moreVert2.default, null)
+									),
+									anchorOrigin: { horizontal: 'left', vertical: 'top' },
+									targetOrigin: { horizontal: 'left', vertical: 'top' }
+								},
+								_react2.default.createElement(_MenuItem2.default, { primaryText: 'Edit', onTouchTap: this.editTblRow }),
+								_react2.default.createElement(_MenuItem2.default, { primaryText: 'Remove', onTouchTap: this.removeTblRow })
+							)
+						)
+					);
+				} else {
+					return _react2.default.createElement(
+						_Table.TableRow,
+						null,
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							null,
+							_react2.default.createElement(_TextField2.default, {
+								hintText: 'Cell Name',
+								floatingLabelText: 'Edit Cell Name',
+								value: this.state.cellName,
+								onChange: this.handleCellNameChange
+							})
+						),
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							null,
+							_react2.default.createElement(_TextField2.default, {
+								hintText: 'Cell Value',
+								floatingLabelText: 'Edit Cell Value',
+								value: this.state.cellValue,
+								onChange: this.handleCellValueChange
+							})
+						),
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							null,
+							_react2.default.createElement(_TextField2.default, {
+								hintText: 'Cell Comment',
+								floatingLabelText: 'Edit Cell Comment',
+								value: this.state.cellComment,
+								onChange: this.handleCellCommentChange
+							})
+						),
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							null,
+							_react2.default.createElement(
+								_IconButton2.default,
+								{ touch: true, onTouchTap: this.editSave },
+								_react2.default.createElement(_done2.default, { color: _colors.blue500 })
+							),
+							_react2.default.createElement(
+								_IconButton2.default,
+								{ touch: true, onTouchTap: this.editCancel },
+								_react2.default.createElement(_clear2.default, { color: _colors.red500 })
+							)
+						)
+					);
+				}
+			}
+		}]);
+
+		return EachNewSummaryTable;
+	}(_react2.default.Component);
+
+	exports.default = EachNewSummaryTable;
+
+/***/ }),
+/* 800 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73016,7 +75657,7 @@
 	exports.default = ActionDone;
 
 /***/ }),
-/* 795 */
+/* 801 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73053,7 +75694,7 @@
 	exports.default = ContentClear;
 
 /***/ }),
-/* 796 */
+/* 802 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73068,7 +75709,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _AddCellLoading = __webpack_require__(797);
+	var _AddCellLoading = __webpack_require__(803);
 
 	var _AddCellLoading2 = _interopRequireDefault(_AddCellLoading);
 
@@ -73107,7 +75748,7 @@
 	exports.default = CellLoading;
 
 /***/ }),
-/* 797 */
+/* 803 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73150,7 +75791,7 @@
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
-	var _DatePicker = __webpack_require__(798);
+	var _DatePicker = __webpack_require__(804);
 
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
@@ -73158,7 +75799,7 @@
 
 	var _AppBar2 = _interopRequireDefault(_AppBar);
 
-	var _lodash = __webpack_require__(815);
+	var _lodash = __webpack_require__(820);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -73212,7 +75853,10 @@
 	      listName: [],
 	      trackName: '',
 	      monthName: ['Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
-	      text: []
+	      totalMonthList: [],
+	      txtValue: '',
+	      name: '',
+	      obj: {}
 	    }, _this.openDialogueBar = function () {
 	      _this.setState({ openDialogue: true });
 	    }, _this.handleCellNameChange = function (e) {
@@ -73220,8 +75864,10 @@
 	    }, _this.handleClose = function () {
 	      _this.setState({ openDialogue: false });
 	    }, _this.handleTrackNameChange = function (e) {
+
+	      _this.setState({ txtValue: e.target.value, name: e.target.name });
 	      //   var arr=[];
-	      // this.setState({trackName:e.target.value})
+	      // this.setStathandleTrackNameChangee({trackName:e.target.value})
 	      // //   for(var i=0; i<this.state.totalMonth;i++){
 	      // //     this.setState({trackName:e.target.value+i});
 	      //    this.state.text.push(this.state.trackName);
@@ -73229,43 +75875,69 @@
 	      //   // this.setState({trackName:e.target.value});
 	      //   // arr.push(trackName);
 	      // this.setState({listName:arr});
-	      console.log(_this.state.text);
+	      //  console.log(this.state.text);
 	    }, _this.handlecellValueChange = function (e) {
 	      _this.setState({ cellValues: e.target.value });
 	    }, _this.handleCellCommentChange = function (e) {
 	      _this.setState({ cellComments: e.target.value });
+	    }, _this.handleBlur = function () {
+	      console.log('name is ' + _this.state.name + 'and value is' + _this.state.txtValue);
+	      _this.state.obj[_this.state.name] = _this.state.txtValue;
 	    }, _this.getTable = function () {
 	      // alert(this.state.startDate);
 	      // console.log(this.state.endDate.getFullYear());
-	      var numberOfYear = _this.state.endDate.getFullYear() - _this.state.startDate.getFullYear();
+	      var currentMonth = _this.state.startDate.getMonth() + 1;
+	      var lastMonth = _this.state.endDate.getMonth() + 1;
+	      var currentYear = _this.state.startDate.getFullYear();
+	      var lastYear = _this.state.endDate.getFullYear();
+	      var numberOfYear = lastYear - currentYear;
 	      // console.log("total year is"+ numberOfYear);
 
 	      // console.log("current month is");
 	      var month = 0;
 	      // console.log("month in current year is "+ month);
 	      if (numberOfYear == 0) {
-	        month = _this.state.endDate.getMonth() + 1 - (_this.state.startDate.getMonth() + 1);
+	        month = _this.state.endDate.getMonth() + 1 - (_this.state.startDate.getMonth() + 1) + 1;
 	      } else {
-	        var currentMonth = _this.state.startDate.getMonth() + 1;
+
 	        // console.log(currentMonth);
-	        var month = 12 - currentMonth;
+	        var month = 12 - currentMonth + 1;
 	        for (var i = 1; i <= numberOfYear; i++) {
 	          if (i == numberOfYear) {
-	            month = month + _this.state.endDate.getMonth() + 1;
+	            month = month + lastMonth;
 	          } else {
 	            month = month + 12;
 	          }
 	        }
 	      }
-	      _this.setState({ totalMonth: month });
-	      console.log("total month is" + month);
+	      var tmpArr = [];
+	      var lstTmpArr = [];
+
+	      var counter = currentMonth;
+	      for (var _i = 0; _i < month; _i++) {
+	        if (counter > 12) {
+	          console.log('inside if loop');
+	          console.log('counter is' + counter);
+	          counter = counter % 12;
+	          currentYear++;
+	        }
+	        tmpArr.push(_this.state.monthName[counter - 1] + currentYear);
+	        counter++;
+	      }
+	      console.log('array is');
+	      console.log(tmpArr);
+	      _this.setState({ totalMonth: month, totalMonthList: tmpArr });
+	      console.log("total month is" + _this.state.totalMonth);
+	      console.log('total month list is' + _this.state.totalMonthList);
 	    }, _this.handleStatrtDate = function (e, date) {
 	      _this.setState({ startDate: date });
 	    }, _this.handleendDate = function (e, date) {
 	      _this.setState({ endDate: date });
 	    }, _this.onAddingTitle = function (key) {
 	      event.preventDefault();
-	      ///  console.log(key.value); 
+	      console.log('object is');
+	      console.log(_this.state.obj);
+	      ///  console.log(key.value);
 	      // let formElements = event.target.value;
 	      // console.log(event.target.elements);
 	      // let formData = {
@@ -73358,8 +76030,10 @@
 	              { key: i },
 	              _react2.default.createElement(_TextField2.default, { id: i,
 	                hintText: 'Cell Construct Name',
-	                floatingLabelText: _this2.state.monthName[_this2.state.startDate.getMonth() + i],
-	                value: _this2.state.text,
+	                name: _this2.state.totalMonthList[i],
+	                floatingLabelText: _this2.state.totalMonthList[i]
+	                // value={this.state.text}
+	                , onBlur: _this2.handleBlur,
 	                onChange: _this2.handleTrackNameChange
 	              }),
 	              _react2.default.createElement('br', null)
@@ -73376,7 +76050,7 @@
 	exports.default = AddCellLoading;
 
 /***/ }),
-/* 798 */
+/* 804 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73386,7 +76060,7 @@
 	});
 	exports.default = undefined;
 
-	var _DatePicker = __webpack_require__(799);
+	var _DatePicker = __webpack_require__(805);
 
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
@@ -73395,7 +76069,7 @@
 	exports.default = _DatePicker2.default;
 
 /***/ }),
-/* 799 */
+/* 805 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73416,9 +76090,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dateUtils = __webpack_require__(800);
+	var _dateUtils = __webpack_require__(806);
 
-	var _DatePickerDialog = __webpack_require__(801);
+	var _DatePickerDialog = __webpack_require__(807);
 
 	var _DatePickerDialog2 = _interopRequireDefault(_DatePickerDialog);
 
@@ -73785,7 +76459,7 @@
 	exports.default = DatePicker;
 
 /***/ }),
-/* 800 */
+/* 806 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -73967,7 +76641,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 801 */
+/* 807 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -73996,7 +76670,7 @@
 
 	var _keycode2 = _interopRequireDefault(_keycode);
 
-	var _Calendar = __webpack_require__(802);
+	var _Calendar = __webpack_require__(808);
 
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 
@@ -74008,11 +76682,11 @@
 
 	var _Popover2 = _interopRequireDefault(_Popover);
 
-	var _PopoverAnimationVertical = __webpack_require__(814);
+	var _PopoverAnimationVertical = __webpack_require__(781);
 
 	var _PopoverAnimationVertical2 = _interopRequireDefault(_PopoverAnimationVertical);
 
-	var _dateUtils = __webpack_require__(800);
+	var _dateUtils = __webpack_require__(806);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -74208,7 +76882,7 @@
 	exports.default = DatePickerDialog;
 
 /***/ }),
-/* 802 */
+/* 808 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -74235,31 +76909,31 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _CalendarActionButtons = __webpack_require__(803);
+	var _CalendarActionButtons = __webpack_require__(809);
 
 	var _CalendarActionButtons2 = _interopRequireDefault(_CalendarActionButtons);
 
-	var _CalendarMonth = __webpack_require__(804);
+	var _CalendarMonth = __webpack_require__(810);
 
 	var _CalendarMonth2 = _interopRequireDefault(_CalendarMonth);
 
-	var _CalendarYear = __webpack_require__(806);
+	var _CalendarYear = __webpack_require__(812);
 
 	var _CalendarYear2 = _interopRequireDefault(_CalendarYear);
 
-	var _CalendarToolbar = __webpack_require__(808);
+	var _CalendarToolbar = __webpack_require__(814);
 
 	var _CalendarToolbar2 = _interopRequireDefault(_CalendarToolbar);
 
-	var _DateDisplay = __webpack_require__(813);
+	var _DateDisplay = __webpack_require__(819);
 
 	var _DateDisplay2 = _interopRequireDefault(_DateDisplay);
 
-	var _SlideIn = __webpack_require__(811);
+	var _SlideIn = __webpack_require__(817);
 
 	var _SlideIn2 = _interopRequireDefault(_SlideIn);
 
-	var _dateUtils = __webpack_require__(800);
+	var _dateUtils = __webpack_require__(806);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -74645,7 +77319,7 @@
 	exports.default = Calendar;
 
 /***/ }),
-/* 803 */
+/* 809 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -74742,7 +77416,7 @@
 	exports.default = CalendarActionButton;
 
 /***/ }),
-/* 804 */
+/* 810 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -74757,9 +77431,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _dateUtils = __webpack_require__(800);
+	var _dateUtils = __webpack_require__(806);
 
-	var _DayButton = __webpack_require__(805);
+	var _DayButton = __webpack_require__(811);
 
 	var _DayButton2 = _interopRequireDefault(_DayButton);
 
@@ -74888,7 +77562,7 @@
 	exports.default = CalendarMonth;
 
 /***/ }),
-/* 805 */
+/* 811 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -74909,7 +77583,7 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _dateUtils = __webpack_require__(800);
+	var _dateUtils = __webpack_require__(806);
 
 	var _EnhancedButton = __webpack_require__(343);
 
@@ -75062,7 +77736,7 @@
 	exports.default = DayButton;
 
 /***/ }),
-/* 806 */
+/* 812 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75083,11 +77757,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _YearButton = __webpack_require__(807);
+	var _YearButton = __webpack_require__(813);
 
 	var _YearButton2 = _interopRequireDefault(_YearButton);
 
-	var _dateUtils = __webpack_require__(800);
+	var _dateUtils = __webpack_require__(806);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -75221,7 +77895,7 @@
 	exports.default = CalendarYear;
 
 /***/ }),
-/* 807 */
+/* 813 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75363,7 +78037,7 @@
 	exports.default = YearButton;
 
 /***/ }),
-/* 808 */
+/* 814 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75382,15 +78056,15 @@
 
 	var _IconButton2 = _interopRequireDefault(_IconButton);
 
-	var _chevronLeft = __webpack_require__(809);
+	var _chevronLeft = __webpack_require__(815);
 
 	var _chevronLeft2 = _interopRequireDefault(_chevronLeft);
 
-	var _chevronRight = __webpack_require__(810);
+	var _chevronRight = __webpack_require__(816);
 
 	var _chevronRight2 = _interopRequireDefault(_chevronRight);
 
-	var _SlideIn = __webpack_require__(811);
+	var _SlideIn = __webpack_require__(817);
 
 	var _SlideIn2 = _interopRequireDefault(_SlideIn);
 
@@ -75527,7 +78201,7 @@
 	exports.default = CalendarToolbar;
 
 /***/ }),
-/* 809 */
+/* 815 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75564,7 +78238,7 @@
 	exports.default = NavigationChevronLeft;
 
 /***/ }),
-/* 810 */
+/* 816 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75601,7 +78275,7 @@
 	exports.default = NavigationChevronRight;
 
 /***/ }),
-/* 811 */
+/* 817 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75626,7 +78300,7 @@
 
 	var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
-	var _SlideInChild = __webpack_require__(812);
+	var _SlideInChild = __webpack_require__(818);
 
 	var _SlideInChild2 = _interopRequireDefault(_SlideInChild);
 
@@ -75727,7 +78401,7 @@
 	exports.default = SlideIn;
 
 /***/ }),
-/* 812 */
+/* 818 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75868,7 +78542,7 @@
 	exports.default = SlideInChild;
 
 /***/ }),
-/* 813 */
+/* 819 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -75889,7 +78563,7 @@
 
 	var _transitions2 = _interopRequireDefault(_transitions);
 
-	var _SlideIn = __webpack_require__(811);
+	var _SlideIn = __webpack_require__(817);
 
 	var _SlideIn2 = _interopRequireDefault(_SlideIn);
 
@@ -76103,150 +78777,13 @@
 	exports.default = DateDisplay;
 
 /***/ }),
-/* 814 */
+/* 820 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _simpleAssign = __webpack_require__(338);
-
-	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Paper = __webpack_require__(380);
-
-	var _Paper2 = _interopRequireDefault(_Paper);
-
-	var _transitions = __webpack_require__(341);
-
-	var _transitions2 = _interopRequireDefault(_transitions);
-
-	var _propTypes = __webpack_require__(342);
-
-	var _propTypes2 = _interopRequireDefault(_propTypes);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	function getStyles(props, context, state) {
-	  var targetOrigin = props.targetOrigin;
-	  var open = state.open;
-	  var muiTheme = context.muiTheme;
-
-	  var horizontal = targetOrigin.horizontal.replace('middle', 'vertical');
-
-	  return {
-	    root: {
-	      opacity: open ? 1 : 0,
-	      transform: open ? 'scaleY(1)' : 'scaleY(0)',
-	      transformOrigin: horizontal + ' ' + targetOrigin.vertical,
-	      position: 'fixed',
-	      zIndex: muiTheme.zIndex.popover,
-	      transition: _transitions2.default.easeOut('450ms', ['transform', 'opacity']),
-	      maxHeight: '100%'
-	    }
-	  };
-	}
-
-	var PopoverAnimationVertical = function (_Component) {
-	  _inherits(PopoverAnimationVertical, _Component);
-
-	  function PopoverAnimationVertical() {
-	    var _Object$getPrototypeO;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, PopoverAnimationVertical);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(PopoverAnimationVertical)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
-	      open: false
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(PopoverAnimationVertical, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.setState({ open: true }); // eslint-disable-line react/no-did-mount-set-state
-	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      this.setState({
-	        open: nextProps.open
-	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props;
-	      var className = _props.className;
-	      var style = _props.style;
-	      var zDepth = _props.zDepth;
-
-
-	      var styles = getStyles(this.props, this.context, this.state);
-
-	      return _react2.default.createElement(
-	        _Paper2.default,
-	        {
-	          style: (0, _simpleAssign2.default)(styles.root, style),
-	          zDepth: zDepth,
-	          className: className
-	        },
-	        this.props.children
-	      );
-	    }
-	  }]);
-
-	  return PopoverAnimationVertical;
-	}(_react.Component);
-
-	PopoverAnimationVertical.propTypes = {
-	  children: _react.PropTypes.node,
-	  className: _react.PropTypes.string,
-	  open: _react.PropTypes.bool.isRequired,
-	  /**
-	   * Override the inline-styles of the root element.
-	   */
-	  style: _react.PropTypes.object,
-	  targetOrigin: _propTypes2.default.origin,
-	  zDepth: _propTypes2.default.zDepth
-	};
-	PopoverAnimationVertical.defaultProps = {
-	  style: {},
-	  zDepth: 1
-	};
-	PopoverAnimationVertical.contextTypes = {
-	  muiTheme: _react.PropTypes.object.isRequired
-	};
-	exports.default = PopoverAnimationVertical;
+	module.exports = __webpack_require__(821);
 
 /***/ }),
-/* 815 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(816);
-
-/***/ }),
-/* 816 */
+/* 821 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -93337,63 +95874,6 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(239)(module)))
 
 /***/ }),
-/* 817 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var DashBoard = function (_React$Component) {
-		_inherits(DashBoard, _React$Component);
-
-		function DashBoard() {
-			_classCallCheck(this, DashBoard);
-
-			return _possibleConstructorReturn(this, (DashBoard.__proto__ || Object.getPrototypeOf(DashBoard)).apply(this, arguments));
-		}
-
-		_createClass(DashBoard, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'h2',
-						null,
-						' DashBoard Page is coming '
-					)
-				);
-			}
-		}]);
-
-		return DashBoard;
-	}(_react2.default.Component);
-
-	exports.default = DashBoard;
-
-/***/ }),
-/* 818 */,
-/* 819 */,
-/* 820 */,
-/* 821 */,
 /* 822 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -93409,17 +95889,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(37);
+	var _AddCellConstruct = __webpack_require__(823);
 
-	var _reactDom2 = _interopRequireDefault(_reactDom);
+	var _AddCellConstruct2 = _interopRequireDefault(_AddCellConstruct);
 
-	var _Nav = __webpack_require__(823);
+	var _CellConstructTbl = __webpack_require__(824);
 
-	var _Nav2 = _interopRequireDefault(_Nav);
-
-	var _Footer = __webpack_require__(824);
-
-	var _Footer2 = _interopRequireDefault(_Footer);
+	var _CellConstructTbl2 = _interopRequireDefault(_CellConstructTbl);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93429,32 +95905,69 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ParentComponent = function (_React$Component) {
-		_inherits(ParentComponent, _React$Component);
+	var CellConstruct = function (_React$Component) {
+		_inherits(CellConstruct, _React$Component);
 
-		function ParentComponent() {
-			_classCallCheck(this, ParentComponent);
+		function CellConstruct() {
+			var _ref;
 
-			return _possibleConstructorReturn(this, (ParentComponent.__proto__ || Object.getPrototypeOf(ParentComponent)).apply(this, arguments));
+			var _temp, _this, _ret;
+
+			_classCallCheck(this, CellConstruct);
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CellConstruct.__proto__ || Object.getPrototypeOf(CellConstruct)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+				cellConstructData: [],
+				headerList: []
+			}, _this.CellConstructObj = function (obj) {
+				console.log('obj receive from source into CellConstruct');
+				console.log(obj);
+
+				// console.log(Object.keys(obj));
+				// let headerList=[];
+
+				var currentState = _this.state.cellConstructData;
+				console.log('current status of cellConstructData');
+				console.log(currentState);
+				var newData = [obj].concat(currentState);
+				console.log('newData');
+				console.log(obj);
+				// [obj].push(...currentState);
+				// console.log('data in array');
+				// console.log(obj);
+				_this.setState({ cellConstructData: newData });
+				console.log('CellConstructData');
+				console.log('length of object is');
+				console.log(Object.keys(obj).length);
+				console.log('object property into array');
+				console.log(_this.state.cellConstructData);
+				_this.state.headerList = Object.keys(obj);
+				console.log(_this.state.headerList);
+			}, _temp), _possibleConstructorReturn(_this, _ret);
 		}
 
-		_createClass(ParentComponent, [{
+		_createClass(CellConstruct, [{
 			key: 'render',
 			value: function render() {
+
 				return _react2.default.createElement(
 					'div',
 					null,
-					_react2.default.createElement(_Nav2.default, null),
-					this.props.children,
-					_react2.default.createElement(_Footer2.default, null)
+					_react2.default.createElement(_AddCellConstruct2.default, { CellConstructObj: this.CellConstructObj }),
+					_react2.default.createElement(_CellConstructTbl2.default, { cellConstructData: this.state.cellConstructData,
+						headerList: this.state.headerList
+					})
 				);
 			}
 		}]);
 
-		return ParentComponent;
+		return CellConstruct;
 	}(_react2.default.Component);
 
-	exports.default = ParentComponent;
+	exports.default = CellConstruct;
 
 /***/ }),
 /* 823 */
@@ -93472,1033 +95985,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _AppBar = __webpack_require__(336);
-
-	var _AppBar2 = _interopRequireDefault(_AppBar);
-
-	var _Drawer = __webpack_require__(382);
-
-	var _Drawer2 = _interopRequireDefault(_Drawer);
-
-	var _MenuItem = __webpack_require__(388);
-
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-
-	var _FontIcon = __webpack_require__(365);
-
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-
-	var _reactRouter = __webpack_require__(409);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Nav = function (_React$Component) {
-	  _inherits(Nav, _React$Component);
-
-	  function Nav() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, Nav);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Nav.__proto__ || Object.getPrototypeOf(Nav)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      openDrawer: false
-	    }, _this.handleClose = function () {
-	      return _this.setState({ openDrawer: false });
-	    }, _this.handleToggle = function () {
-	      return _this.setState({ openDrawer: !_this.state.openDrawer });
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(Nav, [{
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_AppBar2.default, {
-	          title: 'RLS Tool',
-	          iconClassNameRight: 'muidocs-icon-navigation-expand-more',
-	          onLeftIconButtonTouchTap: this.handleToggle,
-	          style: { position: "fixed", top: '0' }
-	        }),
-	        _react2.default.createElement(
-	          _Drawer2.default,
-	          {
-	            docked: false,
-	            width: 200,
-	            open: this.state.openDrawer,
-	            onRequestChange: function onRequestChange(openDrawer) {
-	              return _this2.setState({ openDrawer: openDrawer });
-	            }
-	          },
-	          _react2.default.createElement(
-	            _MenuItem2.default,
-	            { onTouchTap: this.handleClose },
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/' },
-	              ' Home '
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _MenuItem2.default,
-	            { onTouchTap: this.handleClose },
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: '/dashboard' },
-	              ' Dashboard '
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Nav;
-	}(_react2.default.Component);
-
-	exports.default = Nav;
-
-/***/ }),
-/* 824 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var style = {
-	  backgroundColor: "rgb(0, 188, 212)",
-	  borderTop: "1px solid #E7E7E7",
-	  textAlign: "center",
-	  padding: "20px",
-	  position: "fixed",
-	  left: "0",
-	  bottom: "0",
-	  height: "60px",
-	  width: "100%"
-	};
-
-	var phantom = {
-	  display: 'block',
-	  padding: '20px',
-	  height: '60px',
-	  width: '100%'
-	};
-
-	var Footer = function (_React$Component) {
-	  _inherits(Footer, _React$Component);
-
-	  function Footer() {
-	    _classCallCheck(this, Footer);
-
-	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
-	  }
-
-	  _createClass(Footer, [{
-	    key: "render",
-	    value: function render() {
-
-	      return _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement("div", { style: phantom }),
-	        _react2.default.createElement("div", { style: style })
-	      );
-	    }
-	  }]);
-
-	  return Footer;
-	}(_react2.default.Component);
-
-	exports.default = Footer;
-
-/***/ }),
-/* 825 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _MuiThemeProvider = __webpack_require__(184);
-
-	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _Paper = __webpack_require__(380);
-
-	var _Paper2 = _interopRequireDefault(_Paper);
-
-	var _ProjectForm = __webpack_require__(826);
-
-	var _ProjectForm2 = _interopRequireDefault(_ProjectForm);
-
-	var _ProjectDetail = __webpack_require__(827);
-
-	var _ProjectDetail2 = _interopRequireDefault(_ProjectDetail);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var MainApp = function (_React$Component) {
-		_inherits(MainApp, _React$Component);
-
-		function MainApp() {
-			var _ref;
-
-			var _temp, _this, _ret;
-
-			_classCallCheck(this, MainApp);
-
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MainApp.__proto__ || Object.getPrototypeOf(MainApp)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-				projectID: '',
-				projectName: '',
-				id: 0,
-				data: []
-			}, _this.submitProjectInfo = function (obj) {
-				$.ajax({
-					url: 'http://localhost:3000/api/v1/createDB',
-					type: 'POST',
-					data: obj,
-					contetntType: 'application/json',
-					success: function (data) {
-						console.log('DB created');
-					}.bind(_this),
-					error: function (err) {
-						console.log('DB error');
-					}.bind(_this)
-				});
-
-				console.log("project  ID is" + obj.projectID);
-				// this.setState({this.state.projectID:obj.projectID, this.state.projectName:obj.projectName});
-				console.log("project Name is" + obj.projectName);
-				_this.setState({ id: _this.state.id + 1 });
-				var projObj = {
-					id: _this.state.id,
-					projectID: obj.projectID,
-					projectName: obj.projectName
-				};
-				var dataCurrentState = _this.state.data;
-				var newPostData = [projObj].concat(dataCurrentState);
-				_this.setState({ data: newPostData });
-			}, _this.saveEditProjectDetail = function (obj, id) {
-				var dataCurrentState = _this.state.data;
-				var index;
-				for (var i = 0; i < dataCurrentState.length; i++) {
-					if (dataCurrentState[i].id == id) {
-						// index=obj.cellID;
-						var editData = dataCurrentState.splice(i, 1, obj);
-						editData = null;
-						break;
-					}
-				};
-
-				_this.setState({ data: dataCurrentState });
-			}, _this.removeProjectDetail = function (id) {
-				var dataCurrentState = _this.state.data;
-				var index;
-				for (var i = 0; i < dataCurrentState.length; i++) {
-					if (dataCurrentState[i].id == id) {
-						// index=obj.cellID;
-						var editData = dataCurrentState.splice(i, 1);
-						editData = null;
-						break;
-					}
-				};
-
-				_this.setState({ data: dataCurrentState });
-			}, _temp), _possibleConstructorReturn(_this, _ret);
-		}
-
-		_createClass(MainApp, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(_ProjectForm2.default, { submitProjectDetail: this.submitProjectInfo }),
-					_react2.default.createElement(_ProjectDetail2.default, { data: this.state.data,
-						saveEditProjectDetail: this.saveEditProjectDetail,
-						removeProjectDetail: this.removeProjectDetail
-					})
-				);
-			}
-		}]);
-
-		return MainApp;
-	}(_react2.default.Component);
-
-	// ReactDOM.render(<MainApp  />,
-	//  document.getElementById('BindMainComponent'));
-
-
-	exports.default = MainApp;
-
-/***/ }),
-/* 826 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _RaisedButton = __webpack_require__(473);
-
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-	var _MuiThemeProvider = __webpack_require__(184);
-
-	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
-
-	var _FlatButton = __webpack_require__(475);
-
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-	var _reactTapEventPlugin = __webpack_require__(328);
-
-	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
-
-	var _reactBootstrap = __webpack_require__(478);
-
-	var _Dialog = __webpack_require__(731);
-
-	var _Dialog2 = _interopRequireDefault(_Dialog);
-
-	var _TextField = __webpack_require__(733);
-
-	var _TextField2 = _interopRequireDefault(_TextField);
-
-	var _Divider = __webpack_require__(739);
-
-	var _Divider2 = _interopRequireDefault(_Divider);
-
-	var _Snackbar = __webpack_require__(741);
-
-	var _Snackbar2 = _interopRequireDefault(_Snackbar);
-
-	var _AppBar = __webpack_require__(336);
-
-	var _AppBar2 = _interopRequireDefault(_AppBar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// Integrated React Bootstrap
-
-
-	// injectTapEventPlugin();
-
-
-	var App = function (_React$Component) {
-	  _inherits(App, _React$Component);
-
-	  function App() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, App);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      open: false,
-	      openSnackBar: false,
-	      projectID: '',
-	      projectName: ''
-	    }, _this.handleOpen = function () {
-	      _this.setState({ open: true });
-	    }, _this.handleClose = function () {
-	      _this.setState({ open: false, openSnackBar: false });
-	    }, _this.handlePorjectIDChange = function (e) {
-	      _this.setState({ projectID: e.target.value });
-	    }, _this.handlePorjectNameChange = function (e) {
-	      _this.setState({ projectName: e.target.value });
-	    }, _this.submitProjectDetail = function (e) {
-	      e.preventDefault();
-	      console.log(_this.state.projectName);
-	      if (!_this.state.projectID && !_this.state.projectName) {
-	        return;
-	      }
-	      var obj = {
-	        projectID: _this.state.projectID,
-	        projectName: _this.state.projectName
-	      };
-	      _this.props.submitProjectDetail(obj);
-	      _this.setState({ open: false, openSnackBar: true, projectID: '', projectName: '' });
-	      //  this.handleClose();
-	      // this.props.submitProjectName();
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-	  // class HelloMessage extends React.Component {
-
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      var actions = [_react2.default.createElement(_Divider2.default, { style: { backgroundColor: 'rgb(0, 188, 212)' } }), _react2.default.createElement(_FlatButton2.default, {
-	        label: 'Cancel',
-	        primary: true,
-	        onTouchTap: this.handleClose
-	      }), _react2.default.createElement(_RaisedButton2.default, {
-	        label: 'Submit',
-	        primary: true,
-	        keyboardFocused: true,
-	        onTouchTap: this.submitProjectDetail
-	      })];
-
-	      var titleBar = _react2.default.createElement(_AppBar2.default, {
-	        title: 'Add Project Detail',
-	        style: { height: 'auto' }
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_RaisedButton2.default, { label: 'Add Project',
-	          primary: true,
-	          style: { marginTop: '100px', marginLeft: '100px' },
-	          onTouchTap: this.handleOpen
-	        }),
-	        _react2.default.createElement(
-	          _Dialog2.default,
-	          {
-	            title: titleBar,
-	            actions: actions,
-	            modal: true,
-	            open: this.state.open,
-	            onRequestClose: this.handleClose
-	          },
-	          _react2.default.createElement(_TextField2.default, {
-	            hintText: 'Project Name',
-	            floatingLabelText: 'Enter Project Name',
-	            value: this.state.projectName,
-	            onChange: this.handlePorjectNameChange
-	          }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_TextField2.default, {
-	            hintText: 'Project ID',
-	            floatingLabelText: 'Enter Project Unique ID',
-	            value: this.state.projectID,
-	            onChange: this.handlePorjectIDChange
-	          }),
-	          _react2.default.createElement('br', null)
-	        ),
-	        _react2.default.createElement(_Snackbar2.default, {
-	          open: this.state.openSnackBar,
-	          message: 'Project Detail Submitted Successfully!!',
-	          autoHideDuration: 4000,
-	          onRequestClose: this.handleClose
-	        })
-	      );
-	    }
-	  }]);
-
-	  return App;
-	}(_react2.default.Component);
-
-	// ReactDOM.render(<HelloMessage name="Jane" />,
-	//  document.getElementById('BindMainComponent'));
-
-
-	exports.default = App;
-
-/***/ }),
-/* 827 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _EachProjectDetail = __webpack_require__(828);
-
-	var _EachProjectDetail2 = _interopRequireDefault(_EachProjectDetail);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ProjectDetail = function (_React$Component) {
-		_inherits(ProjectDetail, _React$Component);
-
-		function ProjectDetail() {
-			var _ref;
-
-			var _temp, _this, _ret;
-
-			_classCallCheck(this, ProjectDetail);
-
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectDetail.__proto__ || Object.getPrototypeOf(ProjectDetail)).call.apply(_ref, [this].concat(args))), _this), _this.saveEditProjectDetail = function (pName, id) {
-				_this.props.saveEditProjectDetail(pName, id);
-			}, _this.removeProjectDetail = function (id) {
-				_this.props.removeProjectDetail(id);
-			}, _temp), _possibleConstructorReturn(_this, _ret);
-		}
-
-		_createClass(ProjectDetail, [{
-			key: 'render',
-			value: function render() {
-				console.log(this.props.data);
-				if (this.props.data.Length != 0) {
-					var projectData = this.props.data.map(function (data) {
-						return _react2.default.createElement(
-							'div',
-							{ key: data.projectID },
-							_react2.default.createElement(_EachProjectDetail2.default, {
-								projectName: data.projectName,
-								projectID: data.projectID,
-								id: data.id,
-								saveEditProjectDetail: this.saveEditProjectDetail,
-								removeProjectDetail: this.removeProjectDetail
-							})
-						);
-					}.bind(this));
-				}
-				return _react2.default.createElement(
-					'div',
-					null,
-					projectData
-				);
-			}
-		}]);
-
-		return ProjectDetail;
-	}(_react2.default.Component);
-
-	exports.default = ProjectDetail;
-
-/***/ }),
-/* 828 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _List = __webpack_require__(747);
-
-	var _Avatar = __webpack_require__(749);
-
-	var _Avatar2 = _interopRequireDefault(_Avatar);
-
-	var _colors = __webpack_require__(284);
-
-	var _Subheader = __webpack_require__(404);
-
-	var _Subheader2 = _interopRequireDefault(_Subheader);
-
-	var _Divider = __webpack_require__(739);
-
-	var _Divider2 = _interopRequireDefault(_Divider);
-
-	var _Card = __webpack_require__(751);
-
-	var _FlatButton = __webpack_require__(475);
-
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-	var _reactBootstrap = __webpack_require__(478);
-
-	var _StepperComponent = __webpack_require__(829);
-
-	var _StepperComponent2 = _interopRequireDefault(_StepperComponent);
-
-	var _TextField = __webpack_require__(733);
-
-	var _TextField2 = _interopRequireDefault(_TextField);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var EachProjectDetail = function (_React$Component) {
-	  _inherits(EachProjectDetail, _React$Component);
-
-	  function EachProjectDetail() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, EachProjectDetail);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EachProjectDetail.__proto__ || Object.getPrototypeOf(EachProjectDetail)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      editStatus: false,
-	      pName: _this.props.projectName
-
-	    }, _this.handleProjectNameChange = function (e) {
-	      _this.setState({ pName: e.target.value });
-	    }, _this.removeProjectDetail = function () {
-	      _this.props.removeProjectDetail(_this.props.id);
-	    }, _this.editProjectDetail = function () {
-	      _this.setState({ editStatus: true });
-	    }, _this.editSave = function () {
-	      var obj = {
-	        projectName: _this.state.pName,
-	        projectID: _this.props.projectID
-	      };
-	      _this.props.saveEditProjectDetail(obj, _this.props.id);
-	      _this.setState({ editStatus: false });
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(EachProjectDetail, [{
-	    key: 'render',
-	    value: function render() {
-	      if (this.state.editStatus == false) {
-
-	        return _react2.default.createElement(
-	          'div',
-	          { style: { marginTop: '20px' } },
-	          _react2.default.createElement(
-	            _reactBootstrap.Grid,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Row,
-	              null,
-	              _react2.default.createElement(
-	                _Card.Card,
-	                null,
-	                _react2.default.createElement(_Card.CardHeader, {
-	                  title: this.props.projectName,
-	                  subtitle: this.props.projectID,
-	                  actAsExpander: true,
-	                  showExpandableButton: true
-	                }),
-	                _react2.default.createElement(
-	                  _Card.CardActions,
-	                  null,
-	                  _react2.default.createElement(_FlatButton2.default, { label: 'Edit', onTouchTap: this.editProjectDetail }),
-	                  _react2.default.createElement(_FlatButton2.default, { label: 'Remove', onTouchTap: this.removeProjectDetail })
-	                ),
-	                _react2.default.createElement(
-	                  _Card.CardText,
-	                  { expandable: true },
-	                  _react2.default.createElement(_StepperComponent2.default, null)
-	                )
-	              )
-	            )
-	          )
-	        );
-	      } else {
-	        return _react2.default.createElement(
-	          'div',
-	          { style: { marginTop: '20px' } },
-	          _react2.default.createElement(
-	            _reactBootstrap.Grid,
-	            null,
-	            _react2.default.createElement(
-	              _reactBootstrap.Row,
-	              null,
-	              _react2.default.createElement(
-	                _Card.Card,
-	                null,
-	                _react2.default.createElement(_Card.CardHeader, {
-	                  title: 'Edit Project Name',
-	                  subtitle: this.props.projectID,
-	                  actAsExpander: true,
-	                  showExpandableButton: true
-	                }),
-	                _react2.default.createElement(
-	                  _Card.CardText,
-	                  null,
-	                  _react2.default.createElement(_TextField2.default, {
-	                    hintText: 'Project Name',
-	                    floatingLabelText: 'Edit Project Name',
-	                    value: this.state.pName,
-	                    onChange: this.handleProjectNameChange
-	                  })
-	                ),
-	                _react2.default.createElement(
-	                  _Card.CardActions,
-	                  null,
-	                  _react2.default.createElement(_FlatButton2.default, { label: 'Save', onTouchTap: this.editSave }),
-	                  _react2.default.createElement(_FlatButton2.default, { label: 'Cancel' })
-	                )
-	              )
-	            )
-	          )
-	        );
-	      };
-	    }
-	  }]);
-
-	  return EachProjectDetail;
-	}(_react2.default.Component);
-
-	exports.default = EachProjectDetail;
-
-/***/ }),
-/* 829 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _Stepper = __webpack_require__(762);
-
-	var _RaisedButton = __webpack_require__(473);
-
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-	var _FlatButton = __webpack_require__(475);
-
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-	var _AddNewSummary = __webpack_require__(830);
-
-	var _AddNewSummary2 = _interopRequireDefault(_AddNewSummary);
-
-	var _AddNewSummaryTable = __webpack_require__(831);
-
-	var _AddNewSummaryTable2 = _interopRequireDefault(_AddNewSummaryTable);
-
-	var _CellLoading = __webpack_require__(796);
-
-	var _CellLoading2 = _interopRequireDefault(_CellLoading);
-
-	var _CellConstruct = __webpack_require__(833);
-
-	var _CellConstruct2 = _interopRequireDefault(_CellConstruct);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var StepperComponent = function (_React$Component) {
-	  _inherits(StepperComponent, _React$Component);
-
-	  function StepperComponent() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, StepperComponent);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = StepperComponent.__proto__ || Object.getPrototypeOf(StepperComponent)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      finished: false,
-	      stepIndex: 0,
-	      cellData: []
-	    }, _this.handleNext = function () {
-	      var stepIndex = _this.state.stepIndex;
-
-	      _this.setState({
-	        stepIndex: stepIndex + 1,
-	        finished: stepIndex >= 2
-	      });
-	    }, _this.handlePrev = function () {
-	      var stepIndex = _this.state.stepIndex;
-
-	      if (stepIndex > 0) {
-	        _this.setState({ stepIndex: stepIndex - 1 });
-	      }
-	    }, _this.submitCellDetailInfo = function (obj) {
-	      console.log("data in Stepper" + obj.cellName + obj.cellValue + obj.cellComment);
-	      var dataCurrentState = _this.state.cellData;
-	      //  var newPostData=[obj].concat(dataCurrentState);
-	      var newPostData = dataCurrentState.concat([obj]);
-	      _this.setState({ cellData: newPostData });
-	    }, _this.editTblRow = function (obj, cellID) {
-	      //console.log("obj in Stepper" + "id is"+obj.cellID);
-	      var currentData = _this.state.cellData;
-	      var index;
-	      for (var i = 0; i < currentData.length; i++) {
-	        if (currentData[i].cellID == cellID) {
-	          // index=obj.cellID;
-	          var editData = currentData.splice(i, 1, obj);
-	          editData = null;
-	          break;
-	        }
-	      };
-
-	      console.log("current data is");
-	      console.log(currentData);
-
-	      _this.setState({ cellData: currentData });
-	    }, _this.removetTblRow = function (cellID) {
-	      var currentData = _this.state.cellData;
-	      for (var i = 0; i < currentData.length; i++) {
-	        if (currentData[i].cellID == cellID) {
-	          // index=obj.cellID;
-	          var editData = currentData.splice(i, 1);
-	          editData = null;
-	          break;
-	        }
-	      };
-	      _this.setState({ cellData: currentData });
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(StepperComponent, [{
-	    key: 'renderStepActions',
-	    value: function renderStepActions(step) {
-	      var stepIndex = this.state.stepIndex;
-
-
-	      return _react2.default.createElement(
-	        'div',
-	        { style: { margin: '12px 0' } },
-	        _react2.default.createElement(_RaisedButton2.default, {
-	          label: stepIndex === 2 ? 'Finish' : 'Next',
-	          disableTouchRipple: true,
-	          disableFocusRipple: true,
-	          primary: true,
-	          onTouchTap: this.handleNext,
-	          style: { marginRight: 12 }
-	        }),
-	        step > 0 && _react2.default.createElement(_FlatButton2.default, {
-	          label: 'Back',
-	          disabled: stepIndex === 0,
-	          disableTouchRipple: true,
-	          disableFocusRipple: true,
-	          onTouchTap: this.handlePrev
-	        })
-	      );
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      var _state = this.state,
-	          finished = _state.finished,
-	          stepIndex = _state.stepIndex;
-
-
-	      return _react2.default.createElement(
-	        'div',
-	        { style: { maxWidth: 'auto', maxHeight: 'auto', margin: 'auto' } },
-	        _react2.default.createElement(
-	          _Stepper.Stepper,
-	          { activeStep: stepIndex, orientation: 'vertical' },
-	          _react2.default.createElement(
-	            _Stepper.Step,
-	            null,
-	            _react2.default.createElement(
-	              _Stepper.StepLabel,
-	              null,
-	              'Add New Summary Detail'
-	            ),
-	            _react2.default.createElement(
-	              _Stepper.StepContent,
-	              null,
-	              _react2.default.createElement(_AddNewSummary2.default, { handleConstructSubmitData: this.submitCellDetailInfo }),
-	              _react2.default.createElement(_AddNewSummaryTable2.default, { cellData: this.state.cellData,
-	                editDetailTblRow: this.editTblRow,
-	                removeDetailTblRow: this.removetTblRow
-	              }),
-	              this.renderStepActions(0)
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _Stepper.Step,
-	            null,
-	            _react2.default.createElement(
-	              _Stepper.StepLabel,
-	              null,
-	              'Cell Loading '
-	            ),
-	            _react2.default.createElement(
-	              _Stepper.StepContent,
-	              null,
-	              _react2.default.createElement(_CellLoading2.default, null),
-	              this.renderStepActions(1)
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _Stepper.Step,
-	            null,
-	            _react2.default.createElement(
-	              _Stepper.StepLabel,
-	              null,
-	              'Add Cell Construct'
-	            ),
-	            _react2.default.createElement(
-	              _Stepper.StepContent,
-	              null,
-	              _react2.default.createElement(_CellConstruct2.default, null),
-	              this.renderStepActions(2)
-	            )
-	          )
-	        ),
-	        finished && _react2.default.createElement(
-	          'p',
-	          { style: { margin: '20px 0', textAlign: 'center' } },
-	          _react2.default.createElement(
-	            'a',
-	            {
-	              href: '#',
-	              onClick: function onClick(event) {
-	                event.preventDefault();
-	                _this2.setState({ stepIndex: 0, finished: false });
-	              }
-	            },
-	            'Click here'
-	          ),
-	          ' to reset the example.'
-	        )
-	      );
-	    }
-	  }]);
-
-	  return StepperComponent;
-	}(_react2.default.Component);
-
-	exports.default = StepperComponent;
-
-/***/ }),
-/* 830 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _FloatingActionButton = __webpack_require__(773);
 
 	var _FloatingActionButton2 = _interopRequireDefault(_FloatingActionButton);
@@ -94523,628 +96009,7 @@
 
 	var _TextField2 = _interopRequireDefault(_TextField);
 
-	var _AppBar = __webpack_require__(336);
-
-	var _AppBar2 = _interopRequireDefault(_AppBar);
-
-	var _Divider = __webpack_require__(739);
-
-	var _Divider2 = _interopRequireDefault(_Divider);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var style = {
-	  marginRight: 20,
-	  marginTop: 30
-	};
-
-	var AddNewSummary = function (_React$Component) {
-	  _inherits(AddNewSummary, _React$Component);
-
-	  function AddNewSummary() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    _classCallCheck(this, AddNewSummary);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddNewSummary.__proto__ || Object.getPrototypeOf(AddNewSummary)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      openDialogue: false,
-	      cellNames: '',
-	      cellValues: '',
-	      cellComments: '',
-	      cellID: 0
-	    }, _this.openDialogueBar = function () {
-	      _this.setState({ openDialogue: true });
-	    }, _this.handleClose = function () {
-	      _this.setState({ openDialogue: false });
-	    }, _this.handleCellNameChange = function (e) {
-	      _this.setState({ cellNames: e.target.value });
-	    }, _this.handlecellValueChange = function (e) {
-	      _this.setState({ cellValues: e.target.value });
-	    }, _this.handleCellCommentChange = function (e) {
-	      _this.setState({ cellComments: e.target.value });
-	    }, _this.handleConstructSubmit = function (e) {
-	      e.preventDefault();
-	      _this.setState({ cellID: _this.state.cellID + 1 });
-	      var obj = {
-	        cellID: _this.state.cellID,
-	        cellValue: _this.state.cellValues,
-	        cellName: _this.state.cellNames,
-	        cellComment: _this.state.cellComments
-	      };
-	      console.log("object Detail in Add Construct" + obj.cellValue + obj.cellName + obj.cellComment + obj.cellID);
-	      _this.props.handleConstructSubmitData(obj);
-	      _this.setState({ cellValues: '', cellNames: '', cellComments: '', openDialogue: false });
-	    }, _temp), _possibleConstructorReturn(_this, _ret);
-	  }
-
-	  _createClass(AddNewSummary, [{
-	    key: 'render',
-	    value: function render() {
-
-	      var actions = [_react2.default.createElement(_Divider2.default, { style: { backgroundColor: 'rgb(0, 188, 212)' } }), _react2.default.createElement(_FlatButton2.default, {
-	        label: 'Cancel',
-	        primary: true,
-	        onTouchTap: this.handleClose
-	      }), _react2.default.createElement(_FlatButton2.default, {
-	        label: 'Submit',
-	        primary: true,
-	        keyboardFocused: true,
-	        onTouchTap: this.handleConstructSubmit
-	      })];
-
-	      var titleBar = _react2.default.createElement(_AppBar2.default, {
-	        title: 'Add Construct Cell'
-	      });
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _FloatingActionButton2.default,
-	          { style: style,
-	            onTouchTap: this.openDialogueBar,
-	            mini: true },
-	          _react2.default.createElement(_add2.default, null)
-	        ),
-	        _react2.default.createElement(
-	          _Dialog2.default,
-	          {
-	            title: titleBar,
-	            actions: actions,
-	            modal: true,
-	            open: this.state.openDialogue,
-	            onRequestClose: this.handleClose
-	          },
-	          _react2.default.createElement(_TextField2.default, {
-	            hintText: 'Track Name',
-	            floatingLabelText: 'Enter Track Name',
-	            value: this.state.cellNames,
-	            onChange: this.handleCellNameChange
-	          }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_TextField2.default, {
-	            hintText: 'Estimated Per Day Value',
-	            floatingLabelText: 'Enter Estimated Per Day Value',
-	            value: this.state.cellValues,
-	            onChange: this.handlecellValueChange
-	          }),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(_TextField2.default, {
-	            hintText: 'Comment',
-	            floatingLabelText: 'Enter Comment',
-	            value: this.state.cellComments,
-	            onChange: this.handleCellCommentChange
-	          }),
-	          _react2.default.createElement('br', null)
-	        )
-	      );
-	    }
-	  }]);
-
-	  return AddNewSummary;
-	}(_react2.default.Component);
-
-	exports.default = AddNewSummary;
-
-/***/ }),
-/* 831 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _Table = __webpack_require__(777);
-
-	var _IconMenu = __webpack_require__(790);
-
-	var _IconMenu2 = _interopRequireDefault(_IconMenu);
-
-	var _MenuItem = __webpack_require__(388);
-
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-
-	var _IconButton = __webpack_require__(339);
-
-	var _IconButton2 = _interopRequireDefault(_IconButton);
-
-	var _moreVert = __webpack_require__(792);
-
-	var _moreVert2 = _interopRequireDefault(_moreVert);
-
-	var _RaisedButton = __webpack_require__(473);
-
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-	var _TextField = __webpack_require__(733);
-
-	var _TextField2 = _interopRequireDefault(_TextField);
-
-	var _EachNewSummaryTable = __webpack_require__(832);
-
-	var _EachNewSummaryTable2 = _interopRequireDefault(_EachNewSummaryTable);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	//const ID;
-
-
-	var AddNewSummaryTable = function (_React$Component) {
-		_inherits(AddNewSummaryTable, _React$Component);
-
-		function AddNewSummaryTable() {
-			var _ref;
-
-			var _temp, _this, _ret;
-
-			_classCallCheck(this, AddNewSummaryTable);
-
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddNewSummaryTable.__proto__ || Object.getPrototypeOf(AddNewSummaryTable)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-				selectable: false,
-				showCheckboxes: false,
-				stripedRows: true,
-				editStatus: false,
-				cellNames: '',
-				cellValues: '',
-				cellComments: ''
-			}, _this.editDetails = function (obj, cellID) {
-				console.log("obj in Add Construct" + obj.cellID);
-				_this.props.editDetailTblRow(obj, cellID);
-			}, _this.removeDetails = function (cellID) {
-				_this.props.removeDetailTblRow(cellID);
-			}, _temp), _possibleConstructorReturn(_this, _ret);
-		}
-
-		_createClass(AddNewSummaryTable, [{
-			key: 'render',
-			value: function render() {
-				console.log(this.props.cellData);
-				if (this.props.cellData.length != 0) {
-					var projectData = this.props.cellData.map(function (cellData, index) {
-						return _react2.default.createElement(
-							'div',
-							{ key: index },
-							_react2.default.createElement(_EachNewSummaryTable2.default, {
-								cellName: cellData.cellName,
-								cellValue: cellData.cellValue,
-								cellComment: cellData.cellComment,
-								cellID: cellData.cellID,
-								editDetail: this.editDetails,
-								removeDetail: this.removeDetails
-							})
-						);
-					}.bind(this));
-
-					return _react2.default.createElement(
-						_Table.Table,
-						{
-							selectable: this.state.selectable,
-							style: { height: 'auto' }
-						},
-						_react2.default.createElement(
-							_Table.TableHeader,
-							null,
-							_react2.default.createElement(
-								_Table.TableRow,
-								null,
-								_react2.default.createElement(
-									_Table.TableHeaderColumn,
-									null,
-									'Cell Name'
-								),
-								_react2.default.createElement(
-									_Table.TableHeaderColumn,
-									null,
-									'Cell Value'
-								),
-								_react2.default.createElement(
-									_Table.TableHeaderColumn,
-									null,
-									'Comment'
-								),
-								_react2.default.createElement(
-									_Table.TableHeaderColumn,
-									null,
-									'Action'
-								)
-							)
-						),
-						_react2.default.createElement(
-							_Table.TableBody,
-							{ displayRowCheckbox: this.state.showCheckboxes },
-							projectData
-						)
-					);
-				} else {
-					return null;
-				}
-			}
-		}]);
-
-		return AddNewSummaryTable;
-	}(_react2.default.Component);
-
-	exports.default = AddNewSummaryTable;
-
-/***/ }),
-/* 832 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(37);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _Table = __webpack_require__(777);
-
-	var _IconMenu = __webpack_require__(790);
-
-	var _IconMenu2 = _interopRequireDefault(_IconMenu);
-
-	var _MenuItem = __webpack_require__(388);
-
-	var _MenuItem2 = _interopRequireDefault(_MenuItem);
-
-	var _IconButton = __webpack_require__(339);
-
-	var _IconButton2 = _interopRequireDefault(_IconButton);
-
-	var _moreVert = __webpack_require__(792);
-
-	var _moreVert2 = _interopRequireDefault(_moreVert);
-
-	var _RaisedButton = __webpack_require__(473);
-
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-	var _TextField = __webpack_require__(733);
-
-	var _TextField2 = _interopRequireDefault(_TextField);
-
-	var _FlatButton = __webpack_require__(475);
-
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-	var _done = __webpack_require__(794);
-
-	var _done2 = _interopRequireDefault(_done);
-
-	var _clear = __webpack_require__(795);
-
-	var _clear2 = _interopRequireDefault(_clear);
-
-	var _FontIcon = __webpack_require__(365);
-
-	var _FontIcon2 = _interopRequireDefault(_FontIcon);
-
-	var _colors = __webpack_require__(284);
-
-	var _Snackbar = __webpack_require__(741);
-
-	var _Snackbar2 = _interopRequireDefault(_Snackbar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var EachNewSummaryTable = function (_React$Component) {
-		_inherits(EachNewSummaryTable, _React$Component);
-
-		function EachNewSummaryTable() {
-			var _ref;
-
-			var _temp, _this, _ret;
-
-			_classCallCheck(this, EachNewSummaryTable);
-
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EachNewSummaryTable.__proto__ || Object.getPrototypeOf(EachNewSummaryTable)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-				editStatus: false,
-				cellName: _this.props.cellName,
-				cellValue: _this.props.cellValue,
-				cellComment: _this.props.cellComment,
-				openSnackBar: false
-			}, _this.editTblRow = function () {
-				// e.preventDefault();
-				_this.setState({ editStatus: true });
-			}, _this.editCancel = function () {
-				_this.setState({ editStatus: false });
-			}, _this.editSave = function () {
-				// e.preventDefault();
-				//alert('Save buttonn clicked');
-
-				console.log("cell id from Add Constuct table" + _this.props.cellID);
-				var obj = {
-					cellName: _this.state.cellName,
-					cellValue: _this.state.cellValue,
-					cellComment: _this.state.cellComment
-				};
-				console.log("inside  edit" + "obj detail" + obj.cellName + " " + obj.cellValue);
-				var cellID = _this.props.cellID;
-				_this.props.editDetail(obj, cellID);
-				// this.setState({cellName:'',cellValue:'',cellComment:''});
-				_this.setState({ editStatus: false });
-				_this.setState({ cellName: '', cellValue: '', cellComment: '' });
-			}, _this.removeTblRow = function () {
-				var cellID = _this.props.cellID;
-				_this.props.removeDetail(cellID);
-				_this.setState({ openSnackBar: true });
-			}, _this.handleCellNameChange = function (e) {
-				_this.setState({ cellName: e.target.value });
-			}, _this.handleCellValueChange = function (e) {
-				_this.setState({ cellValue: e.target.value });
-			}, _this.handleCellCommentChange = function (e) {
-				_this.setState({ cellComment: e.target.value });
-			}, _this.handleClose = function () {
-				_this.setState({ openSnackBar: false });
-			}, _temp), _possibleConstructorReturn(_this, _ret);
-		}
-
-		_createClass(EachNewSummaryTable, [{
-			key: 'render',
-			value: function render() {
-
-				if (this.state.editStatus == false) {
-					return _react2.default.createElement(
-						_Table.TableRow,
-						null,
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							this.props.cellName
-						),
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							this.props.cellValue
-						),
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							this.props.cellComment
-						),
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							_react2.default.createElement(
-								_IconMenu2.default,
-								{
-									iconButtonElement: _react2.default.createElement(
-										_IconButton2.default,
-										null,
-										_react2.default.createElement(_moreVert2.default, null)
-									),
-									anchorOrigin: { horizontal: 'left', vertical: 'top' },
-									targetOrigin: { horizontal: 'left', vertical: 'top' }
-								},
-								_react2.default.createElement(_MenuItem2.default, { primaryText: 'Edit', onTouchTap: this.editTblRow }),
-								_react2.default.createElement(_MenuItem2.default, { primaryText: 'Remove', onTouchTap: this.removeTblRow })
-							)
-						)
-					);
-				} else {
-					return _react2.default.createElement(
-						_Table.TableRow,
-						null,
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							_react2.default.createElement(_TextField2.default, {
-								hintText: 'Cell Name',
-								floatingLabelText: 'Edit Cell Name',
-								value: this.state.cellName,
-								onChange: this.handleCellNameChange
-							})
-						),
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							_react2.default.createElement(_TextField2.default, {
-								hintText: 'Cell Value',
-								floatingLabelText: 'Edit Cell Value',
-								value: this.state.cellValue,
-								onChange: this.handleCellValueChange
-							})
-						),
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							_react2.default.createElement(_TextField2.default, {
-								hintText: 'Cell Comment',
-								floatingLabelText: 'Edit Cell Comment',
-								value: this.state.cellComment,
-								onChange: this.handleCellCommentChange
-							})
-						),
-						_react2.default.createElement(
-							_Table.TableRowColumn,
-							null,
-							_react2.default.createElement(
-								_IconButton2.default,
-								{ touch: true, onTouchTap: this.editSave },
-								_react2.default.createElement(_done2.default, { color: _colors.blue500 })
-							),
-							_react2.default.createElement(
-								_IconButton2.default,
-								{ touch: true, onTouchTap: this.editCancel },
-								_react2.default.createElement(_clear2.default, { color: _colors.red500 })
-							)
-						)
-					);
-				}
-			}
-		}]);
-
-		return EachNewSummaryTable;
-	}(_react2.default.Component);
-
-	exports.default = EachNewSummaryTable;
-
-/***/ }),
-/* 833 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _AddCellConstruct = __webpack_require__(834);
-
-	var _AddCellConstruct2 = _interopRequireDefault(_AddCellConstruct);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var CellConstruct = function (_React$Component) {
-		_inherits(CellConstruct, _React$Component);
-
-		function CellConstruct() {
-			_classCallCheck(this, CellConstruct);
-
-			return _possibleConstructorReturn(this, (CellConstruct.__proto__ || Object.getPrototypeOf(CellConstruct)).apply(this, arguments));
-		}
-
-		_createClass(CellConstruct, [{
-			key: 'render',
-			value: function render() {
-
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(_AddCellConstruct2.default, null)
-				);
-			}
-		}]);
-
-		return CellConstruct;
-	}(_react2.default.Component);
-
-	exports.default = CellConstruct;
-
-/***/ }),
-/* 834 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _FloatingActionButton = __webpack_require__(773);
-
-	var _FloatingActionButton2 = _interopRequireDefault(_FloatingActionButton);
-
-	var _add = __webpack_require__(775);
-
-	var _add2 = _interopRequireDefault(_add);
-
-	var _Dialog = __webpack_require__(731);
-
-	var _Dialog2 = _interopRequireDefault(_Dialog);
-
-	var _FlatButton = __webpack_require__(475);
-
-	var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-	var _RaisedButton = __webpack_require__(473);
-
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-	var _TextField = __webpack_require__(733);
-
-	var _TextField2 = _interopRequireDefault(_TextField);
-
-	var _DatePicker = __webpack_require__(798);
+	var _DatePicker = __webpack_require__(804);
 
 	var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
@@ -95152,7 +96017,7 @@
 
 	var _AppBar2 = _interopRequireDefault(_AppBar);
 
-	var _lodash = __webpack_require__(815);
+	var _lodash = __webpack_require__(820);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -95167,6 +96032,9 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// import AddCellContent from './AddCellContent.jsx';
+
 
 	var style = {
 	  marginRight: 20,
@@ -95193,11 +96061,96 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddCellConstruct.__proto__ || Object.getPrototypeOf(AddCellConstruct)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      openDialogue: false
-	    }, _this.openDialogueBar = function () {
+	      openDialogue: false,
+	      // tracklist:['as_M','as_C','Set_S','id_S','id_M','id_C','ia_S','ia_M','ia_C','as_M_Lon'],
+	      practiseName: '',
+	      roleName: '',
+	      locationName: '',
+	      bandName: '',
+	      txtValue: '',
+	      names: '',
+	      localTrackList: [],
+	      obj: { practiseName: "", roleName: "", locationName: "", bandName: ""
+	        // obj:{practise:"",role:"",location:"",band:"",as_M:"",as_C:"",Set_S:"",id_S:"",id_M:"",id_C:"",ia_S:"",ia_M:"",ia_C:"",as_M_Lon:""},
+	        // text:[{practise:"Sr Dev",role:"Developer",location:"India",band:"B3",as_M:1,as_C:1,Set_S:1,id_S:1,id_M:1,id_C:1,ia_S:1,ia_M:1,ia_C:1,as_M_Lon:1}]
+	      } }, _this.openDialogueBar = function () {
 	      _this.setState({ openDialogue: true });
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/trackSetting',
+	        type: 'GET',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add Track for get');
+	          console.log(data);
+	          //  var currentState=this.state.localTrackList;
+	          //  var newData=[currentState].concat(data.message)
+	          //  var newData=[data.message].concat(currentState);
+	          this.setState({ localTrackList: data.message });
+	          // this.state.localTrackList.concat[data.message];
+	          console.log("localTrackList");
+	          console.log(this.state.localTrackList);
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add track');
+	        }.bind(_this)
+	      });
 	    }, _this.handleClose = function () {
 	      _this.setState({ openDialogue: false });
+	    }, _this.handlePractiseNameChange = function (e) {
+	      _this.setState({ practiseName: e.target.value });
+	    }, _this.handleRoleNameChange = function (e) {
+	      _this.setState({ roleName: e.target.value });
+	    }, _this.handleLocationNameChange = function (e) {
+	      _this.setState({ locationName: e.target.value });
+	    }, _this.handleBandNameChange = function (e) {
+	      _this.setState({ bandName: e.target.value });
+	    }, _this.handleTrackNameChange = function (e) {
+	      _this.setState({ names: e.target.name });
+	      _this.setState({ txtValue: e.target.value });
+	    }, _this.componetWillMount = function () {
+	      console.log('cwm in CellConstruct');
+	    }, _this.handleAfterChange = function () {
+	      console.log('txtbox name is' + _this.state.names);
+	      console.log('txtbox value is' + _this.state.txtValue);
+	      _this.state.obj[_this.state.names] = _this.state.txtValue;
+	      //   // let index=0;
+	      //   // for(let i=0; i<this.state.localTrackList.length;i++){
+	      //   //   if(this.state.tracklist[i].trackName==this.state.names){
+	      //   //     index=i;
+	      //   //     break;
+	      //   //   }
+	      //   // }
+	      //   // let keyVar=this.state.tracklist[index];
+	      //   // let currentState=this.state.text;
+	      //   // let val=this.state.textF;
+	      //   // this.state.obj[keyVar]=val;
+	      //   //  console.log(this.state.obj);
+	    }, _this.onAddingTitle = function () {
+	      console.log('obj is');
+	      // console.log(this.state.obj);
+	      // var tmpObj={
+	      //   practiseName:this.state.practiseName,
+	      //   roleName:this.state.roleName,
+	      //   locationName:this.state.locationName,
+	      //   bandName:this.state.bandName
+	      // }
+	      _this.state.obj.practiseName = _this.state.practiseName;
+	      _this.state.obj.roleName = _this.state.roleName;
+	      _this.state.obj.locationName = _this.state.locationName;
+	      _this.state.obj.bandName = _this.state.bandName;
+	      _this.state.obj._id = Date.now();
+	      console.log('object send from AddCellConstruct');
+	      console.log(_this.state.obj);
+	      var newObj = _this.state.obj;
+	      _this.props.CellConstructObj(newObj);
+	      newObj = null;
+	      _this.setState({ openDialogue: false });
+	      _this.setState({ practiseName: '', roleName: '', locationName: '', bandName: '' });
+	      //     var dataCurrentState=this.state.text;
+	      //     this.state.text.push(this.state.obj);
+	      // console.log(this.state.text);
+
+	      //   console.log(this.state.obj);
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
@@ -95208,15 +96161,33 @@
 	      var titleBar = _react2.default.createElement(_AppBar2.default, { title: 'Add Cell Construct' });
 
 	      var actions = [_react2.default.createElement(_Divider2.default, { style: { backgroundColor: 'rgb(0, 188, 212)' } }), _react2.default.createElement(_FlatButton2.default, {
+	        key: 'one',
 	        label: 'Cancel',
 	        primary: true,
 	        onTouchTap: this.handleClose
 	      }), _react2.default.createElement(_FlatButton2.default, {
+	        key: 'tw0',
 	        label: 'Submit',
 	        primary: true,
 	        keyboardFocused: true,
 	        onTouchTap: this.onAddingTitle
 	      })];
+
+	      var trackArr = [];
+	      for (var i = 0; i < this.state.localTrackList.length; i++) {
+	        trackArr.push(_react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(_TextField2.default, { key: i,
+	            name: this.state.localTrackList[i].trackName,
+	            hintText: 'Practise Name',
+	            floatingLabelText: this.state.localTrackList[i].trackName,
+	            onChange: this.handleTrackNameChange,
+	            onBlur: this.handleAfterChange
+	          }),
+	          _react2.default.createElement('br', null)
+	        ));
+	      }
 
 	      return _react2.default.createElement(
 	        'div',
@@ -95228,15 +96199,47 @@
 	            mini: true },
 	          _react2.default.createElement(_add2.default, null)
 	        ),
-	        _react2.default.createElement(_Dialog2.default, {
-	          title: titleBar,
-	          actions: actions,
-	          open: this.state.openDialogue,
-	          modal: true,
-	          onRequestClose: this.handleClose,
-	          contentStyle: customContentStyle,
-	          autoScrollBodyContent: true
-	        })
+	        _react2.default.createElement(
+	          _Dialog2.default,
+	          {
+	            title: titleBar,
+	            actions: actions,
+	            open: this.state.openDialogue,
+	            modal: true,
+	            onRequestClose: this.handleClose,
+	            contentStyle: customContentStyle,
+	            autoScrollBodyContent: true
+	          },
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Practise Name',
+	            floatingLabelText: 'Enter Practise Name',
+	            value: this.state.practiseName,
+	            onChange: this.handlePractiseNameChange
+	          }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Role Name',
+	            floatingLabelText: 'Enter Role Name',
+	            value: this.state.roleName,
+	            onChange: this.handleRoleNameChange
+	          }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Location Name',
+	            floatingLabelText: 'Enter Location Name',
+	            value: this.state.locationName,
+	            onChange: this.handleLocationNameChange
+	          }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Band Name',
+	            floatingLabelText: 'Enter Band Name',
+	            value: this.state.bandName,
+	            onChange: this.handleBandNameChange
+	          }),
+	          _react2.default.createElement('br', null),
+	          trackArr
+	        )
 	      );
 	    }
 	  }]);
@@ -95245,6 +96248,1792 @@
 	}(_react2.default.Component);
 
 	exports.default = AddCellConstruct;
+
+/***/ }),
+/* 824 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Table = __webpack_require__(783);
+
+	var _EachNewCellConstructData = __webpack_require__(825);
+
+	var _EachNewCellConstructData2 = _interopRequireDefault(_EachNewCellConstructData);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CellConstructTbl = function (_React$Component) {
+	  _inherits(CellConstructTbl, _React$Component);
+
+	  function CellConstructTbl() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, CellConstructTbl);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CellConstructTbl.__proto__ || Object.getPrototypeOf(CellConstructTbl)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      items: [],
+	      count: 0
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(CellConstructTbl, [{
+	    key: 'render',
+	    value: function render() {
+	      console.log('data in CellConstructTbl');
+	      console.log(this.props.cellConstructData);
+	      // console.log(this.props.cellConstructData);
+	      // if(this.props.cellConstructData.length!=0){
+	      var projectData = this.props.cellConstructData.map(function (cellConstructData, index) {
+	        return _react2.default.createElement(
+	          'div',
+	          { key: cellConstructData._id },
+	          _react2.default.createElement(_EachNewCellConstructData2.default, {
+	            practiseName: cellConstructData.practiseName,
+	            roleName: cellConstructData.roleName,
+	            locationName: cellConstructData.locationName,
+	            bandName: cellConstructData.bandName,
+	            _id: cellConstructData._id,
+	            trackData: cellConstructData
+	          })
+	        );
+	      }.bind(this));
+	      var tmpList = [];
+
+	      console.log('header list in CellConstructTbl');
+	      console.log(this.props.headerList);
+	      if (this.state.count == 1) {
+	        for (var i = 0; i < this.props.headerList.length - 1; i++) {
+	          this.state.items.push(_react2.default.createElement(
+	            _Table.TableHeaderColumn,
+	            null,
+	            this.props.headerList[i]
+	          ));
+	        }
+	      }
+	      this.state.count++;
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        projectData
+	      )
+	      // <Table
+	      // selectable={this.state.selectable}
+	      // style={{height:'auto'}}
+	      // >
+	      // 			 <TableHeader >
+	      // 		<TableRow >
+	      // 			{this.state.items}
+	      // 				</TableRow>
+	      // 			 </TableHeader>
+	      // 		 <TableBody displayRowCheckbox={this.state.showCheckboxes}>
+	      // 		  {projectData}
+	      //
+	      // 	</TableBody>
+	      // 	</Table>
+	      ;
+	    }
+	  }]);
+
+	  return CellConstructTbl;
+	}(_react2.default.Component);
+
+	exports.default = CellConstructTbl;
+
+/***/ }),
+/* 825 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Table = __webpack_require__(783);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EachNewCellConstructData = function (_React$Component) {
+	  _inherits(EachNewCellConstructData, _React$Component);
+
+	  function EachNewCellConstructData() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, EachNewCellConstructData);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EachNewCellConstructData.__proto__ || Object.getPrototypeOf(EachNewCellConstructData)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      obj: {},
+	      items: []
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(EachNewCellConstructData, [{
+	    key: 'render',
+	    value: function render() {
+	      console.log('data in EachNewCellConstructData');
+	      console.log(this.props.trackData);
+	      console.log(this.props.roleName);
+	      var obj = {};
+	      this.state.obj = this.props.trackData;
+	      //   let tbldata=  Object.entries(this.state.obj).forEach(
+	      //     ([key, value]) =>  this.state.items.push(<TableRowColumn >{value}</TableRowColumn>)
+	      // );
+	      // console.log(tbldata)
+	      // foreach()
+	      //     Object.keys(this.props.trackData).map(function(objectKey, index) {
+	      //     var value = this.props.trackData[objectKey];
+	      //     console.log(value);
+	      // });
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { marginTop: '70px' } },
+	        this.props.roleName,
+	        this.props.practiseName
+	      )
+
+	      // <TableRow >
+	      //           <TableRowColumn >{this.props.practiseName}</TableRowColumn>
+	      //           <TableRowColumn >{this.props.roleName}</TableRowColumn>
+	      //           <TableRowColumn >{this.props.locationName}</TableRowColumn>
+	      //           <TableRowColumn >{this.props.bandName}</TableRowColumn>
+	      //
+	      //
+	      //
+	      //         </TableRow>
+	      ;
+	    }
+	  }]);
+
+	  return EachNewCellConstructData;
+	}(_react2.default.Component);
+
+	exports.default = EachNewCellConstructData;
+
+/***/ }),
+/* 826 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(478);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var DashBoard = function (_React$Component) {
+		_inherits(DashBoard, _React$Component);
+
+		function DashBoard() {
+			_classCallCheck(this, DashBoard);
+
+			return _possibleConstructorReturn(this, (DashBoard.__proto__ || Object.getPrototypeOf(DashBoard)).apply(this, arguments));
+		}
+
+		_createClass(DashBoard, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					_reactBootstrap.Grid,
+					null,
+					_react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'h2',
+							{ style: { marginTop: '100px' } },
+							' DashBoard Page is coming '
+						)
+					)
+				);
+			}
+		}]);
+
+		return DashBoard;
+	}(_react2.default.Component);
+
+	exports.default = DashBoard;
+
+/***/ }),
+/* 827 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(478);
+
+	var _AddTrack = __webpack_require__(828);
+
+	var _AddTrack2 = _interopRequireDefault(_AddTrack);
+
+	var _AddRole = __webpack_require__(835);
+
+	var _AddRole2 = _interopRequireDefault(_AddRole);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Settings = function (_React$Component) {
+	  _inherits(Settings, _React$Component);
+
+	  function Settings() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, Settings);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Settings.__proto__ || Object.getPrototypeOf(Settings)).call.apply(_ref, [this].concat(args))), _this), _this.roleList = function (roleName) {
+	      console.log(roleName);
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+	  // state={
+	  //   trackData=[{id:0,trackName:'ID_S'}];
+	  // }
+
+
+	  _createClass(Settings, [{
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _reactBootstrap.Grid,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Row,
+	            { style: { marginTop: '100px' } },
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xs: 4 },
+	              _react2.default.createElement(_AddTrack2.default, null)
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.Col,
+	              { xs: 4 },
+	              _react2.default.createElement(_AddRole2.default, null),
+	              ' '
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Settings;
+	}(_react2.default.Component);
+
+	exports.default = Settings;
+
+/***/ }),
+/* 828 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Card = __webpack_require__(751);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _AddTrackName = __webpack_require__(829);
+
+	var _AddTrackName2 = _interopRequireDefault(_AddTrackName);
+
+	var _DisplayTrack = __webpack_require__(830);
+
+	var _DisplayTrack2 = _interopRequireDefault(_DisplayTrack);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AddTrack = function (_React$Component) {
+	  _inherits(AddTrack, _React$Component);
+
+	  function AddTrack() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, AddTrack);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddTrack.__proto__ || Object.getPrototypeOf(AddTrack)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      trackData: []
+	    }, _this.componentWillMount = function () {
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/trackSetting',
+	        type: 'GET',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add Track for get');
+	          console.log(data);
+	          this.setState({ trackData: data.message });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add track');
+	        }.bind(_this)
+	      });
+	      console.log("CWM is called");
+	    }, _this.trackList = function (trackName, _id) {
+	      console.log('ins_ide Add Track Component');
+	      var currentState = _this.state.trackData;
+	      console.log('name ' + trackName + '_id is ' + _id);
+	      var obj = {
+	        _id: _id,
+	        trackName: trackName
+	      };
+
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/trackSetting',
+	        type: 'POST',
+	        data: obj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add track');
+	          console.log(data);
+	          var newData = [data.message].concat(currentState);
+	          this.setState({ trackData: newData });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add track');
+	          this.setState({ trackData: currentState });
+	        }.bind(_this)
+	      });
+	      // var currentState=this.state.trackData;
+	      // var newData=[obj].concat(currentState);
+	      // console.log('new data is');
+	      // console.log(newData);
+	      // this.setState({trackData:newData});
+	      // console.log("new object created in Add track");
+	      // console.log(this.state.trackData);
+	    }, _this.chipDltRequest = function (_id) {
+	      // var dataCurrentState=this.state.trackData;
+	      // 	var index;
+	      // for (var i = 0; i < dataCurrentState.length; i++) {
+	      //   if(dataCurrentState[i]._id==_id){
+	      //    // index=obj.cell_id;
+	      //    var editData=dataCurrentState.splice(i,1);
+	      //    editData=null;
+	      //     break;
+	      //   }
+	      // };
+	      //
+	      // this.setState({trackData:dataCurrentState});
+	      var dataCurrentState = _this.state.trackData;
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/trackSetting/' + _id,
+	        type: 'DELETE',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add track for remove');
+	          console.log(data);
+	          var index;
+	          for (var i = 0; i < dataCurrentState.length; i++) {
+	            if (dataCurrentState[i]._id == _id) {
+	              // index=obj.cellID;
+	              var editData = dataCurrentState.splice(i, 1);
+	              editData = null;
+	              break;
+	            }
+	          };
+
+	          this.setState({ trackData: dataCurrentState });
+	          // /       this.setState({trackData:data.message});
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add track for remove');
+	        }.bind(_this)
+	      });
+	    }, _this.editTrackName = function (obj, _id) {
+	      console.log("obj in Addtrack");
+	      console.log(obj);
+	      console.log(_id);
+	      var dataCurrentState = _this.state.trackData;
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/trackSetting',
+	        type: 'PUT',
+	        data: obj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add track for put');
+	          console.log(data.message);
+	          var index;
+	          for (var i = 0; i < dataCurrentState.length; i++) {
+	            if (dataCurrentState[i]._id == _id) {
+	              // index=obj.cellID;
+	              var editData = dataCurrentState.splice(i, 1, obj);
+	              editData = null;
+	              break;
+	            }
+	          };
+	          console.log("data after edit");
+	          console.log(dataCurrentState);
+	          this.setState({ trackData: dataCurrentState });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add track for put');
+	          this.setState({ trackData: dataCurrentState });
+	        }.bind(_this)
+	      });
+	      //   console.log("obj in AddTrack");
+	      //   console.log(obj);
+	      //   console.log(_id);
+	      //   var dataCurrentState=this.state.trackData;
+	      //   var index;
+	      // for (var i = 0; i < dataCurrentState.length; i++) {
+	      //   if(dataCurrentState[i]._id==_id){
+	      //    // index=obj.cell_id;
+	      //    var editData=dataCurrentState.splice(i,1,obj);
+	      //    editData=null;
+	      //     break;
+	      //   }
+	      // };
+	      // console.log("data after edit");
+	      // console.log(dataCurrentState);
+	      // this.setState({trackData:dataCurrentState});
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(AddTrack, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Card.Card,
+	        { style: { width: '300px' } },
+	        _react2.default.createElement(_Card.CardHeader, {
+	          title: 'Track List',
+	          subtitle: 'manipulate Track List',
+	          actAsExpander: true,
+	          showExpandableButton: true
+	        }),
+	        _react2.default.createElement(
+	          _Card.CardText,
+	          { expandable: true },
+	          _react2.default.createElement(_AddTrackName2.default, { trackList: this.trackList
+	          }),
+	          _react2.default.createElement(
+	            'div',
+	            { style: { marginTop: '50px' } },
+	            _react2.default.createElement(_DisplayTrack2.default, { trackData: this.state.trackData,
+	              chipDltRequest: this.chipDltRequest,
+	              editTrackName: this.editTrackName
+	            })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return AddTrack;
+	}(_react2.default.Component);
+
+	exports.default = AddTrack;
+
+/***/ }),
+/* 829 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AddTrackName = function (_React$Component) {
+	  _inherits(AddTrackName, _React$Component);
+
+	  function AddTrackName() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, AddTrackName);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddTrackName.__proto__ || Object.getPrototypeOf(AddTrackName)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      trackName: '',
+	      txtFormStatus: false
+	    }, _this.handleTrackNameChange = function (e) {
+	      _this.setState({ trackName: e.target.value });
+	    }, _this.submitTrackName = function (e) {
+	      //alert(this.state.trackName);
+	      e.preventDefault();
+	      console.log('obj in Add Track Name');
+	      //console.log('name ' + this.state.trackName + '_id is '+ this.state._id);
+	      var _id = Date.now();
+	      _this.props.trackList(_this.state.trackName, _id);
+	      _this.setState({ txtFormStatus: false, trackName: '' });
+	    }, _this.handleOpen = function () {
+	      _this.setState({ txtFormStatus: true });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(AddTrackName, [{
+	    key: 'render',
+	    value: function render() {
+	      var txtForm = this.state.txtFormStatus ? [_react2.default.createElement(_TextField2.default, {
+	        key: 'one',
+	        hintText: 'Track Name',
+	        floatingLabelText: 'Enter Track Name',
+	        value: this.state.trackName,
+	        onChange: this.handleTrackNameChange
+	      }), _react2.default.createElement(_FlatButton2.default, { key: 'two', label: 'Submit', primary: true, onTouchTap: this.submitTrackName })] : null;
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_RaisedButton2.default, { label: 'Add Track',
+	          primary: true,
+	          onTouchTap: this.handleOpen
+	        }),
+	        txtForm
+	      );
+	    }
+	  }]);
+
+	  return AddTrackName;
+	}(_react2.default.Component);
+
+	exports.default = AddTrackName;
+
+/***/ }),
+/* 830 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _EachTrackDisplay = __webpack_require__(831);
+
+	var _EachTrackDisplay2 = _interopRequireDefault(_EachTrackDisplay);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var DisplayTrack = function (_React$Component) {
+	  _inherits(DisplayTrack, _React$Component);
+
+	  function DisplayTrack() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, DisplayTrack);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DisplayTrack.__proto__ || Object.getPrototypeOf(DisplayTrack)).call.apply(_ref, [this].concat(args))), _this), _this.chipDltRequest = function (_id) {
+	      _this.props.chipDltRequest(_id);
+	    }, _this.editTrackName = function (obj, _id) {
+	      _this.props.editTrackName(obj, _id);
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(DisplayTrack, [{
+	    key: 'render',
+	    value: function render() {
+
+	      console.log("DisplayTrack Componennt");
+	      console.log(this.props.trackData);
+
+	      var projectData = this.props.trackData.map(function (data) {
+	        console.log(data);
+	        return _react2.default.createElement(
+	          'div',
+	          { key: data._id },
+	          _react2.default.createElement(_EachTrackDisplay2.default, {
+	            trackName: data.trackName,
+	            _id: data._id,
+	            chipDltRequest: this.chipDltRequest,
+	            editTrackName: this.editTrackName
+	          })
+	        );
+	      }.bind(this));
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        projectData
+	      );
+	    }
+	  }]);
+
+	  return DisplayTrack;
+	}(_react2.default.Component);
+
+	exports.default = DisplayTrack;
+
+/***/ }),
+/* 831 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Chip = __webpack_require__(832);
+
+	var _Chip2 = _interopRequireDefault(_Chip);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var styles = {
+	  chip: {
+	    margin: 4
+	  },
+	  wrapper: {
+	    display: 'flex',
+	    flexWrap: 'wrap'
+	  }
+	};
+
+	var EachTrackDisplay = function (_React$Component) {
+	  _inherits(EachTrackDisplay, _React$Component);
+
+	  function EachTrackDisplay() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, EachTrackDisplay);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EachTrackDisplay.__proto__ || Object.getPrototypeOf(EachTrackDisplay)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      trackEditStatus: false,
+	      trackName: _this.props.trackName
+	    }, _this.handleTrackNameChange = function (e) {
+	      _this.setState({ trackName: e.target.value });
+	    }, _this.handleRequestDelete = function () {
+	      _this.props.chipDltRequest(_this.props._id);
+	    }, _this.handleTouchTap = function () {
+	      _this.setState({ trackEditStatus: true });
+	    }, _this.submitEditTrackName = function (e) {
+	      //  console.log('role name is'+this.state.roleNames);
+	      e.preventDefault();
+	      var obj = {
+	        _id: _this.props._id,
+	        trackName: _this.state.trackName
+	      };
+	      _this.setState({ trackEditStatus: false });
+	      console.log(obj);
+	      _this.props.editTrackName(obj, _this.props._id);
+	    }, _this.cancelEditTrackName = function () {
+	      _this.setState({ trackEditStatus: false });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(EachTrackDisplay, [{
+	    key: 'render',
+	    value: function render() {
+
+	      if (this.state.trackEditStatus == true) {
+	        return _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Track Name',
+	            floatingLabelText: 'Edit Track Name',
+	            value: this.state.trackName,
+	            onChange: this.handleTrackNameChange
+	          }),
+	          _react2.default.createElement(_FlatButton2.default, { label: 'Submit', primary: true, onTouchTap: this.submitEditTrackName }),
+	          _react2.default.createElement(_FlatButton2.default, { label: 'Cancel', primary: true, onTouchTap: this.cancelEditTrackName })
+	        );
+	      } else {
+	        return _react2.default.createElement(
+	          'div',
+	          { style: styles.wrapper },
+	          _react2.default.createElement(
+	            _Chip2.default,
+	            {
+	              onRequestDelete: this.handleRequestDelete,
+	              onTouchTap: this.handleTouchTap,
+	              style: styles.chip
+	            },
+	            this.props.trackName
+	          )
+	        );
+	      }
+	    }
+	  }]);
+
+	  return EachTrackDisplay;
+	}(_react2.default.Component);
+
+	exports.default = EachTrackDisplay;
+
+/***/ }),
+/* 832 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _Chip = __webpack_require__(833);
+
+	var _Chip2 = _interopRequireDefault(_Chip);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Chip2.default;
+
+/***/ }),
+/* 833 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _simpleAssign = __webpack_require__(338);
+
+	var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _keycode = __webpack_require__(350);
+
+	var _keycode2 = _interopRequireDefault(_keycode);
+
+	var _colorManipulator = __webpack_require__(282);
+
+	var _EnhancedButton = __webpack_require__(343);
+
+	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
+
+	var _cancel = __webpack_require__(834);
+
+	var _cancel2 = _interopRequireDefault(_cancel);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	function getStyles(props, context, state) {
+	  var chip = context.muiTheme.chip;
+
+
+	  var backgroundColor = props.backgroundColor || chip.backgroundColor;
+	  var focusColor = (0, _colorManipulator.emphasize)(backgroundColor, 0.08);
+	  var pressedColor = (0, _colorManipulator.emphasize)(backgroundColor, 0.12);
+
+	  return {
+	    avatar: {
+	      marginRight: -4
+	    },
+	    deleteIcon: {
+	      color: state.deleteHovered ? (0, _colorManipulator.fade)(chip.deleteIconColor, 0.4) : chip.deleteIconColor,
+	      cursor: 'pointer',
+	      margin: '4px 4px 0px -8px'
+	    },
+	    label: {
+	      color: props.labelColor || chip.textColor,
+	      fontSize: chip.fontSize,
+	      fontWeight: chip.fontWeight,
+	      lineHeight: '32px',
+	      paddingLeft: 12,
+	      paddingRight: 12,
+	      userSelect: 'none',
+	      whiteSpace: 'nowrap'
+	    },
+	    root: {
+	      backgroundColor: state.clicked ? pressedColor : state.focused || state.hovered ? focusColor : backgroundColor,
+	      borderRadius: 16,
+	      boxShadow: state.clicked ? chip.shadow : null,
+	      cursor: props.onTouchTap ? 'pointer' : 'default',
+	      display: 'flex',
+	      whiteSpace: 'nowrap',
+	      width: 'fit-content'
+	    }
+	  };
+	}
+
+	var Chip = function (_Component) {
+	  _inherits(Chip, _Component);
+
+	  function Chip() {
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, Chip);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Chip)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+	      clicked: false,
+	      deleteHovered: false,
+	      focused: false,
+	      hovered: false
+	    }, _this.handleBlur = function (event) {
+	      _this.setState({ clicked: false, focused: false });
+	      _this.props.onBlur(event);
+	    }, _this.handleFocus = function (event) {
+	      if (_this.props.onTouchTap || _this.props.onRequestDelete) {
+	        _this.setState({ focused: true });
+	      }
+	      _this.props.onFocus(event);
+	    }, _this.handleKeyboardFocus = function (event, keyboardFocused) {
+	      if (keyboardFocused) {
+	        _this.handleFocus();
+	        _this.props.onFocus(event);
+	      } else {
+	        _this.handleBlur();
+	      }
+
+	      _this.props.onKeyboardFocus(event, keyboardFocused);
+	    }, _this.handleKeyDown = function (event) {
+	      if ((0, _keycode2.default)(event) === 'backspace') {
+	        event.preventDefault();
+	        if (_this.props.onRequestDelete) {
+	          _this.props.onRequestDelete(event);
+	        }
+	      }
+	      _this.props.onKeyDown(event);
+	    }, _this.handleMouseDown = function (event) {
+	      // Only listen to left clicks
+	      if (event.button === 0) {
+	        event.stopPropagation();
+	        if (_this.props.onTouchTap) {
+	          _this.setState({ clicked: true });
+	        }
+	      }
+	      _this.props.onMouseDown(event);
+	    }, _this.handleMouseEnter = function (event) {
+	      if (_this.props.onTouchTap) {
+	        _this.setState({ hovered: true });
+	      }
+	      _this.props.onMouseEnter(event);
+	    }, _this.handleMouseEnterDeleteIcon = function () {
+	      _this.setState({ deleteHovered: true });
+	    }, _this.handleMouseLeave = function (event) {
+	      _this.setState({
+	        clicked: false,
+	        hovered: false
+	      });
+	      _this.props.onMouseLeave(event);
+	    }, _this.handleMouseLeaveDeleteIcon = function () {
+	      _this.setState({ deleteHovered: false });
+	    }, _this.handleMouseUp = function (event) {
+	      _this.setState({ clicked: false });
+	      _this.props.onMouseUp(event);
+	    }, _this.handleTouchTapDeleteIcon = function (event) {
+	      // Stop the event from bubbling up to the `Chip`
+	      event.stopPropagation();
+	      _this.props.onRequestDelete(event);
+	    }, _this.handleTouchEnd = function (event) {
+	      _this.setState({ clicked: false });
+	      _this.props.onTouchEnd(event);
+	    }, _this.handleTouchStart = function (event) {
+	      event.stopPropagation();
+	      if (_this.props.onTouchTap) {
+	        _this.setState({ clicked: true });
+	      }
+	      _this.props.onTouchStart(event);
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(Chip, [{
+	    key: 'render',
+	    value: function render() {
+	      var buttonEventHandlers = {
+	        onBlur: this.handleBlur,
+	        onFocus: this.handleFocus,
+	        onKeyDown: this.handleKeyDown,
+	        onMouseDown: this.handleMouseDown,
+	        onMouseEnter: this.handleMouseEnter,
+	        onMouseLeave: this.handleMouseLeave,
+	        onMouseUp: this.handleMouseUp,
+	        onTouchEnd: this.handleTouchEnd,
+	        onTouchStart: this.handleTouchStart,
+	        onKeyboardFocus: this.handleKeyboardFocus
+	      };
+
+	      var prepareStyles = this.context.muiTheme.prepareStyles;
+
+	      var styles = getStyles(this.props, this.context, this.state);
+
+	      var _props = this.props;
+	      var children = _props.children;
+	      var style = _props.style;
+	      var className = _props.className;
+	      var labelStyle = _props.labelStyle;
+	      var labelColor = _props.labelColor;
+	      var backgroundColor = _props.backgroundColor;
+	      var onRequestDelete = _props.onRequestDelete;
+
+	      var other = _objectWithoutProperties(_props, ['children', 'style', 'className', 'labelStyle', 'labelColor', 'backgroundColor', 'onRequestDelete']);
+
+	      var deletable = this.props.onRequestDelete;
+	      var avatar = null;
+
+	      style = (0, _simpleAssign2.default)(styles.root, style);
+	      labelStyle = prepareStyles((0, _simpleAssign2.default)(styles.label, labelStyle));
+
+	      var deleteIcon = deletable ? _react2.default.createElement(_cancel2.default, {
+	        color: styles.deleteIcon.color,
+	        style: styles.deleteIcon,
+	        onTouchTap: this.handleTouchTapDeleteIcon,
+	        onMouseEnter: this.handleMouseEnterDeleteIcon,
+	        onMouseLeave: this.handleMouseLeaveDeleteIcon
+	      }) : null;
+
+	      var childCount = _react2.default.Children.count(children);
+
+	      // If the first child is an avatar, extract it and style it
+	      if (childCount > 1) {
+	        children = _react2.default.Children.toArray(children);
+
+	        if (_react2.default.isValidElement(children[0]) && children[0].type.muiName === 'Avatar') {
+	          avatar = children.shift();
+
+	          avatar = _react2.default.cloneElement(avatar, {
+	            style: (0, _simpleAssign2.default)(styles.avatar, avatar.props.style),
+	            size: 32
+	          });
+	        }
+	      }
+
+	      return _react2.default.createElement(
+	        _EnhancedButton2.default,
+	        _extends({}, other, buttonEventHandlers, {
+	          className: className,
+	          containerElement: 'div' // Firefox doesn't support nested buttons
+	          , disableTouchRipple: true,
+	          disableFocusRipple: true,
+	          style: style
+	        }),
+	        avatar,
+	        _react2.default.createElement(
+	          'span',
+	          { style: labelStyle },
+	          children
+	        ),
+	        deleteIcon
+	      );
+	    }
+	  }]);
+
+	  return Chip;
+	}(_react.Component);
+
+	Chip.propTypes = {
+	  /**
+	   * Override the background color of the chip.
+	   */
+	  backgroundColor: _react.PropTypes.string,
+	  /**
+	   * Used to render elements inside the Chip.
+	   */
+	  children: _react.PropTypes.node,
+	  /**
+	   * CSS `className` of the root element.
+	   */
+	  className: _react.PropTypes.node,
+	  /**
+	   * Override the label color.
+	   */
+	  labelColor: _react.PropTypes.string,
+	  /**
+	   * Override the inline-styles of the label.
+	   */
+	  labelStyle: _react.PropTypes.object,
+	  /** @ignore */
+	  onBlur: _react.PropTypes.func,
+	  /** @ignore */
+	  onFocus: _react.PropTypes.func,
+	  /** @ignore */
+	  onKeyDown: _react.PropTypes.func,
+	  /** @ignore */
+	  onKeyboardFocus: _react.PropTypes.func,
+	  /** @ignore */
+	  onMouseDown: _react.PropTypes.func,
+	  /** @ignore */
+	  onMouseEnter: _react.PropTypes.func,
+	  /** @ignore */
+	  onMouseLeave: _react.PropTypes.func,
+	  /** @ignore */
+	  onMouseUp: _react.PropTypes.func,
+	  /**
+	   * Callback function fired when the delete icon is clicked. If set, the delete icon will be shown.
+	   * @param {object} event `touchTap` event targeting the element.
+	   */
+	  onRequestDelete: _react.PropTypes.func,
+	  /** @ignore */
+	  onTouchEnd: _react.PropTypes.func,
+	  /** @ignore */
+	  onTouchStart: _react.PropTypes.func,
+	  /**
+	   * Callback function fired when the `Chip` element is touch-tapped.
+	   *
+	   * @param {object} event TouchTap event targeting the element.
+	   */
+	  onTouchTap: _react.PropTypes.func,
+	  /**
+	   * Override the inline-styles of the root element.
+	   */
+	  style: _react.PropTypes.object
+	};
+	Chip.defaultProps = {
+	  onBlur: function onBlur() {},
+	  onFocus: function onFocus() {},
+	  onKeyDown: function onKeyDown() {},
+	  onKeyboardFocus: function onKeyboardFocus() {},
+	  onMouseDown: function onMouseDown() {},
+	  onMouseEnter: function onMouseEnter() {},
+	  onMouseLeave: function onMouseLeave() {},
+	  onMouseUp: function onMouseUp() {},
+	  onTouchEnd: function onTouchEnd() {},
+	  onTouchStart: function onTouchStart() {}
+	};
+	Chip.contextTypes = { muiTheme: _react.PropTypes.object.isRequired };
+	exports.default = Chip;
+
+/***/ }),
+/* 834 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _pure = __webpack_require__(369);
+
+	var _pure2 = _interopRequireDefault(_pure);
+
+	var _SvgIcon = __webpack_require__(378);
+
+	var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NavigationCancel = function NavigationCancel(props) {
+	  return _react2.default.createElement(
+	    _SvgIcon2.default,
+	    props,
+	    _react2.default.createElement('path', { d: 'M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z' })
+	  );
+	};
+	NavigationCancel = (0, _pure2.default)(NavigationCancel);
+	NavigationCancel.displayName = 'NavigationCancel';
+	NavigationCancel.muiName = 'SvgIcon';
+
+	exports.default = NavigationCancel;
+
+/***/ }),
+/* 835 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Card = __webpack_require__(751);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _AddroleName = __webpack_require__(836);
+
+	var _AddroleName2 = _interopRequireDefault(_AddroleName);
+
+	var _Displayrole = __webpack_require__(837);
+
+	var _Displayrole2 = _interopRequireDefault(_Displayrole);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Addrole = function (_React$Component) {
+	  _inherits(Addrole, _React$Component);
+
+	  function Addrole() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, Addrole);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Addrole.__proto__ || Object.getPrototypeOf(Addrole)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      roleData: []
+	    }, _this.componentWillMount = function () {
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/roleSetting',
+	        type: 'GET',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add role for get');
+	          console.log(data);
+	          this.setState({ roleData: data.message });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add role');
+	        }.bind(_this)
+	      });
+	      console.log("CWM is called");
+	    }, _this.roleList = function (roleName, _id) {
+
+	      var currentState = _this.state.roleData;
+	      console.log('inside Add role Component');
+	      //  console.log('name ' + roleName + 'id is '+ id);
+	      var obj = {
+	        _id: _id,
+	        roleName: roleName
+	      };
+
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/roleSetting',
+	        type: 'POST',
+	        data: obj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add role');
+	          console.log(data);
+	          var newData = [data.message].concat(currentState);
+	          this.setState({ roleData: newData });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add role');
+	          this.setState({ roleData: currentState });
+	        }.bind(_this)
+	      });
+
+	      // var currentState=this.state.roleData;
+	      // var newData=[obj].concat(currentState);
+	      // console.log('new data is');
+	      // console.log(newData);
+	      //
+	      // console.log("new object created in Add role");
+	      // console.log(this.state.roleData);
+	    }, _this.chipDltRequest = function (_id) {
+	      var dataCurrentState = _this.state.roleData;
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/roleSetting/' + _id,
+	        type: 'DELETE',
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add role for remove');
+	          console.log(data);
+	          var index;
+	          for (var i = 0; i < dataCurrentState.length; i++) {
+	            if (dataCurrentState[i]._id == _id) {
+	              // index=obj.cellID;
+	              var editData = dataCurrentState.splice(i, 1);
+	              editData = null;
+	              break;
+	            }
+	          };
+
+	          this.setState({ roleData: dataCurrentState });
+	          // /       this.setState({roleData:data.message});
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add role for remove');
+	        }.bind(_this)
+	      });
+	    }, _this.editroleName = function (obj, _id) {
+	      console.log("obj in Addrole");
+	      console.log(obj);
+	      console.log(_id);
+	      var dataCurrentState = _this.state.roleData;
+	      $.ajax({
+	        url: 'http://localhost:3000/api/v1/roleSetting',
+	        type: 'PUT',
+	        data: obj,
+	        contetntType: 'application/json',
+	        success: function (data) {
+	          console.log('server connected from Add role for put');
+	          console.log(data.message);
+	          var index;
+	          for (var i = 0; i < dataCurrentState.length; i++) {
+	            if (dataCurrentState[i]._id == _id) {
+	              // index=obj.cellID;
+	              var editData = dataCurrentState.splice(i, 1, obj);
+	              editData = null;
+	              break;
+	            }
+	          };
+	          console.log("data after edit");
+	          console.log(dataCurrentState);
+	          this.setState({ roleData: dataCurrentState });
+	        }.bind(_this),
+	        error: function (err) {
+	          console.log('server not connected from Add role for put');
+	          this.setState({ roleData: dataCurrentState });
+	        }.bind(_this)
+	      });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(Addrole, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Card.Card,
+	        { style: { width: '300px' } },
+	        _react2.default.createElement(_Card.CardHeader, {
+	          title: 'role List',
+	          subtitle: 'manipulate role List',
+	          actAsExpander: true,
+	          showExpandableButton: true
+	        }),
+	        _react2.default.createElement(
+	          _Card.CardText,
+	          { expandable: true },
+	          _react2.default.createElement(_AddroleName2.default, { roleList: this.roleList,
+	            id: this.state.indexId
+	          }),
+	          _react2.default.createElement(
+	            'div',
+	            { style: { marginTop: '50px' } },
+	            _react2.default.createElement(_Displayrole2.default, { roleData: this.state.roleData,
+	              chipDltRequest: this.chipDltRequest,
+	              editroleName: this.editroleName
+	            })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Addrole;
+	}(_react2.default.Component);
+
+	exports.default = Addrole;
+
+/***/ }),
+/* 836 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AddRoleName = function (_React$Component) {
+	  _inherits(AddRoleName, _React$Component);
+
+	  function AddRoleName() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, AddRoleName);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddRoleName.__proto__ || Object.getPrototypeOf(AddRoleName)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      roleName: '',
+	      txtFormStatus: false
+	    }, _this.handleRoleNameChange = function (e) {
+	      _this.setState({ roleName: e.target.value });
+	    }, _this.submitRoleName = function (e) {
+	      //alert(this.state.trackName);
+	      e.preventDefault();
+	      //  this.setState({id:this.state.id+1});
+	      console.log('obj in Add Role Name');
+	      //  console.log('name ' + this.state.roleName + 'id is '+ this.state.id);
+	      var _id = Date.now();
+	      console.log(_id);
+	      _this.props.roleList(_this.state.roleName, _id);
+	      _this.setState({ txtFormStatus: false, roleName: '' });
+	    }, _this.handleOpen = function () {
+	      _this.setState({ txtFormStatus: true });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(AddRoleName, [{
+	    key: 'render',
+	    value: function render() {
+	      var txtForm = this.state.txtFormStatus ? [_react2.default.createElement(_TextField2.default, {
+	        key: 'one',
+	        hintText: 'Role Name',
+	        floatingLabelText: 'Enter Role Name',
+	        value: this.state.roleName,
+	        onChange: this.handleRoleNameChange
+	      }), _react2.default.createElement(_FlatButton2.default, { key: 'two', label: 'Submit', primary: true, onTouchTap: this.submitRoleName })] : null;
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_RaisedButton2.default, { label: 'Add Role',
+	          primary: true,
+	          onTouchTap: this.handleOpen
+	        }),
+	        txtForm
+	      );
+	    }
+	  }]);
+
+	  return AddRoleName;
+	}(_react2.default.Component);
+
+	exports.default = AddRoleName;
+
+/***/ }),
+/* 837 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _EachRoleDisplay = __webpack_require__(838);
+
+	var _EachRoleDisplay2 = _interopRequireDefault(_EachRoleDisplay);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var DisplayRole = function (_React$Component) {
+	  _inherits(DisplayRole, _React$Component);
+
+	  function DisplayRole() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, DisplayRole);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DisplayRole.__proto__ || Object.getPrototypeOf(DisplayRole)).call.apply(_ref, [this].concat(args))), _this), _this.chipDltRequest = function (_id) {
+	      _this.props.chipDltRequest(_id);
+	    }, _this.editRoleName = function (obj, _id) {
+	      _this.props.editRoleName(obj, _id);
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(DisplayRole, [{
+	    key: 'render',
+	    value: function render() {
+
+	      var projectData = this.props.roleData.map(function (data) {
+	        return _react2.default.createElement(
+	          'div',
+	          { key: data._id },
+	          _react2.default.createElement(_EachRoleDisplay2.default, {
+	            roleName: data.roleName,
+	            _id: data._id,
+	            chipDltRequest: this.chipDltRequest,
+	            editRoleName: this.editRoleName
+	          })
+	        );
+	      }.bind(this));
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        projectData
+	      );
+	    }
+	  }]);
+
+	  return DisplayRole;
+	}(_react2.default.Component);
+
+	exports.default = DisplayRole;
+
+/***/ }),
+/* 838 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Chip = __webpack_require__(832);
+
+	var _Chip2 = _interopRequireDefault(_Chip);
+
+	var _TextField = __webpack_require__(733);
+
+	var _TextField2 = _interopRequireDefault(_TextField);
+
+	var _RaisedButton = __webpack_require__(473);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	var _FlatButton = __webpack_require__(475);
+
+	var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var styles = {
+	  chip: {
+	    margin: 4
+	  },
+	  wrapper: {
+	    display: 'flex',
+	    flexWrap: 'wrap'
+	  }
+	};
+
+	var EachRoleDisplay = function (_React$Component) {
+	  _inherits(EachRoleDisplay, _React$Component);
+
+	  function EachRoleDisplay() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, EachRoleDisplay);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EachRoleDisplay.__proto__ || Object.getPrototypeOf(EachRoleDisplay)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      roleEditStatus: false,
+	      roleName: _this.props.roleName
+	    }, _this.handleRoleNameChange = function (e) {
+	      _this.setState({ roleName: e.target.value });
+	    }, _this.handleRequestDelete = function () {
+	      _this.props.chipDltRequest(_this.props._id);
+	    }, _this.handleTouchTap = function () {
+	      _this.setState({ roleEditStatus: true });
+	    }, _this.submitEditRoleName = function (e) {
+	      //  console.log('role name is'+this.state.roleNames);
+	      e.preventDefault();
+	      var obj = {
+	        _id: _this.props._id,
+	        roleName: _this.state.roleName
+	      };
+	      console.log(obj);
+	      console.log(_this.props._id);
+	      _this.setState({ roleEditStatus: false });
+	      _this.props.editRoleName(obj, _this.props._id);
+	    }, _this.cancelEditRoleName = function () {
+	      _this.setState({ roleEditStatus: false });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  _createClass(EachRoleDisplay, [{
+	    key: 'render',
+	    value: function render() {
+
+	      if (this.state.roleEditStatus == true) {
+	        return _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(_TextField2.default, {
+	            hintText: 'Role Name',
+	            floatingLabelText: 'Edit Role Name',
+	            value: this.state.roleName,
+	            onChange: this.handleRoleNameChange
+	          }),
+	          _react2.default.createElement(_FlatButton2.default, { label: 'Submit', primary: true, onTouchTap: this.submitEditRoleName }),
+	          _react2.default.createElement(_FlatButton2.default, { label: 'Cancel', primary: true, onTouchTap: this.cancelEditRoleName })
+	        );
+	      } else {
+	        return _react2.default.createElement(
+	          'div',
+	          { style: styles.wrapper },
+	          _react2.default.createElement(
+	            _Chip2.default,
+	            {
+	              onRequestDelete: this.handleRequestDelete,
+	              onTouchTap: this.handleTouchTap,
+	              style: styles.chip
+	            },
+	            this.props.roleName
+	          )
+	        );
+	      }
+	    }
+	  }]);
+
+	  return EachRoleDisplay;
+	}(_react2.default.Component);
+
+	exports.default = EachRoleDisplay;
 
 /***/ })
 /******/ ]);
